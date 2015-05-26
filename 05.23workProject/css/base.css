@@ -415,7 +415,7 @@ body{
 /*content2*/
 .content2{
     width: 1040px;
-    height: 187px;
+    height:200px;
     margin: 0 auto;
     background: #ffffff;
 
@@ -492,3 +492,94 @@ body{
     background-color: #639898;
 }
 /*content2 end*/
+
+/*content3 中间一大部分*/
+.content3{
+    width: 1040px;
+    height: 1050px;
+    background: #ffffff;
+    margin: 0 auto;
+
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+
+    box-pack:center;
+    -webkit-box-pack:center;
+    -moz-box-pack:center;
+    -o-box-pack:center;
+    -ms-box-pack:center;
+}
+.content3_mid{
+    width: 940px;
+    height: 1050px;
+    border: 1px solid #000000;
+}
+
+.title{
+    width: 940px;
+    height: 40px;
+    line-height: 40px;
+    padding-bottom:20px ;
+
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+
+    box-pack:justify;
+    -webkit-box-pack:justify;
+    -moz-box-pack:justify;
+    -o-box-pack:justify;
+    -ms-box-pack:justify;
+}
+.titletext{
+    color: #ff9600 ;
+    font-size: 12px;
+    font-style: italic;
+}
+.titletext1{
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+    font-style: normal;
+}
+.arrow{
+    width: 49px;
+    height: 24px;
+}
+.arrow1{
+    margin-left:1px;
+}
+
+/*四张图片*/
+.imgwrapper{
+    width: 940px;
+    height: 214px;
+    background: greenyellow;
+
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+
+    box-pack:justify;
+    -webkit-box-pack:justify;
+    -moz-box-pack:justify;
+    -o-box-pack:justify;
+    -ms-box-pack:justify;
+
+}
+
+.imgwrapper1{
+ width: 220px;
+    height: 214px;
+    border: 1px solid #000000;
+
+}
+/*四张图片 end*/
+/*content3*/
