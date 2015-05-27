@@ -874,10 +874,10 @@ body{
     -ms-box-align:center;
 }
 
-.sc div:nth-child(1){
+.sc>div:nth-child(1){
     margin-left: 18px;
 }
-.sc div:nth-child(4){
+.sc>div:nth-child(4){
     margin-right: 18px;
 }
 .company{
@@ -981,7 +981,7 @@ body{
 .footer{
     width: 1040px;
     height: 421px;
-    background: #525252;
+    background: #414141;
     border-bottom:1px solid #525252;
     margin: 0 auto;
 
@@ -998,16 +998,16 @@ body{
     -ms-box-pack:justify;
 }
 
-.footer div:nth-child(1){
+.footer>div:nth-child(1){
     margin-left: 50px;
 }
-.footer div:nth-child(4){
+.footer>div:nth-child(4){
     margin-right: 50px;
 }
 .footer_wrap{
     width: 220px;
-    height: 370px;
-    border: 1px solid #ffffff;
+    height: 340px;
+    margin-top: 61px;
 }
 .logo2{
     width: 220px;
@@ -1021,13 +1021,194 @@ body{
 .footer_text{
     font-size: 12px;
     color: #f1f1f1;
-    line-height: 20px;
+    line-height: 21px;
+    margin-bottom: 18px;
 }
 .footer_title{
     color: #a8a8a8;
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 15px;
+}
+.footer_warp2{
+    width:220px;
+    height: 135px;
+    border-bottom: 1px solid #333333;
+}
+.footertext1{
+   font-size: 13px;
+    color: #A2A2A2;
+    font-weight: bold;
+}
+.footertext1:hover{
+    color:#ff9600;
+}
+.footer_imgtext_wrap{
+    width: 210px;
+    height: 63px;
+    margin-top: 15px;
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
 
 }
+.footer_img{
+    width: 56px;
+    height: 56px;
+    border: 3px solid #4e4e4e;
+    margin-right:10px ;
+}
+.footer_text2{
+    width: 138px;
+    height: 60px;
+    line-height: 20px;
+    font-size: 12px;
+    color: #f1f1f1;
+    line-height: 20px;
+}
+
+.footer_warp3{
+    width:220px;
+    height: 20px;
+    font-size: 11px;
+    color: #bababa;
+    margin-top: 10px;
+
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+
+    box-pack:justify;
+    -webkit-box-pack:justify;
+    -moz-box-pack:justify;
+    -o-box-pack:justify;
+    -ms-box-pack:justify;
+}
+
+.footer_text3:hover{
+    color:#ff9600;
+}
+
+.footer_warp4{
+    width:220px;
+    height: 135px;
+    border-top: 1px solid #555555;
+    margin-top: 1px;
+}
+.footertext4{
+    margin-top: 17px;
+    font-size: 13px;
+    color: #A2A2A2;
+    font-weight: bold;
+}
 /*footer end*/
+
+.banner{
+    width: 1040px;
+    height: 50px;
+    background: #333333;
+    font-size: 11px;
+    margin: 0 auto;
+    color: #f1f1f1;
+
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+
+    box-align:center;
+    -webkit-box-align:center;
+    -moz-box-align:center;
+    -o-box-align:center;
+    -ms-box-align:center;
+
+    box-pack:justify;
+    -webkit-box-pack:justify;
+    -moz-box-pack:justify;
+    -o-box-pack:justify;
+    -ms-box-pack:justify;
+}
+
+.bannertext{
+    margin-left:50px ;
+}
+.bannertext1:hover{
+    color:#ff9600;
+}
+.banner_icon{
+    width: 185px;
+    height: 25px;
+    margin-right:50px;
+
+    display: box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -o-box;
+    display: -ms-box;
+
+    box-pack:justify;
+    -webkit-box-pack:justify;
+    -moz-box-pack:justify;
+    -o-box-pack:justify;
+    -ms-box-pack:justify;
+}
+.banner_icon1{
+    width: 25px;
+    height: 25px;
+    background-image:url("../images/footericon.png");
+    position: relative;
+}
+.banner_icon1:hover{
+    opacity: 0.7;
+}
+.banner_icon2{
+    width: 25px;
+    height: 25px;
+    background:url("../images/footericon.png") 0 -25px;
+    position: relative;
+}
+.banner_icon2:hover{
+    opacity: 0.7;
+}
+.banner_icon3{
+    width: 25px;
+    height: 25px;
+    background:url("../images/footericon.png") 0 -50px;
+    position: relative;
+}
+.banner_icon3:hover{
+    opacity: 0.7;
+}
+.banner_icon4{
+    width: 25px;
+    height: 25px;
+    background:url("../images/footericon.png") 0 -75px;
+    position: relative;
+}
+.banner_icon4:hover{
+    opacity: 0.7;
+}
+.banner_icon5{
+    width: 25px;
+    height: 25px;
+    background:url("../images/footericon.png") 0 -125px;
+    position: relative;
+}
+.banner_icon5:hover{
+    opacity: 0.7;
+}
+.banner_icon6{
+    width: 25px;
+    height: 25px;
+    background:url("../images/footericon.png") 0 -100px;
+    position: relative;
+}
+.banner_icon6:hover{
+    opacity: 0.7;
+}
+
