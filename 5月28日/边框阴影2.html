@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #f1f1f1;
+        }
+        .a1{
+            width: 220px;
+            height: 80px;
+            background: #f6f8f7;
+            border-radius: 40px;
+            position: relative;
+            margin-top: 10px;
+        }
+        .a2{
+             width:200px ;
+             height: 60px;
+             border-radius: 30px;
+             position: absolute;
+             top: 10px;
+             left: 10px;
+            background: -ms-linear-gradient(top, #fafafa, #bfbfc1);
+            background:-moz-linear-gradient(top,#fafafa,#bfbfc1);
+            background: -o-linear-gradient(top, #fafafa,#bfbfc1);
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#fafafa), to(#bfbfc1));
+             box-shadow: 0 0 5px #9f9f9f;
+         }
+        .a3{
+            width:180px ;
+            height: 40px;
+            border-radius: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #9f9f97;
+            box-shadow: inset 0 3px 10px #4f4f4f;
+        }
+        .a3_01{
+            width:180px ;
+            height: 40px;
+            border-radius: 20px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #99bd80;
+            box-shadow: inset 0 3px 10px #4f4f4f;
+        }
+        .a4{
+            width:110px ;
+            height: 42px;
+            position: absolute;
+            left: -1px;
+            top: -1px;
+            border-radius: 21px;
+            background: -ms-linear-gradient(top, #f9f7fa,#c4c0b4);
+            background:-moz-linear-gradient(top,#f9f7fa,#c4c0b4);
+            background: -o-linear-gradient(top, #f9f7fa,#c4c0b4);
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#f9f7fa), to(#c4c0b4));
+            box-shadow: 0 2px 7px 1px #939393;
+        }
+        .a4_01{
+            width:110px ;
+            height: 42px;
+            position: absolute;
+            right: -1px;
+            top: -1px;
+            border-radius: 21px;
+            background: -ms-linear-gradient(top, #f9f7fa,#c4c0b4);
+            background:-moz-linear-gradient(top,#f9f7fa,#c4c0b4);
+            background: -o-linear-gradient(top, #f9f7fa,#c4c0b4);
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#f9f7fa), to(#c4c0b4));
+            box-shadow: 0 2px 7px 1px #939393;
+        }
+        .a5{
+            width:76px ;
+            height: 20px;
+            border-radius: 10px;
+            background: #d1cbbf;
+            position: absolute;
+            top: 10px;
+            left: 18px;
+            background: -ms-linear-gradient(top, #cbc6c0,#e5ded6);
+            background:-moz-linear-gradient(top,#cbc6c0,#e5ded6);
+            background: -o-linear-gradient(top, #cbc6c0,#e5ded6);
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#cbc6c0), to(#e5ded6));
+        }
+
+.a6{
+    font-family: Arial;
+    font-size: 22px;
+    position: absolute;
+    font-weight: bold;
+    top:10px;
+    left: 115px;
+    color: rgba(0, 0, 0, 0.36);
+    text-shadow: 0 1px 1px rgb(188, 188, 188);
+}
+   .a7{
+       font-family: Arial;
+       font-size: 22px;
+       position: absolute;
+       font-weight: bold;
+       top:10px;
+       left: 15px;
+       color: rgba(0, 0, 0, 0.18);
+       text-shadow: 0 1px 1px rgb(188, 188, 188);
+   }
+        .b1{
+            width: 100px;
+            height: 140px;
+            margin-top: 20px;
+            margin-left: 20px;
+            background: -ms-linear-gradient(top, #cbc6c0,#e5ded6);
+            background:-moz-linear-gradient(top,#cbc6c0,#e5ded6);
+            background: -o-linear-gradient(top, #cbc6c0,#e5ded6);
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#eeeeee), to(#bcbcbc));
+            border-radius: 5px;
+            box-shadow: 0 0 10px #8d8d8d,
+            0 2px 3px #494949;
+            position: relative;
+        }
+        .b2{
+            width: 50px;
+            height: 100px;
+            background: #e8e8e8;
+            position: absolute;
+            border-radius: 3px;
+            left: 25px;
+            top: 20px;
+            box-shadow: 0 0 5px #686868,
+                       0 1px 0px #ffffff,
+                    inset 0 1px 1px #ffffff,
+                    inset 0 10px 1px #f0f0f0;
+        }
+        .b2_1{
+            width: 50px;
+            height: 100px;
+            background: #e8e8e8;
+            position: absolute;
+            border-radius: 3px;
+            left: 25px;
+            top: 20px;
+            box-shadow: 0 0 5px #8c8c8c,
+            0 8px 5px #8c8c8c,
+            inset 0 1px 1px #ffffff,
+            inset 0 -10px 1px #aaaaa8;
+        }
+        .b3{
+            width: 48px;
+            height: 46px;
+            background: #cbc7be;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            left: 1px;
+            box-shadow: 0 0 5px #cbc7be;
+        }
+        .b3_1{
+            width: 48px;
+            height: 46px;
+            background: #cbc7be;
+            border-radius: 5px;
+            position: absolute;
+            bottom: 10px;
+            left: 1px;
+            box-shadow: 0 0 5px #d9d5cc;
+        }
+        .b4{
+             width: 8px;
+             height: 8px;
+             border-radius:4px;
+             background: #656565;
+             position: absolute;
+             left: 46px;
+             top:6px;
+            box-shadow: 0 1px 1px #ffffff;
+         }
+        .b5{
+            width: 8px;
+            height: 8px;
+            border-radius:4px;
+            background: #656565;
+            position: absolute;
+            left: 46px;
+            bottom:6px;
+            box-shadow: 0 1px 1px #ffffff;
+        }
+
+        .c1{
+            width: 120px;
+            height: 120px;
+            border-radius: 60px;
+            margin-top: 20px;
+            margin-left: 20px;
+            position: relative;
+            background: -ms-linear-gradient(top, #c2c2c2,#f8f8f8);
+            background:-moz-linear-gradient(top,#c2c2c2,#f8f8f8);
+            background: -o-linear-gradient(top, #c2c2c2,#f8f8f8);
+            background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#c2c2c2), to(#f8f8f8));
+            box-shadow: inset 0 2px 2px #909090;
+        }
+        .c2{
+            width: 104px;
+            height: 104px;
+            border-radius: 52px;
+            position: absolute;
+            left: 8px;
+            top: 8px;
+            background: #eaeaea;
+            box-shadow: 0 3px 3px #aaaaaa,
+                        inset 0 4px 5px #f4f4f4,
+            inset 0 -4px 5px #d0d0d0;
+        }
+        .c3{
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background: #828282;
+            position: absolute;
+            left: 44px;
+            top: 44px;
+            box-shadow:inset 0 2px 3px #4c4c4c,
+            0 1px 1px #ffffff;
+        }
+        .c3_1{
+            width: 16px;
+            height: 16px;
+            border-radius: 8px;
+            background: #2ac62a;
+            position: absolute;
+            left: 44px;
+            top: 44px;
+            box-shadow:inset 0 2px 3px #8c8c8c,
+            0 0 10px #2cd92c,
+            0 1px 1px #ffffff;
+        }
+        </style>
+</head>
+<body>
+<!--开关按钮1-->
+<div class="a1">
+   <div class="a2">
+       <div class="a3">
+           <div class="a6">OFF</div>
+                <div class="a4">
+                    <div class="a5"></div>
+                </div>
+       </div>
+       </div>
+</div>
+
+<div class="a1">
+    <div class="a2">
+        <div class="a3_01">
+            <div class="a7">ON</div>
+            <div class="a4_01">
+                <div class="a5"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+<!--开关按钮2-->
+<div class="b1">
+    <div class="b4"></div>
+    <div class="b5"></div>
+    <div class="b2">
+        <div class="b3"></div>
+    </div>
+</div>
+
+<div class="b1">
+    <div class="b4"></div>
+    <div class="b5"></div>
+    <div class="b2_1">
+        <div class="b3_1"></div>
+    </div>
+</div>
+
+<!--开关按钮3-->
+<div class="c1">
+    <div class="c2">
+        <div class="c3"></div>
+    </div>
+</div>
+<div class="c1">
+    <div class="c2">
+        <div class="c3_1"></div>
+    </div>
+</div>
+</body>
+</html>
