@@ -25,6 +25,7 @@ ul{
     float: left;
     border-right: 5px solid #00aaaa;
     position: relative;
+    z-index: 3;
 }
 .right{
     width: 1094px;
@@ -81,7 +82,98 @@ ul{
     color: #000000;
     transition: all 0.1s linear;
 }
+.inp3{
+    display: none;
+}
+.lab03{
+    display: block;
+    width: 100px;
+    height: 22px;
+    position: absolute;
+    cursor: pointer;
+    top: 16px;
+    left: 60px;
+    z-index: 3;
+}
 
+.secondmenu_1{
+    width: 0px;
+    height: 1800px;
+    background: #00aaaa;
+    position: absolute;
+    left: 254px;
+    top: -124px;
+    z-index: 2;
+    /*display: none;*/
+}
+.li1_1{
+    position: absolute;
+    width: 196px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 15px;
+    left: 255px;
+    top: -124px;
+    z-index: 3;
+    line-height: 40px;
+    display: none;
+}
+.inp3:checked ~ .li1_1{
+    display: block;
+    transition: all 0.3s linear;
+}
+.li1_2{
+    position: absolute;
+    left: 255px;
+    top: -85px;
+    width: 196px;
+    height: 40px;
+    color: #ffffff;
+    font-size: 15px;
+    z-index: 3;
+    line-height: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.11);
+    display: none;
+}
+.inp3:checked ~ .li1_2{
+    display: block;
+    transition: all 0.3s linear;
+}
+.inp3:checked ~ .secondmenu_1{
+    width: 200px;
+    transition: all 0.3s linear;
+}
+.scaling{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 254px;
+    top: -124px;
+    background: #00aaaa  url("../images/plus.png")no-repeat;
+    background-position: 8px 8px;
+    z-index: 3;
+}
+.inp3:checked ~ .scaling{
+    left: 454px;
+    background: #00aaaa  url("../images/minus.png") no-repeat;
+    background-position: 8px 12px;
+    transition: all 0.3s linear;
+
+}
+.scaling2{
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 275px;
+    top: -124px;
+    background-color: rgb(255, 255, 255);
+    transform: skew(-45deg);
+    z-index: 3;
+}
+.inp3:checked ~ .scaling2{
+    left: 474px;
+    transition: all 0.3s linear;
+}
 /*搜索框*/
 .searcher{
     width: 210px;
@@ -162,7 +254,7 @@ ul{
     color: #151719;
     padding-left: 40px;
      background: url("../images/announce.png") no-repeat;
-    margin-top: 30px;
+    margin-top: 40px;
     margin-left: 25px;
     line-height: 30px;
 }
@@ -193,8 +285,6 @@ ul{
 .imgshow::-webkit-scrollbar-thumb {
     background:#00aaaa;
 }
-
-
 /*滚动条 end*/
 .imgbox1{
     width: 2020px;
@@ -602,15 +692,15 @@ ul{
     background-position: center center;
 }
 .lab02:hover{
-    background: #000000 url("../images/to-left-arrow.png") no-repeat;
+    background: #000000 url("../images/to-right-arrow.png") no-repeat;
     background-position: center center;
 }
 .inp1:checked ~ .columms3_box3{
-    left:-294px;
+    transform: translateX(-147px);
     transition: all 0.5s linear;
 }
 .inp2:checked ~ .columms3_box3{
-    left:0px;
+    transform: translateX(147px);
     transition: all 0.5s linear;
 }
 .inp2{
