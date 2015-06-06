@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background-color: #333333;
+        }
+        @-webkit-keyframes frame1{
+            from{-webkit-transform: rotateZ(0deg)}
+            to{-webkit-transform: rotateZ(360deg)}
+        }
+        @-webkit-keyframes frame2{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(-15px,15px)}
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        @-webkit-keyframes frame3{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(-26px,26px)}
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        @-webkit-keyframes frame4{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(-39px,39px) }
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        @-webkit-keyframes frame5{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(-52px,52px) }
+            to{-webkit-transform: translate(0px,0px)}
+        }
+        @-webkit-keyframes frame6{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(-65px,65px) }
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        @-webkit-keyframes frame7{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(15px,-15px) }
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        @-webkit-keyframes frame8{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(26px,-26px)}
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        @-webkit-keyframes frame9{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(39px,-38px) }
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        @-webkit-keyframes frame10{
+            from{-webkit-transform: translate(0px,0px)}
+            50%{-webkit-transform:translate(52px,-52px) }
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        @-webkit-keyframes frame11{
+            from{-webkit-transform: translate(0px,0px) }
+            50%{-webkit-transform:translate(65px,-65px)}
+            to{-webkit-transform: translate(0px,0px) }
+        }
+        .d0{
+           width: 300px;
+            height: 300px;
+            /*border: 1px solid #ffffff;*/
+            position: relative;
+            margin: 0 auto;
+            top: 200px;
+            /*transform: rotate(135deg);*/
+            -webkit-animation:frame1 3.2s linear infinite;
+        }
+        .d0 div:nth-child(1) {
+            height: 0;
+            width: 0;
+          border: 10px solid #ffd700;
+            border-radius: 10px;
+            position: absolute;
+            top: 140px;
+            left:140px;
+            box-shadow:0 0 30px rgba(255, 215, 0, 0.98);
+        }
+        .d0 div:nth-child(2){
+            height: 0;
+            width: 0;
+            border-left:20px solid #87ceeb;
+            border-bottom:20px solid #87ceeb;
+            border-top: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-radius: 20px;
+
+            position: absolute;
+            top:130px;
+            left:130px;
+            -webkit-animation:frame2 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+        .d0 div:nth-child(3){
+            height: 0;
+            width: 0;
+            border-left:30px solid #ffffff;
+            border-bottom:30px solid #ffffff;
+            border-top: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-radius: 30px;
+
+            position: absolute;
+            top:120px;
+            left:120px;
+            -webkit-animation:frame3 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+        .d0 div:nth-child(4){
+            height: 0;
+            width: 0;
+            border-left:40px solid #87ceeb;
+            border-bottom:40px solid #87ceeb;
+            border-top: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-radius: 40px;
+            position: absolute;
+            top:110px;
+            left:110px;
+            -webkit-animation:frame4 1.6s ease infinite;
+            transform: rotate(45deg);
+        }
+        .d0 div:nth-child(5){
+            height: 0;
+            width: 0;
+            border-left:50px solid #ffffff;
+            border-bottom:50px solid #ffffff;
+            border-top: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-radius: 50px;
+
+            position: absolute;
+            top:100px;
+            left:100px;
+            -webkit-animation:frame5 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+        .d0 div:nth-child(6){
+            height: 0;
+            width: 0;
+            border-left:60px solid #87ceeb;
+            border-bottom:60px solid #87ceeb;
+            border-top: 60px solid transparent;
+            border-right: 60px solid transparent;
+            border-radius: 60px;
+            position: absolute;
+            top:90px;
+            left:90px;
+            -webkit-animation:frame6 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+        .d0 div:nth-child(7){
+            height: 0;
+            width: 0;
+            border-top:20px solid #ff6347;
+            border-right:20px solid #ff6347;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid transparent;
+            border-radius: 20px;
+            position: absolute;
+            top:130px;
+            left:130px;
+            -webkit-animation:frame7 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+
+        .d0 div:nth-child(8){
+            height: 0;
+            width: 0;
+            border-top:30px solid #ffffff;
+            border-right:30px solid #ffffff;
+            border-bottom: 30px solid transparent;
+            border-left: 30px solid transparent;
+            border-radius: 30px;
+            position: absolute;
+            top:120px;
+            left:120px;
+            -webkit-animation:frame8 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+        .d0 div:nth-child(9){
+            height: 0;
+            width: 0;
+            border-top:40px solid #ff6347;
+            border-right:40px solid #ff6347;
+            border-bottom: 40px solid transparent;
+            border-left: 40px solid transparent;
+            border-radius: 40px;
+
+            position: absolute;
+            top:110px;
+            left:110px;
+            -webkit-animation:frame9 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+        .d0 div:nth-child(10){
+            height: 0;
+            width: 0;
+            border-top:50px solid #ffffff;
+            border-right:50px solid #ffffff;
+            border-bottom: 50px solid transparent;
+            border-left: 50px solid transparent;
+            border-radius: 50px;
+            position: absolute;
+            top:100px;
+            left:100px;
+            -webkit-animation:frame10 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+        .d0 div:nth-child(11){
+            height: 0;
+            width: 0;
+            border-top:60px solid #ff6347;
+            border-right:60px solid #ff6347;
+            border-bottom: 60px solid transparent;
+            border-left: 60px solid transparent;
+            border-radius: 60px;
+
+            position: absolute;
+            top:90px;
+            left:90px;
+            -webkit-animation:frame11 1.6s ease infinite;
+            /*transform: rotate(45deg);*/
+        }
+        </style>
+</head>
+<body>
+<div class="d0">
+   <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+</body>
+</html>

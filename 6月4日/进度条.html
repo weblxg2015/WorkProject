@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ccc;
+            background-image: -webkit-radial-gradient(rgb(238, 238, 238), rgb(68, 68, 68));
+        }
+        .d0{
+            width: 1200px;
+            height:600px;
+            position: relative;
+        }
+        .d0 div {
+            width: 8px;
+            height: 102px;
+            background: #464646;
+            border-radius: 4px;
+        }
+        @-webkit-keyframes frame1{
+            from{-webkit-transform: scale(1,1) }
+            50%{ -webkit-transform: scale(1,0.1)}
+            from{-webkit-transform: scale(1,1) }
+        }
+        @-webkit-keyframes frame2{
+            from{background: #464646; }
+            50%{background: #c9c9c9 }
+            to{background: #464646; }
+        }
+        @-webkit-keyframes frame3{
+            from{border-radius: 4px}
+            to{border-radius: 4px}
+        }
+        .d0 div:nth-child(1) {
+            position: absolute;
+            top: 250px;
+            left: 680px;
+            -webkit-animation: frame1 2.5s linear infinite,
+            frame2 2.5s linear infinite;
+        }
+
+
+        .d0 div:nth-child(2){
+            position: absolute;
+            top:250px;
+            left: 667px;
+            -webkit-animation: frame1 2.5s linear infinite 0.2s,
+            frame2 2.5s linear infinite 0.2s;
+        }
+        .d0 div:nth-child(3){
+            position: absolute;
+            top:250px;
+            left: 654px;
+            -webkit-animation: frame1 2.5s linear infinite 0.4s,
+            frame2 2.5s linear infinite 0.4s;
+        }
+        .d0 div:nth-child(4){
+            position: absolute;
+            top:250px;
+            left: 641px;
+            -webkit-animation: frame1 2.5s linear infinite 0.6s,
+            frame2 2.5s linear infinite 0.6s;
+        }
+        .d0 div:nth-child(5){
+            position: absolute;
+            top:250px;
+            left: 628px;
+            -webkit-animation: frame1 2.5s linear infinite 0.8s,
+            frame2 2.5s linear infinite 0.8s;
+        }
+        .d0 div:nth-child(6){
+            position: absolute;
+            top:250px;
+            left: 615px;
+            -webkit-animation: frame1 2.5s linear infinite 1s,
+            frame2 2.5s linear infinite 1s;
+        }
+        .d0 div:nth-child(7){
+            position: absolute;
+            top:250px;
+            left: 602px;
+            -webkit-animation: frame1 2.5s linear infinite 1.2s,
+            frame2 2.5s linear infinite 1.2s;
+        }
+        .d0 div:nth-child(8){
+            position: absolute;
+            top:250px;
+            left: 589px;
+            -webkit-animation: frame1 2.5s linear infinite 1.4s,
+            frame2 2.5s linear infinite 1.4s;
+        }
+        .d0 div:nth-child(9){
+            position: absolute;
+            top:250px;
+            left: 693px;
+            -webkit-animation: frame1 2.5s linear infinite 0.2s,
+            frame2 2.5s linear infinite 0.2s;
+        }
+        .d0 div:nth-child(10){
+            position: absolute;
+            top:250px;
+            left: 706px;
+            -webkit-animation: frame1 2.5s linear infinite 0.4s,
+            frame2 2s linear infinite 0.4s;
+        }
+        .d0 div:nth-child(11){
+            position: absolute;
+            top:250px;
+            left: 719px;
+            -webkit-animation: frame1 2.5s linear infinite 0.6s,
+            frame2 2.5s linear infinite 0.6s;
+        }
+        .d0 div:nth-child(12){
+            position: absolute;
+            top:250px;
+            left: 732px;
+            -webkit-animation: frame1 2.5s linear infinite 0.8s,
+            frame2 2.5s linear infinite 0.8s;
+        }
+        .d0 div:nth-child(13){
+            position: absolute;
+            top:250px;
+            left: 745px;
+            -webkit-animation: frame1 2.5s linear infinite 1s,
+            frame2 2.5s linear infinite 1s;
+        }
+        .d0 div:nth-child(14){
+            position: absolute;
+            top:250px;
+            left: 758px;
+            -webkit-animation: frame1 2.5s linear infinite 1.2s,
+            frame2 2.5s linear infinite 1.2s;
+        }
+        .d0 div:nth-child(15){
+            position: absolute;
+            top:250px;
+            left: 771px;
+            -webkit-animation: frame1 2.5s linear infinite 1.4s,
+            frame2 2.5s linear infinite 1.4s;
+        }
+
+            </style>
+</head>
+<body>
+<div class="d0">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>

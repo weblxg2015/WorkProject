@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #CCCCCC;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .menu{
+            /*overflow: hidden;*/
+            margin: 50px;
+        }
+
+        .menu > li{
+            float: left;
+            width: 160px;
+            height: 54px;
+            border-top:2px solid #303030;
+            border-bottom: 2px solid #181818;
+            background-color: #262626;
+            position: relative;
+        }
+        .menu > li:first-child {
+            border-radius: 5px 0 0;
+        }
+        .menu a{
+            display: block;
+            font-size: 18px;
+            line-height: 54px;
+            padding: 0 25px;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            color: #808080;
+        }
+        .menu li:hover{
+            background-color: #1B1B1B;
+            border-bottom:2px solid #303030;
+            border-top: 2px solid #181818;
+        }
+        .menu li:hover > a {
+            border-radius: 5px 0 0 0;
+            border-left: 3px solid #C4302B;
+            color: #C4302B;
+        }
+
+        .sencondmenu li{
+            width: 160px;
+            height: 54px;
+            border-bottom: 2px solid #181818;
+            border-top: 2px solid #303030;
+            background: linear-gradient(#292929, #252525);
+        }
+        .sencondmenu li:hover{
+            border-bottom: 2px solid #222222;
+            border-top: 2px solid #1B1B1B;
+            background: linear-gradient(#1c1c1c, #1b1b1b);
+        }
+        .sencondmenu a{
+            border-left:3px solid transparent;
+        }
+        .sencondmenu li:hover a{
+            color: #ffffff;
+            border-left: 3px solid #454545;
+            border-radius: 0;
+        }
+        .sencondmenu li{
+            transform: rotateY(90deg);
+        }
+
+        @-webkit-keyframes frame1{
+            from{-webkit-transform: rotateY(90deg); }
+            to{-webkit-transform: rotateY(0deg);}
+        }
+        @-webkit-keyframes frame2{
+            from{opacity: 0}
+            to{opacity: 1}
+        }
+        @-webkit-keyframes frame3{
+            from{-webkit-transform: rotateX(0deg); }
+            50%{-webkit-transform: rotateX(45deg); }
+            to{-webkit-transform: rotateX(0deg);}
+        }
+        .menu li:hover .sencondmenu li:nth-child(1){
+            -webkit-animation: frame1 0.5s linear,
+            frame2 0.5s linear,
+            frame3 0.5s linear;
+            transform: rotateY(0deg);
+        }
+        .menu li:hover .sencondmenu li:nth-child(2){
+            -webkit-animation: frame1 0.5s linear 0.1s,
+            frame2 0.5s linear 0.1s;
+            transform: rotateY(0deg);
+        }
+        .menu li:hover .sencondmenu li:nth-child(3){
+            -webkit-animation: frame1 0.5s linear 0.2s,
+            frame2 0.5s linear 0.2s;
+            transform: rotateY(0deg);
+        }
+        .menu li:hover .sencondmenu li:nth-child(4){
+            -webkit-animation: frame1 0.5s linear 0.3s,
+            frame2 0.5s linear 0.3s;
+            transform: rotateY(0deg);
+        }
+        .menu li:hover .sencondmenu li:nth-child(5){
+            -webkit-animation: frame1 0.5s linear 0.4s,
+            frame2 0.5s linear 0.4s;
+            transform: rotateY(0deg);
+        }
+        .menu li:hover .sencondmenu li:nth-child(6){
+            -webkit-animation: frame1 0.5s linear 0.5s,
+            frame2 0.5s linear 0.5s;
+            transform: rotateY(0deg);
+        }
+        .menu li:hover .sencondmenu li:nth-child(7){
+            -webkit-animation: frame1 0.5s linear 0.6s,
+            frame2 0.5s linear 0.6s;
+            transform: rotateY(0deg);
+        }
+        .menu li:hover .sencondmenu li:nth-child(8){
+            -webkit-animation: frame1 0.5s linear 0.7s,
+            frame2 0.5s linear 0.7s;
+            transform: rotateY(0deg);
+        }
+        </style>
+</head>
+<body>
+<ul class="menu">
+    <li>
+        <a href="#">主页</a>
+    </li>
+    <li><a href="#">菜单一</a>
+          <ul class="sencondmenu">
+              <li><a href="#">菜单A</a></li>
+              <li><a href="#">菜单B</a></li>
+              <li><a href="#">菜单C</a></li>
+              <li><a href="#">菜单D</a></li>
+              <li><a href="#">菜单E</a></li>
+              <li><a href="#">菜单F</a></li>
+              <li><a href="#">菜单G</a></li>
+              <li><a href="#">菜单H</a></li>
+          </ul>
+    </li>
+    <li><a href="#">菜单二</a>
+        <ul class="sencondmenu">
+            <li><a href="#">菜单A</a></li>
+            <li><a href="#">菜单B</a></li>
+            <li><a href="#">菜单C</a></li>
+            <li><a href="#">菜单D</a></li>
+            <li><a href="#">菜单E</a></li>
+            <li><a href="#">菜单F</a></li>
+            <li><a href="#">菜单G</a></li>
+            <li><a href="#">菜单H</a></li>
+        </ul>
+    </li>
+    <li><a href="#">菜单三</a>
+        <ul class="sencondmenu">
+            <li><a href="#">菜单A</a></li>
+            <li><a href="#">菜单B</a></li>
+            <li><a href="#">菜单C</a></li>
+            <li><a href="#">菜单D</a></li>
+            <li><a href="#">菜单E</a></li>
+            <li><a href="#">菜单F</a></li>
+            <li><a href="#">菜单G</a></li>
+            <li><a href="#">菜单H</a></li>
+        </ul>
+    </li>
+    <li><a href="#">菜单四</a>
+        <ul class="sencondmenu">
+            <li><a href="#">菜单A</a></li>
+            <li><a href="#">菜单B</a></li>
+            <li><a href="#">菜单C</a></li>
+            <li><a href="#">菜单D</a></li>
+            <li><a href="#">菜单E</a></li>
+            <li><a href="#">菜单F</a></li>
+            <li><a href="#">菜单G</a></li>
+            <li><a href="#">菜单H</a></li>
+        </ul>
+    </li>
+    <li><a href="#">返回教程</a></li>
+    </ul>
+</body>
+</html>
