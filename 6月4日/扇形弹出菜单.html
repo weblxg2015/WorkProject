@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+        body{
+            background: #f9f4f0;
+        }
+        .a0{
+            width: 200px;
+            height: 200px;
+            margin-left: 500px;
+            margin-top: 100px;
+            position: relative;
+        }
+
+        .a0 input[type="checkbox"]{
+            display: none;
+        }
+        .lab01{
+            display: block;
+            width: 46px;
+            height: 46px;
+            border-radius: 23px;
+            position: absolute;
+            left: 0px;
+            bottom: 0;
+            z-index: 10;
+            box-shadow:
+            0 0 1px rgba(0, 0, 0, 0.67);
+            background: #ffffff;
+            cursor: pointer;
+        }
+        .box1{
+            width: 46px;
+            height: 46px;
+            border-radius: 23px;
+            position: absolute;
+            left: 0px;
+            bottom: 0;
+            z-index: 0;
+            box-shadow:
+            0 3px 5px rgba(0, 0, 0, 0.22);
+        }
+        .a1{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            position: absolute;
+            left: 5px;
+            bottom: 5px;
+            background-color: #f76f54;
+            background-image: url("images/sz.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+            box-shadow:
+            inset 0 1px 1px rgba(255, 255, 255, 0.52),
+            0 0 1px rgba(0, 0, 0, 0.97);
+            z-index: 11;
+          transform: rotate(0deg);
+        }
+        .che01:checked ~ .lab01{
+            transform: rotate(-135deg);
+            transition: all 0.5s linear;
+        }
+
+        .a2{
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 28px;
+            height: 28px;
+            border-radius: 14px;
+            background-color: #444444;
+            background-image: url("images/xing.png");
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        .lab02{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.61);
+            position: absolute;
+            left: 4px;
+            bottom: 4px;
+            z-index: 9;
+            background: #ffffff;
+        }
+        @-webkit-keyframes frame01{
+            0%{ bottom:5px }
+            90%{bottom: 180px}
+            100%{bottom: 164px}
+        }
+        @-webkit-keyframes frame02{
+            0%{transform: rotate(0deg)}
+            100%{transform: rotate(-360deg)}
+        }
+        .che01:checked ~ .lab02{
+            bottom: 164px;
+            -webkit-animation:frame01 0.5s ease-out,
+            frame02 0.5s linear;
+        }
+
+        .che02:checked ~ .lab02{
+            opacity: 0;
+            transform: scale(5);
+            transition: all 0.5s linear;
+        }
+        .che02:checked ~ .lab03{
+            display: none;
+        }
+        .che02:checked ~ .lab04{
+            display: none;
+        }
+        .che02:checked ~ .lab05{
+            display: none;
+        }
+        .che02:checked ~ .lab06{
+            display: none;
+        }
+        .che02:checked ~ .lab07{
+            display: none;
+        }
+
+        .lab03{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.61);
+            position: absolute;
+            left: 4px;
+            bottom: 4px;
+            z-index: 9;
+            background: #ffffff;
+        }
+
+        @-webkit-keyframes frame21{
+            0%{ bottom:4px }
+            90%{bottom: 158px}
+            100%{bottom: 150px}
+        }
+        @-webkit-keyframes frame22{
+            0%{ left:4px }
+            90%{left:55px }
+            100%{left: 50px}
+        }
+        .che01:checked ~ .lab03{
+            bottom: 150px;
+            left: 50px;
+            -webkit-animation:frame21 0.55s ease-out,
+             frame22 0.55s ease-out,
+            frame02 0.55s linear;
+        }
+
+        .che03:checked ~ .lab03{
+            opacity: 0;
+            transform: scale(5);
+            transition: all 0.5s linear;
+        }
+
+        .lab04{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.61);
+            position: absolute;
+            left: 4px;
+            bottom: 4px;
+            z-index: 9;
+            background: #ffffff;
+        }
+        @-webkit-keyframes frame31{
+            0%{ bottom:4px }
+            90%{bottom: 125px}
+            100%{bottom: 120px}
+        }
+        @-webkit-keyframes frame32{
+            0%{ left:4px }
+            90%{left:95px }
+            100%{left: 90px}
+        }
+        .che01:checked ~ .lab04{
+            bottom: 120px;
+            left: 90px;
+            -webkit-animation:frame31 0.6s ease-out,
+            frame32 0.6s ease-out,
+            frame02 0.6s linear;
+        }
+        .che04:checked ~ .lab04{
+            opacity: 0;
+            transform: scale(5);
+            transition: all 0.5s linear;
+        }
+
+        .lab05{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.61);
+            position: absolute;
+            left: 4px;
+            bottom: 4px;
+            z-index: 9;
+            background: #ffffff;
+        }
+        @-webkit-keyframes frame41{
+            0%{ bottom:4px }
+            90%{bottom: 85px}
+            100%{bottom: 80px}
+        }
+        @-webkit-keyframes frame42{
+            0%{ left:4px }
+            90%{left:125px }
+            100%{left: 120px}
+        }
+        .che01:checked ~ .lab05{
+            bottom: 80px;
+            left: 120px;
+            -webkit-animation:frame41 0.65s ease-out,
+            frame42 0.65s ease-out,
+            frame02 0.65s linear;
+        }
+        .che05:checked ~ .lab05{
+            opacity: 0;
+            transform: scale(5);
+            transition: all 0.5s linear;
+        }
+        .lab06{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.61);
+            position: absolute;
+            left: 4px;
+            bottom: 4px;
+            z-index: 9;
+            background: #ffffff;
+        }
+        @-webkit-keyframes frame51{
+            0%{ bottom:4px }
+            90%{bottom: 47px}
+            100%{bottom: 42px}
+        }
+        @-webkit-keyframes frame52{
+            0%{ left:4px }
+            90%{left:145px }
+            100%{left: 140px}
+        }
+        .che01:checked ~ .lab06{
+            bottom: 42px;
+            left: 140px;
+            -webkit-animation:frame51 0.70s ease-out,
+            frame52 0.70s ease-out,
+            frame02 0.70s linear;
+        }
+        .che06:checked ~ .lab06{
+            opacity: 0;
+            transform: scale(5);
+            transition: all 0.5s linear;
+        }
+
+        .lab07{
+            width: 36px;
+            height: 36px;
+            border-radius: 18px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.61);
+            position: absolute;
+            left: 4px;
+            bottom: 4px;
+            z-index: 9;
+            background: #ffffff;
+        }
+
+        @-webkit-keyframes frame62{
+            0%{ left:4px }
+            90%{left:155px }
+            100%{left: 150px}
+        }
+        .che01:checked ~ .lab07{
+            bottom: 4px;
+            left: 150px;
+            -webkit-animation:
+            frame62 0.70s ease-out,
+            frame02 0.70s linear;
+
+        }
+
+        .che07:checked ~ .lab07{
+            opacity: 0;
+            transform: scale(5);
+            transition: all 0.5s linear;
+        }
+        </style>
+</head>
+<body>
+<div class="a0">
+    <div class="box1"></div>
+    <input type="checkbox" id="check01" class="che01">
+    <label for="check01" class="lab01">
+        <div class="a1"></div>
+    </label>
+
+    <input type="checkbox" id="check02" class="che02">
+    <label for="check02" class="lab02">
+           <div class="a2"></div>
+        </label>
+
+    <input type="checkbox" id="check03" class="che03">
+    <label for="check03" class="lab03">
+        <div class="a2"></div>
+    </label>
+
+    <input type="checkbox" id="check04" class="che04">
+    <label for="check04" class="lab04">
+        <div class="a2"></div>
+    </label>
+
+    <input type="checkbox" id="check05" class="che05">
+    <label for="check05" class="lab05">
+        <div class="a2"></div>
+    </label>
+
+    <input type="checkbox" id="check06" class="che06">
+    <label for="check06" class="lab06">
+        <div class="a2"></div>
+    </label>
+
+    <input type="checkbox" id="check07" class="che07">
+    <label for="check07" class="lab07">
+        <div class="a2"></div>
+    </label>
+</div>
+</body>
+</html>

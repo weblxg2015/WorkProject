@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 0;
+            padding: 0;
+            background:#b1b1b1;
+            font-size:14px;
+            color:#000;
+        }
+        ul{
+            list-style: none;
+            font-size: 13px;
+            color: #000000;
+            text-align: center;
+            line-height: 30px;
+        }
+
+
+        .a0{
+            width:100px;
+            height:100px;
+            margin:0 0 250px 0;
+            position:relative;
+            z-index:15;
+        }
+
+        .b0{
+            width:500px;
+            height:500px;
+            overflow:hidden;
+            position:absolute;
+            left:0;
+            top:0;
+            z-index:15;
+        }
+        .c1{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #c8c8c8;
+            border-radius: 0 0 100px 0;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        .li1 div{
+            position:absolute;
+            width:100px;
+            padding-left:100px;
+            height:200px;
+            background:#ddd;
+            border-radius:0 0 200px 0;
+            transform-origin:0 0;
+            box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+        }
+
+        .m2 li:nth-of-type(6) div{
+            background:#888;
+            transform:rotate(75deg);
+        }
+        .m2 li:nth-of-type(5) div{
+            background:#999;
+            transform:rotate(60deg);
+        }
+        .m2 li:nth-of-type(4) div{
+            background:#aaa;
+            transform:rotate(45deg);
+        }
+        .m2 li:nth-of-type(3) div{
+            background:#bbb;
+            transform:rotate(30deg);
+        }
+        .m2 li:nth-of-type(2) div{
+            background:#ccc;
+            transform:rotate(15deg);
+        }
+        .m2 li:nth-of-type(6) div:hover{
+            background:#d00;
+            color:#fff;
+        }
+        .m2 li:nth-of-type(5) div:hover{
+            background:#d00;
+            color:#fff;
+        }
+        .m2 li:nth-of-type(4) div:hover{
+            background:#d00;
+            color:#fff;
+        }
+        .m2 li:nth-of-type(3) div:hover{
+            background:#d00;
+            color:#fff;
+        }
+        .m2 li:nth-of-type(2) div:hover{
+            background:#d00;
+            color:#fff;
+        }
+        .m2 li:nth-of-type(1) div:hover{
+            background:#d00;
+            color:#fff;
+        }
+        .m2{
+            transform: rotate(90deg);
+        }
+
+        .a0:hover .m2{
+            transform: rotate(0deg);
+            transition:all 1s linear;
+        }
+    .d1{
+           z-index: -1;
+      }
+
+        .a0:hover .c1{
+            background: #ff0000;
+            color: #ffffff;
+        }
+
+        .m1 li{
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .m3{
+            position: absolute;
+            transform: rotate(90deg);
+
+            z-index: -2;
+        }
+        .li1:hover .m3{
+            transform: rotate(0deg);
+            transition:all 1s linear;
+        }
+        .m3 .li2 div{
+            position:absolute;
+            width:100px;
+            padding-left:200px;
+            height:300px;
+            background:#ddd;
+            border-radius:0 0 300px 0;
+            transform-origin:0 0;
+            z-index: -5;
+            box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+        }
+        .m3 li:nth-child(1) div{
+            background:#999;
+            transform:rotate(0deg);
+        }
+        .m3 li:nth-child(2) div{
+            background:#888;
+            transform:rotate(30deg);
+        }
+        .m3 li:nth-child(3) div{
+            background:#777;
+            transform:rotate(60deg);
+        }
+
+
+        .m4{
+            position: absolute;
+            transform: rotate(90deg);
+            z-index: -2;
+        }
+        .li1:hover .m4{
+            transform: rotate(0deg);
+            transition:all 1s linear;
+        }
+        .m4 .li3 div{
+            position:absolute;
+            width:100px;
+            padding-left:200px;
+            height:300px;
+            background:#ddd;
+            border-radius:0 0 300px 0;
+            transform-origin:0 0;
+            z-index: -5;
+            box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+        }
+        .m4 li:nth-child(1) div{
+            background:#999;
+            transform:rotate(0deg);
+        }
+        .m4 li:nth-child(2) div{
+            background:#888;
+            transform:rotate(15deg);
+        }
+        .m4 li:nth-child(3) div{
+            background:#777;
+            transform:rotate(30deg);
+        }
+        .m4 li:nth-child(4) div{
+            background:#666;
+            transform:rotate(45deg);
+        }
+        .m4 li:nth-child(5) div{
+            background:#555;
+            transform:rotate(60deg);
+        }
+        .m4 li:nth-child(6) div{
+            background:#444;
+            transform:rotate(75deg);
+
+        }
+
+        .m5{
+            position: absolute;
+            transform: rotate(90deg);
+            z-index: -2;
+        }
+        .li1:hover .m5{
+            transform: rotate(0deg);
+            transition:all 1s linear;
+        }
+        .m5 .li4 div{
+            position:absolute;
+            width:100px;
+            padding-left:200px;
+            height:300px;
+            background:#ddd;
+            border-radius:0 0 300px 0;
+            transform-origin:0 0;
+            z-index: -5;
+            box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.4);
+        }
+        .m5 li:nth-child(1) div{
+            background:#999;
+            transform:rotate(0deg);
+        }
+        .m5 li:nth-child(2) div{
+            background:#888;
+            transform:rotate(18deg);
+        }
+        .m5 li:nth-child(3) div{
+            background:#777;
+            transform:rotate(36deg);
+        }
+        .m5 li:nth-child(4) div{
+            background:#666;
+            transform:rotate(54deg);
+        }
+        .m5 li:nth-child(5) div{
+            background:#555;
+            transform:rotate(72deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="b0">
+<div class="a0">
+        <ul class="m1">
+                <li>
+                         <div class="c1">导航菜单</div>
+                         <ul class="m2">
+                                 <li class="li1"><div class="d1">首页</div></li>
+                                 <li class="li1">
+                                     <div class="d1">服务</div>
+                                     <ul class="m3">
+                                         <li class="li2"><div>打印</div></li>
+                                         <li class="li2"><div>编辑</div></li>
+                                         <li class="li2"><div>保管</div></li>
+                                     </ul>
+                                 </li>
+                                 <li class="li1">
+                                     <div class="d1">联系</div>
+                                     <ul class="m4">
+                                         <li class="li3"><div>支持</div></li>
+                                         <li class="li3"><div>销售</div></li>
+                                         <li class="li3"><div>购买</div></li>
+                                         <li class="li3"><div>摄影师</div></li>
+                                         <li class="li3"><div>零售商</div></li>
+                                         <li class="li3"><div>常规</div></li>
+                                     </ul>
+                                 </li>
+                                 <li class="li1"><div class="d1">商店</div>
+                                     <ul class="m3">
+                                         <li class="li2"><div>南区</div></li>
+                                         <li class="li2"><div>北区</div></li>
+                                         <li class="li2"><div>中心区</div></li>
+                                     </ul>
+                                 </li>
+                                 <li class="li1"><div class="d1">联系我们</div>
+                                     <ul class="m3">
+                                         <li class="li2"><div>邮箱</div></li>
+                                         <li class="li2"><div>邮递</div></li>
+                                         <li class="li2"><div>电话</div></li>
+                                     </ul>
+                                 </li>
+                                 <li class="li1"><div class="d1">销量</div>
+                                     <ul class="m5">
+                                         <li class="li4"><div>数码单反机身</div></li>
+                                         <li class="li4"><div>镜头</div></li>
+                                         <li class="li4"><div>闪光枪</div></li>
+                                         <li class="li4"><div>三脚架</div></li>
+                                         <li class="li4"><div>过滤镜</div></li>
+                                     </ul>
+                                 </li>
+                         </ul>
+                </li>
+            </ul>
+    </div>
+</div>
+</body>
+</html>
