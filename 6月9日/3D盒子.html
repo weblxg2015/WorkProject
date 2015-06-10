@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrap{
+            position: relative;
+            left: 300px;
+            top: 200px;
+            width: 700px;
+            height: 500px;
+            perspective: 1000px;
+        }
+        .box{
+            transform-style:preserve-3d;
+        }
+        @-webkit-keyframes frames1 {
+            from{-webkit-transform: rotateY(0deg)}
+            to{-webkit-transform: rotateY(360deg)}
+        }
+        .box:hover{
+            -webkit-animation: frames1 5s linear infinite;
+        }
+        .m1{
+            position: absolute;
+            transform-style:preserve-3d;
+        }
+        .m2{
+            position: absolute;
+            transform-style:preserve-3d;
+            transform: translateY(250px);
+        }
+        .m3{
+            position: absolute;
+            transform-style:preserve-3d;
+            transform: rotate(90deg) translateY(-50px);
+        }
+        .m4{
+            position: absolute;
+            transform-style:preserve-3d;
+            transform: rotate(90deg) translateY(-300px);
+        }
+        .z1{
+            position: relative;
+            transform-style:preserve-3d;
+        }
+        .z1 div{
+            position:absolute;
+            background: rgba(92, 176, 213, 0.60);
+        }
+        .z1 div:nth-child(1){
+            width: 300px;
+            height: 50px;
+            transform: translateZ(25px);
+        }
+        .z1:hover{
+            transform: rotateY(360deg)
+        }
+
+        .z1 div:nth-child(2){
+            width: 300px;
+            height: 50px;
+            transform: translateZ(-25px);
+        }
+        .z1 div:nth-child(3){
+            width: 300px;
+            height: 50px;
+            transform: translateY(25px) rotateX(90deg);
+        }
+        .z1 div:nth-child(4){
+            width: 300px;
+            height: 50px;
+            transform:translateY(-25px) rotateX(90deg);
+        }
+        .z1 div:nth-child(5){
+            width: 50px;
+            height: 50px;
+            transform:translateX(-25px) rotateY(90deg);
+        }
+        .z1 div:nth-child(6){
+            width: 50px;
+            height: 50px;
+            transform:translateX(275px) rotateY(90deg);
+        }
+        .a1{
+            position: absolute;
+            transform-style:preserve-3d;
+            transform:translateZ(125px)
+        }
+
+        .a2{
+            position: absolute;
+            transform-style:preserve-3d;
+            transform:translateZ(-125px)
+        }
+        .a3{
+            position: absolute;
+            transform-style:preserve-3d;
+            transform:translateZ(150px) translateX(25px)  rotateY(90deg) ;
+        }
+        .a4{
+            position: absolute;
+            transform-style:preserve-3d;
+            transform:translateZ(150px) translateX(275px)  rotateY(90deg) ;
+        }
+
+        </style>
+</head>
+<body>
+<div class="wrap">
+     <div class="box">
+         <!--一个面-->
+         <div class="m1">
+           <div class="a1">
+          <div class="z1">
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+             <div></div>
+          </div>
+         </div>
+
+         <div class="a2">
+             <div class="z1">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+             </div>
+         </div>
+         <div class="a3">
+             <div class="z1">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+             </div>
+         </div>
+         <div class="a4">
+             <div class="z1">
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+                 <div></div>
+             </div>
+         </div>
+     </div>
+         <!--一个面 end-->
+         <!--第2个面-->
+         <div class="m2">
+             <div class="a1">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+
+             <div class="a2">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+             <div class="a3">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+             <div class="a4">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+         </div>
+    <!--第二个面 end-->
+         <!--第三个面-->
+         <div class="m3">
+             <div class="a1">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+
+             <div class="a2">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+             <div class="a3">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+             <div class="a4">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+         </div>
+         <!--第三个面 end-->
+
+         <!--第四个面-->
+         <div class="m4">
+             <div class="a1">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+
+             <div class="a2">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+             <div class="a3">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+             <div class="a4">
+                 <div class="z1">
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                     <div></div>
+                 </div>
+             </div>
+         </div>
+         <!--第四个面 end-->
+     </div>
+</div>
+</body>
+</html>

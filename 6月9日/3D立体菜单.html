@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrap{
+            perspective: 500px;
+            position: relative;
+            left: 300px;
+            top:100px;
+            transform-style: preserve-3d;
+        }
+        .ul1{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            transform-style: preserve-3d;
+            transform: rotate(-35deg) skew(20deg, 5deg);
+        }
+        .ul1 li{
+            width: 100px;
+            height: 50px;
+            background: #000000;
+            border-bottom: 1px solid #e8e8e8;
+            box-shadow: -30px 30px 0px #a6a6a6;
+            position: relative;
+        }
+        .ul1 li:hover{
+            background: #ff6e42;
+            top:-10px;
+            left: 10px;
+            transition: all 0.5s;
+        }
+        .ul1 li:hover:before {
+            background: #b65234;
+            height: 18px;
+            left: -33px;
+            transition: all 0.5s;
+        }
+        .ul1 li:hover:after {
+            background: #b65234;
+            width: 18px;
+            top: 9px;
+            left: 32px;
+            transition: all 0.5s;
+        }
+        .ul1 li:after{
+            content: "";
+            width: 10px;
+            height: 100px;
+            background: #0f0007;
+            position: absolute;
+            top: 5px;
+            left: 40px;
+
+           transform:rotate(90deg) skew(0deg, 45deg);
+        }
+
+        .ul1 li:before{
+            content: "";
+            width: 50px;
+            height: 10px;
+            background: #0f0007;
+            position: absolute;
+            top: 25px;
+            left: -30px;
+            transform:rotate(90deg)  skew(45deg, 0deg);
+        }
+        </style>
+</head>
+<body>
+<div class="wrap">
+<ul class="ul1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    </ul>
+    </div>
+</body>
+</html>

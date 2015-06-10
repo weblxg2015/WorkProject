@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrap{
+            perspective: 800px;
+            position: relative;
+            left: 300px;
+            top: 100px;
+        }
+        @-webkit-keyframes frames1 {
+            from{-webkit-transform: rotateY(0deg)}
+            to{-webkit-transform: rotateY(360deg)}
+        }
+        .box:hover{
+            -webkit-animation: frames1 5s linear infinite;
+        }
+        .box{
+            height: 300px;
+            width: 300px;
+            transform-style: preserve-3d;
+        }
+        .wrap:hover{
+
+        }
+        .wrap img{
+            width: 120px;
+            height: 80px;
+            position: absolute;
+
+
+        }
+        .img1{
+            transform:translateZ(100px);
+            left:100px;
+            top:120px
+        }
+        .img2{
+            transform:translateZ(60px) rotateY(40deg);
+            left:210px;
+            top:120px
+        }
+        .img3{
+            transform:translateZ(-40px) rotateY(90deg);
+            left:250px;
+            top:120px
+        }
+        .img4{
+            transform:translateZ(60px) rotateY(-40deg);
+            left:-10px;
+            top:120px
+        }
+        .img5{
+            transform:translateZ(-40px) rotateY(-90deg);
+            left:-50px;
+            top:120px
+        }
+        .img6{
+            transform:translateZ(-135px) rotateY(-150deg);
+            left:0px;
+            top:120px
+        }
+        .img7{
+            transform:translateZ(-140px) rotateY(140deg);
+            left:200px;
+            top:120px
+        }
+        .img8{
+            transform:translateZ(-170px) rotateY(190deg);
+            left:100px;
+            top:120px
+        }
+        </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="box">
+    <img src="images/mm1.jpg" class="img1">
+    <img src="images/mm2.jpg" class="img2">
+    <img src="images/mm3.jpg" class="img3">
+    <img src="images/mm4.jpg" class="img4">
+    <img src="images/mm5.jpg" class="img5">
+    <img src="images/mm6.jpg" class="img6">
+    <img src="images/mm7.jpg" class="img7">
+    <img src="images/mm8.jpg" class="img8">
+    <!--<img src="images/mm9.jpg" class="img9">-->
+    </div>
+    </div>
+</body>
+</html>
