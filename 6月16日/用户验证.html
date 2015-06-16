@@ -8,20 +8,27 @@
         function fun01(){
 
             a1=document.getElementById('inp01').value;
-            a2=a1.length;
+//            a2=a1.length;
+            a3=a1.charCodeAt(0);
             if(a1==""){
                 alert("不允许输入空值")
             }
-            
-            for(i=1;i<a1.length;i++){
-                n=a1.charCodeAt(i);
-                a2=a1.length;
-                if(((n >= 48 && n <= 57) || (n==95) || (n==36)) && (a2<=8 && a2>=4)){
-                    alert("输入正确");
-                }
-                else{
-                    alert("请正确输入");
-                }
+            if(a3 >= 48 && a3 <= 57) {
+//                alert("输入正确");
+//            }
+                for (i = 1; i < a1.length; i++) {
+                    n = a1.charCodeAt(i);
+                    a2 = a1.length;
+                    if (((n >= 48 && n <= 57) || (n == 95) || (n == 36)) && (a2 <= 8 && a2 >= 4)) {
+                        alert("输入正确");
+                    }
+                    else {
+                        alert("请正确输入");
+                    }
+                 }
+            }
+            else {
+                alert("第一位数必须为数字");
             }
         }
     </script>
