@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wjx{
+            position: relative;
+            margin-top: 30px;
+            margin-left: 50px;
+            width: 0;
+            height: 0;
+            border-left:50px solid #ff0000;
+            border-top:70px solid transparent;
+            border-right:50px solid transparent;
+            border-bottom:70px solid transparent;
+            transform: rotate(-54deg);
+        }
+        .wjx:before{
+            content: "";
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left:50px solid #ff0000;
+            border-top:70px solid transparent;
+            border-right:50px solid transparent;
+            border-bottom:70px solid transparent;
+            transform: rotate(60deg);
+            left: -50px;
+            top:0;
+        }
+        </style>
+</head>
+<body>
+<div class="wjx"></div>
+</body>
+</html>
