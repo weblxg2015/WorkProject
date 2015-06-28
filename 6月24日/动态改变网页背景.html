@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .d1{
+            width: 180px;
+            height: 150px;
+            background: #ff0000;
+            float: left;
+        }
+        .d2{
+            width: 180px;
+            height: 150px;
+            background: yellow;
+            float: left;
+        }
+        .d3{
+            width: 180px;
+            height: 150px;
+            background: #008000;
+            float: left;
+        }
+        .d4{
+            width: 180px;
+            height: 150px;
+            background: blue;
+            float: left;
+        }
+        .d5{
+            width: 180px;
+            height: 150px;
+            background: url("1.jpg");
+            background-size: 180px 150px;
+            float: left;
+        }
+        .d6{
+            width: 180px;
+            height: 150px;
+            background: url("2.jpg");
+            background-size: 180px 150px;
+            float: left;
+        }
+        .d7{
+            width: 180px;
+            height: 150px;
+            background: url("3.jpg");
+            background-size: 180px 150px;
+            float: left;
+        }
+
+        </style>
+</head>
+<body id="body01">
+<div class="d1" onclick="fun01()"></div>
+<div class="d2" onclick="fun02()"></div>
+<div class="d3" onclick="fun03()"></div>
+<div class="d4" onclick="fun04()"></div>
+<div class="d5" onclick="fun05()"></div>
+<div class="d6" onclick="fun06()"></div>
+<div class="d7" onclick="fun07()"></div>
+</body>
+</html>
+        <script>
+            function fun01(){
+                document.getElementById("body01").style.background="red";
+            }
+            function fun02(){
+                document.getElementById("body01").style.background="yellow";
+            }
+            function fun03(){
+                document.getElementById("body01").style.background="green";
+            }
+            function fun04(){
+                document.getElementById("body01").style.background="blue";
+            }
+            function fun05(){
+                document.getElementById("body01").style.background="url('1.jpg')";
+            }
+            function fun06(){
+                document.getElementById("body01").style.background="url('2.jpg')";
+            }
+            function fun07(){
+                document.getElementById("body01").style.background="url('3.jpg')";
+            }
+
+            </script>

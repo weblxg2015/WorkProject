@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+      function fun01(){
+          v1=document.getElementById("height").value;
+          v2=document.getElementById("weight").value;
+          var a1=Number(v1);
+          var a2=Number(v2);
+
+          if(152<=a1&&a1<158){
+              if(80<=a2&&a2<92){
+                  document.getElementById['show'].innerHTML="建议穿S"
+                  alert("建议穿S");
+              }
+              else if(92<=a2&&a2<105){
+                  alert("建议穿M");
+              }
+             else if(105<=a2&&a2<115){
+                  alert("建议穿L");
+              }
+              else if(115<=a2&&a2<=125){
+                  alert("建议穿XL");
+              }
+          }
+
+         else if(158<=a1&&a1<165){
+              if(90<=a2&&a2<98){
+                  alert("建议穿S");
+              }
+              else if(98<=a2&&a2<108){
+                  alert("建议穿M");
+              }
+              else if(108<=a2&&a2<118){
+                  alert("建议穿L");
+              }
+              else if(118<=a2&&a2<=128){
+                  alert("建议穿XL");
+              }
+          }
+          else if(165<=a1&&a1<=170){
+              if(98<=a2&&a2<108){
+                  alert("建议穿M");
+              }
+              else if(108<=a2&&a2<118){
+                  alert("建议穿L");
+              }
+              else if(118<=a2&&a2<=130){
+                  alert("建议穿XL");
+              }
+          }
+
+           else if(a1=" "){
+              alert("请输入正确的身高和体重");
+          }
+
+
+      }
+        </script>
+</head>
+<body>
+请输入你的身高：<input type="text" id="height">CM(请输入152到175)<br>
+请输入你的体重：<input type="text" id="weight">斤(请输入80到130)<br>
+<input type="button" value="确定" onclick="fun01()"><br>
+</body>
+</html>
