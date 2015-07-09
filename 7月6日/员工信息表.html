@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+          table{
+              width: 500px;
+              height: 500px;
+              table-layout:fixed;
+          }
+          table tr td{
+              border: 1px solid #000000;
+              text-align: center;
+          }
+        </style>
+    <script>
+      function fun01(){
+          var arr1=new Array;
+          arr1[0]=document.getElementById("name1").innerText;
+          arr1[1]=document.getElementById("name2").innerText;
+          arr1[2]=document.getElementById("name3").innerText;
+          arr1[3]=document.getElementById("name4").innerText;
+          arr1[4]=document.getElementById("name5").innerText;
+          arr1[5]=document.getElementById("name6").innerText;
+//          var name01=document.getElementsByTagName("tr");
+//          for(var i= 1,j=0;i<name01.length;i++,j++){
+//              arr[j]=name01[i].getElementsByTagName("td")[0].innerText;
+//          }
+//          for(var i=0;i<arr.length;i++){
+//              for(var j=i+1;j<arr.length;j++)
+//                  if(arr[i]>=arr[j]){
+//                      var temp;
+//                      temp=arr[i];
+//                      arr[i]=arr[j];
+//                      arr[j]=temp;
+//                  }
+//              name01[i+1].getElementsByTagName("td")[0].innerText=arr[i];
+//          }
+//          alert("姓名是按照升序排列");
+          for(i=0;i<arr1.length;i++){
+            for(j=0;j<arr1.length-i;j++){
+                if(arr1[j]>arr1[j+1]){
+                    var temp;
+                    temp=arr1[j+1];
+                    arr1[j+1]=arr1[j];
+                    arr1[j]=temp;
+                }
+            }
+        }
+          document.getElementById('name1').innerText = arr1[0];
+          document.getElementById('name2').innerText = arr1[1];
+          document.getElementById('name3').innerText = arr1[2];
+          document.getElementById('name4').innerText = arr1[3];
+          document.getElementById('name5').innerText = arr1[4];
+          document.getElementById('name6').innerText = arr1[5];
+      }
+
+      function fun02(){
+          var arr2=new Array;
+          arr2[0]=Number(document.getElementById("age1").innerText);
+          arr2[1]=Number(document.getElementById("age2").innerText);
+          arr2[2]=Number(document.getElementById("age3").innerText);
+          arr2[3]=Number(document.getElementById("age4").innerText);
+          arr2[4]=Number(document.getElementById("age5").innerText);
+          arr2[5]=Number(document.getElementById("age6").innerText);
+          var min;
+          var temp;
+          for(i=0;i<arr2.length;i++) {
+              min = i;
+              for (j = i + 1; j < arr2.length; j++) {
+                  if (arr2[min] > arr2[j]) {
+                      min = j;
+                  }
+              }
+                  if (min != i) {
+                      temp = arr2[i];
+                      arr2[i] = arr2[min];
+                      arr2[min] = temp;
+                  }
+              }
+
+          document.getElementById('age1').innerText = arr2[0];
+          document.getElementById('age2').innerText = arr2[1];
+          document.getElementById('age3').innerText = arr2[2];
+          document.getElementById('age4').innerText = arr2[3];
+          document.getElementById('age5').innerText = arr2[4];
+          document.getElementById('age6').innerText = arr2[5];
+      }
+
+      function fun03(){
+          var arr3=new Array;
+          arr3[0]=Number(document.getElementById("wage1").innerText);
+          arr3[1]=Number(document.getElementById("wage2").innerText);
+          arr3[2]=Number(document.getElementById("wage3").innerText);
+          arr3[3]=Number(document.getElementById("wage4").innerText);
+          arr3[4]=Number(document.getElementById("wage5").innerText);
+          arr3[5]=Number(document.getElementById("wage6").innerText);
+          for(i=0;i<arr3.length;i++){
+              for(j=0;j<arr3.length-i;j++){
+                  if(arr3[j]>arr3[j+1]){
+                      var temp;
+                      temp=arr3[j+1];
+                      arr3[j+1]=arr3[j];
+                      arr3[j]=temp;
+                  }
+              }
+          }
+
+          document.getElementById('wage1').innerText = arr3[0];
+          document.getElementById('wage2').innerText = arr3[1];
+          document.getElementById('wage3').innerText = arr3[2];
+          document.getElementById('wage4').innerText = arr3[3];
+          document.getElementById('wage5').innerText = arr3[4];
+          document.getElementById('wage6').innerText = arr3[5];
+
+      }
+
+      //
+      function fun04(){
+          var arr4=new Array;
+          arr4[0]=document.getElementById("depart1").innerText;
+          arr4[1]=document.getElementById("depart2").innerText;
+          arr4[2]=document.getElementById("depart3").innerText;
+          arr4[3]=document.getElementById("depart4").innerText;
+          arr4[4]=document.getElementById("depart5").innerText;
+          arr4[5]=document.getElementById("depart6").innerText;
+          for(i=0;i<arr4.length;i++) {
+              for (j = 0; j < arr4.length - i; j++) {
+                  if (arr4[j] > arr4[j + 1]) {
+                      var temp;
+                      temp = arr4[j + 1];
+                      arr4[j + 1] = arr4[j];
+                      arr4[j] = temp;
+              }
+              }
+          }
+          document.getElementById('depart1').innerText = arr4[0];
+          document.getElementById('depart2').innerText = arr4[1];
+          document.getElementById('depart3').innerText = arr4[2];
+          document.getElementById('depart4').innerText = arr4[3];
+          document.getElementById('depart5').innerText = arr4[4];
+          document.getElementById('depart6').innerText = arr4[5];
+      }
+        </script>
+</head>
+<body>
+ 员工信息表
+<table cellspacing="0">
+       <tr>
+           <td>姓名</td>
+           <td>年龄</td>
+           <td>工资</td>
+           <td>部门</td>
+       </tr>
+    <tr>
+        <td id="name1">Adam</td>
+        <td id="age1">20</td>
+        <td id="wage1">2300</td>
+        <td id="depart1">技术部</td>
+    </tr>
+    <tr>
+        <td id="name2">Ingemar</td>
+        <td id="age2">35</td>
+        <td id="wage2">10008</td>
+        <td id="depart2">开发部</td>
+    </tr>
+    <tr>
+        <td id="name3">Elvis</td>
+        <td id="age3">24</td>
+        <td id="wage3">7200</td>
+        <td id="depart3">开发部</td>
+    </tr>
+    <tr>
+        <td id="name4">Gavin</td>
+        <td id="age4">32</td>
+        <td id="wage4">9800</td>
+        <td id="depart4">销售部</td>
+    </tr>
+    <tr>
+        <td id="name5">Webster</td>
+        <td id="age5">56</td>
+        <td id="wage5">10500</td>
+        <td id="depart5">技术部</td>
+    </tr>
+    <tr>
+        <td id="name6">Owen</td>
+        <td id="age6">19</td>
+        <td id="wage6">14000</td>
+        <td id="depart6">人力部</td>
+    </tr>
+    </table>
+
+<input type="button" value="按姓名排序" onclick="fun01()">
+ <input type="button" value="按年龄排序" onclick="fun02()">
+ <input type="button" value="按工资排序" onclick="fun03()">
+ <input type="button" value="按部门排序" onclick="fun04()">
+</body>
+</html>

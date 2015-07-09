@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .show1{
+            width: 300px;
+            height: 150px;
+            border: 1px solid #000000;
+            margin-top: 10px;
+        }
+        .show2{
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000000;
+            margin-top: 10px;
+        }
+        </style>
+    <script>
+        var arr1=[];
+        function fun06(a,b){
+            var c1= a.join();
+            var c2= b.join();
+            return c1.localeCompare(c2);
+        }
+         function fun01(){
+                 var arr2=[];
+                 arr2[0]= document.getElementById("name").value;
+                 arr2[1]= document.getElementById("age").value;
+                 arr2[2]= document.getElementById("major").value;
+             arr1.push(arr2);
+         }
+        function fun02(){
+            var v1="";
+            arr1.sort(fun06);
+            for(i=0;i<arr1.length;i++){
+                        v1=arr1[i]+"<br>"+v1;
+            }
+            var v2="姓名,"+"年龄,"+"专业"+"<br>"+v1;
+            document.getElementById("show1").innerHTML=v2;
+        }
+        function fun03() {
+            var arrname = [];
+            var v3 = "";
+            for (i = 0; i < arr1.length; i++) {
+                   if (i == 0) {
+                        arrname[i] = arr1[i][0];
+                        v3 = arrname[i] + v3;
+                    }
+                else {
+                    arrname[i] = arr1[i][0] + "=";
+                    v3 = arrname[i] + v3;
+                }
+            }
+                document.getElementById("show2").innerHTML = v3;
+        }
+            function fun04() {
+                var arrname = []
+                var v4 = "";
+                for (i = 0; i < arr1.length; i++) {
+                    arrname[i] = arr1[i][1]+"岁"+"<br>";
+                    v4 = arrname[i] + v4;
+                }
+                document.getElementById("show2").innerHTML = v4;
+            }
+
+            function fun05() {
+                var arrmajor = [];
+                for (i = 0; i < arr1.length; i++) {
+                    arrmajor[i] = arr1[i][2];
+                }
+                arrmajor.sort(fun06);
+                document.getElementById("show2").innerHTML = arrmajor;
+            }
+
+        </script>
+</head>
+<body>
+姓名：<input type="text" id="name"><br>
+年龄：<input type="text" id="age"><br>
+专业：<input type="text" id="major"><br>
+<br>
+<input type="button" value="增加" onclick="fun01()">
+<input type="button" value="查询全部" onclick="fun02()">
+<div class="show1" id="show1">
+    </div>
+<input type="button" value="提取所有姓名" onclick="fun03()">
+<input type="button" value="提取所有年龄" onclick="fun04()">
+<input type="button" value="提取所有专业" onclick="fun05()">
+
+<div class="show2" id="show2">
+</div>
+</body>
+</html>
