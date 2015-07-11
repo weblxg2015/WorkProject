@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .inp1{
+            width: 60px;
+        }
+        .show{
+            width: 300px;
+            height: 100px;
+            border: 1px solid #000000;
+        }
+
+        </style>
+    <script>
+
+         function fun1(){
+             var t1=new Date();
+             var t2=new Date();
+
+             t1.setFullYear(Number(document.getElementById("year1").value));
+             t1.setMonth(Number(document.getElementById("month1").value));
+             t1.setDate(Number(document.getElementById("day1").value));
+
+             t2.setFullYear(Number(document.getElementById("year2").value));
+             t2.setMonth(Number(document.getElementById("month2").value));
+             t2.setDate(Number(document.getElementById("day2").value));
+             var t3=t2-t1;
+
+             var y1=parseInt(t3/(1000*60*60*24*365));
+             var m1=parseInt((t3-y1*(1000*60*60*24*365))/(1000*60*60*24*30));
+             var d1=parseInt((t3-(y1*(1000*60*60*24*365)+(m1*(1000*60*60*24*30))))/(1000*60*60*24))-1;
+
+             document.getElementById("id01").innerHTML="你和前女友的交往时间是："+y1+"年"+m1+"月"+d1+"天"+"<br>"
+             +"<br>"+"<span style='color: red'>"+"生活还在继续，即使分手了，也要过好明天"+"</span>";
+
+         }
+    </script>
+
+</head>
+<body>
+请输入你和前女友的开始交往的时间：<br><br>
+<input type="text" class="inp1" id="year1">年<br><br>
+<input type="text" class="inp1" id="month1">月<br><br>
+<input type="text" class="inp1" id="day1">日<br><br>
+
+请输入你和前女友的分手的时间：<br><br>
+<input type="text" class="inp1" id="year2">年<br><br>
+<input type="text" class="inp1" id="month2">月<br><br>
+<input type="text" class="inp1" id="day2">日<br><br>
+<input type="button" value="计算" onclick="fun1()"><br><br>
+<div id="id01" class="show">
+
+    </div>
+</body>
+</html>
