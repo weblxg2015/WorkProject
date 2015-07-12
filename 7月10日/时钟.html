@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            background: #f9f9f9;
+            font-family: Arial;
+        }
+        .wrap{
+            position: relative;
+            width: 600px;
+            height: 600px;
+            border: 2px solid #c0c0c0;
+            border-radius: 300px;
+            background-color: #ffffff;
+            z-index: -100;
+        }
+        .wrap2{
+            width: 520px;
+            height: 520px;
+            border: 1px solid #c0c0c0;
+            border-radius: 260px;
+            background-color: #ffffff;
+            position: absolute;
+            left: 40px;
+            top: 40px;
+            z-index: -1;
+        }
+        .line1{
+            width: 2px;
+            height: 600px;
+            background: #000000;
+            position: absolute;
+            left: 299px;
+        }
+        .line2{
+            width: 2px;
+            height: 600px;
+            background: #000000;
+            position: absolute;
+            left: 299px;
+           transform: rotateZ(30deg);
+        }
+        .line3{
+            width: 2px;
+            height: 600px;
+            background: #000000;
+            position: absolute;
+            left: 299px;
+            transform: rotateZ(60deg);
+        }
+        .line4{
+            width: 2px;
+            height: 600px;
+            background: #000000;
+            position: absolute;
+            left: 299px;
+            transform: rotateZ(90deg);
+        }
+        .line5{
+            width: 2px;
+            height: 600px;
+            background: #000000;
+            position: absolute;
+            left: 299px;
+            transform: rotateZ(120deg);
+        }
+        .line6{
+            width: 2px;
+            height: 600px;
+            background: #000000;
+            position: absolute;
+            left: 299px;
+            transform: rotateZ(150deg);
+        }
+        .num1{
+            font-size: 45px;
+            position: absolute;
+            left: 415px;
+            top: 50px;
+        }
+        .num2{
+            font-size: 45px;
+            position: absolute;
+            left: 508px;
+            top: 145px;
+        }
+        .num3{
+            font-size: 45px;
+            position: absolute;
+            left: 550px;
+            top: 275px;
+        }
+        .num4{
+            font-size: 45px;
+            position: absolute;
+            left: 513px;
+            top: 405px;
+        }
+        .num5{
+            font-size: 45px;
+            position: absolute;
+            left: 418px;
+            top: 505px;
+        }
+        .num6{
+            font-size: 45px;
+            position: absolute;
+            left: 287px;
+            top: 535px;
+        }
+        .num7{
+            font-size: 45px;
+            position: absolute;
+            left: 157px;
+            top: 505px;
+        }
+        .num8{
+            font-size: 45px;
+            position: absolute;
+            left: 63px;
+            top: 405px;
+        }
+        .num9{
+            font-size: 45px;
+            position: absolute;
+            left: 30px;
+            top: 275px;
+        }
+        .num10{
+            font-size: 45px;
+            position: absolute;
+            left: 50px;
+            top: 145px;
+        }
+        .num11{
+            font-size: 45px;
+            position: absolute;
+            left: 142px;
+            top: 50px;
+        }
+        .num12{
+            font-size: 45px;
+            position: absolute;
+            left: 275px;
+            top: 15px;
+        }
+        .day{
+            width: 50px;
+            height: 50px;
+            border: 1px solid #9b9b9b;
+            border-radius:10px;
+            position: absolute;
+            left: 430px;
+            top: 380px;
+            z-index: -10;
+        }
+        .centre{
+            width: 8px;
+            height: 8px;
+            background: #dc0000;
+            border-radius: 4px;
+            position: absolute;
+            left: 296px;
+            top: 296px;
+            z-index: 15;
+        }
+        @keyframes frame01 {
+            0%{transform: rotateZ(0deg);}
+            100%{transform: rotateZ(360deg);}
+        }
+
+        .second{
+            height: 280px;
+            width: 2px;
+            background: #dc0000;
+            border-radius: 1px;
+            position: absolute;
+            left: 299px;
+           top: 8%;
+            transform-origin:center 90% ;
+            z-index: 14;
+
+        }
+        .minute{
+            height: 240px;
+            width: 6px;
+            background: #000000;
+            border-radius: 3px;
+            position: absolute;
+            left: 297px;
+            top: 15%;
+            transform-origin:center 87.5% ;
+            z-index: 13;
+        }
+        .hour{
+            height: 180px;
+            width: 6px;
+            background: #000000;
+            border-radius: 3px;
+            position: absolute;
+            left: 297px;
+            top: 23%;
+            transform-origin:center 89% ;
+            z-index: 12;
+
+        }
+
+        </style>
+
+
+</head>
+<body onload="fun01()">
+<div class="wrap">
+    <!--<div class="wrap2"></div>-->
+    <!--<div class="line1"></div>-->
+    <!--<div class="line2"></div>-->
+    <!--<div class="line3"></div>-->
+    <!--<div class="line4"></div>-->
+    <!--<div class="line5"></div>-->
+    <!--<div class="line6"></div>-->
+
+
+    <div class="num1">1</div>
+    <div class="num2">2</div>
+    <div class="num3">3</div>
+    <div class="num4">4</div>
+    <div class="num5">5</div>
+    <div class="num6">6</div>
+    <div class="num7">7</div>
+    <div class="num8">8</div>
+    <div class="num9">9</div>
+    <div class="num10">10</div>
+    <div class="num11">11</div>
+    <div class="num12">12</div>
+
+    <div class="day" id="day1"></div>
+    <div class="centre"></div>
+
+    <div class="second" id="second"></div>
+    <div class="minute" id="minute"></div>
+    <div class="hour" id="hour"></div>
+</div>
+<div class="day2" id="day2"></div>
+</body>
+</html>
+<script>
+    function fun01() {
+        var d1 = new Date();//读取当前时间
+        var day1 = d1.getDate();//获取日期
+        document.getElementById("day1").innerHTML =
+                "<div style='font-size: 30px;text-align: center;line-height:50px;color: #636363 '>" + day1 + "</div>";//将日期显示出来
+//计算秒针旋转位置
+        var sec = (d1.getSeconds() * 1000 + d1.getMilliseconds()) / 60000;//获取当前时间的秒数，加上毫秒数，转换成毫秒，再计算占1分钟的百分比
+        var sec2 = sec * 360;//通过百分比来确定当前秒针位置
+        document.getElementById("second").style.transform = "rotateZ(" + sec2 + "deg)";
+
+//计算分针旋转位置
+        var min = (d1.getMinutes()*60000 + d1.getSeconds() * 1000 + d1.getMilliseconds()) / 3600000;//获取当前时间的秒数，加上秒数和毫秒数，转换成毫秒，再计算占1小时的百分比
+        var min2 = min * 360;//通过百分比来确定当前分针位置
+        document.getElementById("minute").style.transform = "rotateZ(" + min2 + "deg)";
+
+//计算秒针旋转位置
+       var hour1=d1.getHours();//获取当前小时数
+        if(hour1>=12){//判断是否大于12，大于就减去12
+            hour1=hour1-12;
+        }
+        var hour2 = (hour1*3600000+d1.getMinutes()*60000 + d1.getSeconds() * 1000 + d1.getMilliseconds()) / 43200000;//获取当前时间的秒数，加上分钟数，秒数和毫秒数，转换成毫秒，再计算占1小时的百分比
+        var hour3 = hour2 * 360;//通过百分比来确定当前时针位置
+        document.getElementById("hour").style.transform = "rotateZ(" + hour3 + "deg)";
+        setTimeout(fun01,1)//1毫秒循环执行一次函数
+    }
+</script>

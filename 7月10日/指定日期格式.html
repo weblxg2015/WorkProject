@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .inp1{
+            width: 60px;
+        }
+        </style>
+    <script>
+        function fun01(){
+            var t1=new Date();
+            var y1=document.getElementById("inp1").value;
+            var m1=document.getElementById("inp2").value;
+            var d1=document.getElementById("inp3").value;
+
+            var h1=t1.getHours();
+            var m2=t1.getMinutes();
+            var s1=t1.getSeconds();
+
+            document.getElementById("time").innerHTML=y1+"-"+m1+"-"+d1+"&nbsp;"+h1+":"+m2+":"+s1;
+            setTimeout(fun01,1000)
+        }
+
+        </script>
+</head>
+<body>
+请输入日期：<br><br>
+<input type="text" class="inp1" id="inp1">年<br><br>
+<input type="text" class="inp1" id="inp2">月<br><br>
+<input type="text" class="inp1" id="inp3">日<br><br>
+<input type="button" value="确定" onclick="fun01()"><br><br>
+<div id="time"></div>
+</body>
+</html>

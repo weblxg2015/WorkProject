@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--用户名由数字，字母组成，且必须以字母开头，长度在6-8位之间-->
+    <!--密码由下划线，$中任意内容组成，且以数字开头，长度为8-->
+    <script>
+        function fun01() {
+            var v1 = document.getElementById("user").value;
+            var v2 = document.getElementById("paw").value;
+            var a1 = v1.charCodeAt(0);
+            var a2 = v2.charCodeAt(0);
+            //用户名
+            if (v1 == "") {
+                alert("用户名不能为空")
+            }
+            else {
+                if ((a1 >= 65 && a1 <= 90) || (a1 >= 97 && a1 <= 112)) {
+                    if (v1.length >= 6 && v1.length <= 8) {
+                        for (i = 1; i < v1.length; i++) {
+                            var b1 = v1.charCodeAt(i);
+                        }
+                        if (((b1 >= 65 && b1 <= 90) || (b1 >= 97 && b1 <= 112)) || (b1 >= 48 && b1 <= 57)) {
+                            alert("用户名输入正确");
+                        }
+                        else {
+                            alert("用户名必须由数字、字母组成")
+                        }
+                    }
+                    else {
+                        alert("用户名长度在6-8位之间")
+                    }
+                }
+                else {
+                    alert("用户名第一位必须是字母")
+                }
+            }
+            //密码
+            if (v2 == "") {
+                alert("密码不能为空")
+            }
+            else {
+                if (a2 >= 48 && a2 <= 57) {
+                    if (v2.length == 8) {
+                        for (j = 1; j < v2.length; j++) {
+                            var b2 = v2.charCodeAt(j);
+                        }
+                        if (b2 == 95 || b2 == 36) {
+                            alert("密码输入正确");
+                        }
+                        else {
+                            alert("密码由下划线，$中任意内容")
+                        }
+                    }
+                    else {
+                        alert("密码长度必须为8位")
+                    }
+                }
+                else {
+                    alert("密码第一位必须是数字")
+                }
+            }
+        }
+        </script>
+</head>
+<body>
+用户名:<input type="text" id="user"> 用户名由数字，字母组成，且必须以字母开头，长度在6-8位之间<br><br>
+密&nbsp;码:<input type="text" id="paw"> 密码由下划线，$中任意内容组成，且以数字开头，长度为8<br><br>
+<input type="button" value="验证" onclick="fun01()">
+</body>
+</html>

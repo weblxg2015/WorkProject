@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        Array.prototype.fun01=function(){
+            document.write("原数组为:"+this+"<br>");
+            for(i=0;i<this.length;i++){
+                var a1=this[i];
+                for(j=0;j<this.length;j++){
+                    var b1=this[j];
+                    if((a1==b1)&&(i!=j)){
+                        this.splice(j,1)
+                    }
+                }
+            }
+            document.write("删除后的数组为:"+this);
+        }
+        var arr1=[3,4,5,8,9,3,10,98,10];
+        arr1.fun01();
+        </script>
+</head>
+<body>
+</body>
+</html>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
-        setTimeout(fun01,1000);
         var d1=new Date();
         var arr1 = [[12, 45, 7, 2, 88], [9, 34, 5, 78], [44, 23]];
         function fun02(a,b){
@@ -16,13 +15,13 @@
             }
             var d2=new Date();
             document.write(arr1+"<br>"+"<br>");
-            var d3=(d2-d1)-1000;
+            var d3=(d2-d1);
             document.write("进行这个排序所用的时间是"+"<span style='color: #ff0000;font-size: 20px'>"+d3+"</span>"+"ms");
         }
 
     </script>
 </head>
-<body>
+<body onload="fun01()">
 
 </body>
 </html>
