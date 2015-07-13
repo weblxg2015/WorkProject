@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body onload="fun01()">
+<div id="id01"></div>
+</body>
+<script>
+    var s1=16711680;
+    var s2=3076;
+    var v2="";
+     i=0;
+    var v1="一件事情的毕业，永远是另一件事情的开启。"
+    function fun01(){
+            s1=s1+s2;
+        var s5=s1+s2;
+        var s6=s5.toString(16);
+
+        v2+="<span style='color:#"+s6+";'>"+v1.charAt(i)+"</span>";
+        if(i==v1.length) {
+            document.getElementById("id01").innerHTML = v2;
+        }
+         i++;
+        setTimeout(fun01,1);
+   }
+</script>
+</html>

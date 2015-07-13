@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .clock{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            border-radius: 100px;
+            font-size: 18px;
+            position: relative;
+            top: 200px;
+            left: 300px;
+        }
+        .clock>div{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            transform-origin:70px 70px;
+        }
+        .clock>div:nth-of-type(1){
+            transform: rotate(75deg);
+        }
+        .clock>div:nth-of-type(2){
+            transform: rotate(105deg);
+        }
+        .clock>div:nth-of-type(3){
+            transform: rotate(135deg);
+        }
+        .clock>div:nth-of-type(4){
+            transform: rotate(165deg);
+        }
+        .clock>div:nth-of-type(5){
+            transform: rotate(195deg);
+        }
+        .clock>div:nth-of-type(6){
+            transform: rotate(225deg);
+        }
+        .clock>div:nth-of-type(7){
+            transform: rotate(255deg);
+        }
+        .clock>div:nth-of-type(8){
+            transform: rotate(285deg);
+        }
+        .clock>div:nth-of-type(9){
+            transform: rotate(315deg);
+        }
+        .clock>div:nth-of-type(10){
+            transform: rotate(345deg);
+        }
+        .clock>div:nth-of-type(11){
+            transform: rotate(15deg);
+        }
+        .clock>div:nth-of-type(12){
+            transform: rotate(45deg);
+        }
+        .clock>div:nth-of-type(13){
+            height: 80px;
+            border-left: 1px solid black;
+            left: 100px;
+            top: 10px;
+            transform-origin: 0px 80px;
+        }
+        .clock>div:nth-of-type(14){
+            height: 60px;
+            border-left: 1px solid black;
+            left: 100px;
+            top: 30px;
+            transform-origin: 0px 60px;
+        }
+        .clock>div:nth-of-type(15){
+            height: 40px;
+            border-left: 1px solid black;
+            left: 100px;
+            top: 50px;
+            transform-origin: 0px 40px;
+        }
+    </style>
+    <script>
+        function fun1(){
+            var time = new Date();
+            document.getElementById('s').style.cssText = "transform: rotate(" + (time.getSeconds()*6) + "deg)";
+            document.getElementById('m').style.cssText = "transform: rotate(" + (time.getMinutes()*6) + "deg)";
+            document.getElementById('h').style.cssText = "transform: rotate(" + (time.getHours()*30+time.getMinutes()/10*6) + "deg)";
+        }
+        setInterval(fun1,1000);
+
+    </script>
+</head>
+<body onload="fun1()">
+<div class="clock">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+    <div id="s"></div>
+    <div id="m"></div>
+    <div id="h"></div>
+</div>
+</body>
+</html>

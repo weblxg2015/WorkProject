@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .d1{
+            width: 50px;
+        }
+        </style>
+
+    <script>
+        function fun01(){
+            var x1=Number(document.getElementById("x1").value);
+            var y1=Number(document.getElementById("y1").value);
+            var x2=Number(document.getElementById("x2").value);
+            var y2=Number(document.getElementById("y2").value);
+            var s1=x1-x2;
+            var s2=y1-y2;
+            document.getElementById("id01").innerHTML=Math.sqrt(Math.pow(s1,2)+Math.pow(s2,2));
+
+        }
+    </script>
+</head>
+<body>
+请输入第一个坐标：X:<input type="text" id="x1" class="d1">&nbsp;Y:<input type="text" id="y1" class="d1"><br><br>
+请输入第二个坐标：X:<input type="text" id="x2" class="d1">&nbsp;Y:<input type="text" id="y2" class="d1"><br><br>
+<input type="button" value="计算" onclick="fun01()"><br>
+<div id="id01"></div>
+
+</body>
+</html>

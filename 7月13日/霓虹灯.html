@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /*.d1{*/
+            /*color: #aa69ff;*/
+        /*}*/
+        </style>
+</head>
+<body onload="fun01()">
+<div id="id01"></div>
+</body>
+<script>
+    var v1="但是，如果你驯养了我，我们就会彼此需要。对我来说，你就是我的世界里独一无二的了；我对你来说，也是你的世界里的唯一了。”";
+    var c1=["#ff2a52","#ff2b7c","FF46C0","#ff47dd","#f755ff","#dc61ff","#aa69ff"];
+    var v3="";
+    j=0;
+    function fun01(){
+       for(i=0;i<v1.length;i++){
+           v2="<span style='color:"+c1[j]+";'>"+v1.substring(i,i+1)+"</span>";
+           v3=v3+v2;
+           j++;
+           if(j==c1.length){
+               j=0;
+           }
+       }
+           document.getElementById("id01").innerHTML=v3;
+            v3="";
+           setTimeout(fun01,100);
+
+    }
+</script>
+</html>

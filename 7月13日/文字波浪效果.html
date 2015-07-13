@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+
+        var i=0;
+        function fun01(){
+            var v1=document.getElementById('id01');
+
+            var v2="好好学习,天天向上天天向上";
+            var c1=v2.substring(0,i-2);
+            var c2=v2.substring(i-2,i-1);
+            var c3=v2.substring(i-1,i);
+//            var c4=v2.substring(i);
+            var c5=v2.substring(i+1,i+2);
+            var c6=v2.substring(i+2,i+3);
+            var c7=v2.substring(i+3);
+
+            v1.innerHTML="<span style='position:relative;top:100px'>"+c1+"</span>"
+            +"<span style='position:relative;top:90px'>"+c2+"</span>"+
+            "<span style='position:relative;top:80px'>"+c3+"</span>"+
+            "<span style='position:relative;top:70px'>"+v2.charAt(i)+"</span>"+
+            "<span style='position:relative;top:80px'>"+c5+"</span>"+
+            "<span style='position:relative;top:90px'>"+c6+"</span>"+
+            "<span style='position:relative;top:100px'>"+c7+"</span>";
+            i++;
+            if(i==v2.length){
+                i=0;
+            }
+            setTimeout(fun01,100);
+        }
+    </script>
+</head>
+<body onload="fun01()">
+<div id="id01" class="d1"></div>
+
+</body>
+</html>

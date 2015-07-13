@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .d1{
+            color: #00ADEE;
+            font-size: 20px;
+        }
+        </style>
+
+</head>
+<body onload="fun01()">
+<div id="id01" class="d1">有些路啊只能一个人走</div>
+</body>
+<script>
+    var a1=document.getElementById("id01");
+    i=1;
+    j=10;
+    function fun01(){
+        var d1=i/10;
+        a1.style.opacity=d1;
+        i++;
+            if(i==10){
+                setTimeout(fun02,100);
+                j=10
+            }
+        else {
+                setTimeout(fun01, 100);
+            }
+    }
+    function fun02(){
+        var d1=j/10;
+        a1.style.opacity=d1;
+        j--;
+        if(j==0){
+            setTimeout(fun01,100);
+            i=0
+        }
+        else {
+            setTimeout(fun02, 100);
+        }
+    }
+</script>
+</html>

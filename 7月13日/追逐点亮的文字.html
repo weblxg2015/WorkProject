@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body onload="fun01()">
+<div id="id01"></div>
+</body>
+<script>
+    var s1="我慢慢地慢慢的了解到，所谓的父女母子一场，只不过意味着，你和他的缘分就是今生今世不断地在目送他的背影渐行渐远";
+    var a1=document.getElementById("id01");
+    a1.style.color="blue";
+    i=0;
+    function fun01(){
+        var v1=s1.substring(0,i);
+        var v2=s1.substring(i+1);
+        a1.innerHTML=v1+"<span style='color: #73ff28'>"+s1.charAt(i)+"</span>"+v2;
+        setTimeout(fun01,100);
+        i++;
+        if(i==s1.length){
+            i=0;
+        }
+    }
+
+</script>
+</html>

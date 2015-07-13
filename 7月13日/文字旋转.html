@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        @keyframes myframe01 {
+            0%{transform: rotateZ(0deg)}
+            100%{transform: rotateZ(360deg)}
+        }
+        @keyframes myframe02 {
+            0%{transform: rotateZ(0deg)}
+            100%{transform: rotateZ(-360deg)}
+        }
+        .wrap{
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            /*border: 1px solid #000000;*/
+            position: relative;
+            font-size: 20px;
+            animation: myframe01 8s linear infinite;
+        }
+        .d1{
+            position: absolute;
+            top: 5px;
+            left: 90px;
+            animation: myframe02 8s linear infinite;
+        }
+        .d2{
+            position: absolute;
+            top: 30px;
+            left: 150px;
+            animation: myframe02 8s linear infinite;
+        }
+        .d3{
+            position: absolute;
+            top: 90px;
+            left: 170px;
+            animation: myframe02 8s linear infinite;
+        }
+        .d4{
+            position: absolute;
+            top: 150px;
+            left: 150px;
+            animation: myframe02 8s linear infinite;
+        }
+        .d5{
+            position: absolute;
+            top: 170px;
+            left: 90px;
+            animation: myframe02 8s linear infinite;
+        }
+        .d6{
+            position: absolute;
+            top: 150px;
+            left: 30px;
+            animation: myframe02 8s linear infinite;
+        }
+        .d7{
+            position: absolute;
+            top: 90px;
+            left: 10px;
+            animation: myframe02 8s linear infinite;
+        }
+        .d8{
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            animation: myframe02 8s linear infinite;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <span class="d1">山</span>
+    <span class="d2">河</span>
+    <span class="d3">拱</span>
+    <span class="d4">手</span>
+    <span class="d5">为</span>
+    <span class="d6">君</span>
+    <span class="d7">一</span>
+    <span class="d8">笑</span>
+</div>
+</body>
+</html>
