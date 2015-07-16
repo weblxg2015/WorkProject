@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        /*
+        基本介绍：
+        showModalDialog()         (IE 4+ 支持)
+        showModelessDialog()      (IE 5+ 支持)
+        window.showModalDialog()                  方法用来创建一个显示HTML内容的模态对话框。
+        window.showModelessDialog()             方法用来创建一个显示HTML内容的非模态对话框。
+        使用方法：
+        vReturnValue = window.showModalDialog(sURL [, vArguments] [,sFeatures])
+        vReturnValue = window.showModelessDialog(sURL [, vArguments] [,sFeatures])
+        参数说明：
+        sURL          --  必选参数，类型：字符串。用来指定对话框要显示的文档的URL。
+        vArguments    -- 可选参数，类型：变体。用来向对话框传递参数。传递的参数类型不限，包括数组等。对话框通过
+
+        window.dialogArguments来取得传递进来的参数。
+        sFeatures     -- 可选参数，类型：字符串。用来描述对话框的外观等信息，可以使用以下的一个或几个，用分号“;”隔开。
+        ----------------
+                1.    dialogHeight:    对话框高度，不小于100px
+        2.    dialogWidth:    对话框宽度。
+        3.    dialogLeft:     离屏幕左的距离。
+        4.    dialogTop:     离屏幕上的距离。
+        5.    center:          { yes | no | 1 | 0 } ：              是否居中，默认yes，但仍可以指定高度和宽度。
+        6.    help:             {yes | no | 1 | 0 }：                是否显示帮助按钮，默认yes。
+        7.    resizable:       {yes | no | 1 | 0 } [IE5+]：     是否可被改变大小。默认no。
+        8.    status:          {yes | no | 1 | 0 } [IE5+]：      是否显示状态栏。默认为yes[ Modeless]或no[Modal]。
+        9.    scroll:            { yes | no | 1 | 0 | on | off }：是否显示滚动条。默认为yes。
+
+        下面几个属性是用在HTA中的，在一般的网页中一般不使用。
+        10.    dialogHide:{ yes | no | 1 | 0 | on | off }：在打印或者打印预览时对话框是否隐藏。默认为no。
+        11.    edge:{ sunken | raised }：指明对话框的边框样式。默认为raised。
+        12.    unadorned:{ yes | no | 1 | 0 | on | off }：默认为no。
+        */
+//
+
+        //谷歌不可用
+   window.showModalDilog("购物交互窗口.html",null,"dialogHeight=450;dialogWidth=200;resizable=no;menuba=no;resizable=no");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

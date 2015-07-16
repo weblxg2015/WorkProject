@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>旋转的文字</title>
+</head>
+<body>
+<div id="mydiv" style="width:400px; height: 100px; position:absolute;left:500px;top:30px;">
+</div>
+
+<script type="text/javascript">
+    var messageinfo="欢迎来到晨风世界";
+    var Balises=""
+    var Taille=40;
+    var Midx=100;
+    var Decal=0.6;
+    for (x=messageinfo.length-1;x>=0;x--){
+        Balises=Balises + '<div id=L' + x + ' style="width:3;position:absolute;top:10;left:10">' + messageinfo[x] + '</DIV>'
+    }
+    var div=document.getElementByIdx_x_x("mydiv");
+    div.innerHTML=Balises;
+    window.setInterval("Minfo()",50);
+
+    var Alpha=5;
+
+    function Minfo(){
+        Alpha=Alpha-0.05;
+        for (x=0;x<messageinfo.length;x++){
+            var Alpha1=Alpha+Decal*x;
+            var Cosine=Math.cos(Alpha1);
+            var Ob=document.all("L"+x);
+            Ob.style.left=Midx+100*Math.sin(Alpha1);
+            Ob.style.fontSize=Taille+25*Cosine;
+            Ob.style.color="rgb("+ (160+Cosine*80+50) + ","+ (150+Cosine*80+50) + ",0)";
+        }
+    }
+</script>
+</body>
+</html>

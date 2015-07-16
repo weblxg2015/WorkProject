@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+     <script>
+         var win01=window.open("购物交互窗口（子）.html","shop","height=500px,weight=500px");
+         var a1=["男士","女士","儿童"];
+        var b1=[["男衬衫","男西装","男西裤"],["女短裙","女长裙","女衬衫"],["童装","童裤","童鞋"]];
+       var c1=[["110","120","130"],["210","220","230"],["310"]["320"]["330"]];
+         function fun01(){
+             var breed=document.getElementById("breed");
+             var breed01="";
+             for(i=0;i<a1.length;i++){
+                 breed01=breed01+"<option>"+a1[i]+"</option>"
+             }
+             breed.innerHTML=breed01;
+             setTimeout(fun02,100)
+         }
+       function fun02() {
+           var sort=win01.document.getElementById("sort");
+           var sort01="";
+           var n1=document.getElementById("breed").value;
+           var n2=Number(a1.indexOf(n1));
+//           alert(n2)
+           for(i=0;i<b1[n2].length;i++){
+               sort01=sort01+"<option>"+b1[n2][i]+"</option>"
+           }
+           sort.innerHTML=sort01;
+       }
+         </script>
+</head>
+<body onload="fun01()">
+品种：<select id="breed" onchange="fun02()"></select>
+<div id="table"></div>
+<div id="total"></div>
+</body>
+</html>

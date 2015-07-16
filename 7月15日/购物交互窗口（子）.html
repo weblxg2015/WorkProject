@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .d1{
+            width: 100px;
+            height: 20px;
+            display: inline-block;
+            border: 1px solid #000000;
+        }
+
+        </style>
+    <script>
+        var a1=["男士","女士","儿童"];
+        var b1=[["男衬衫","男西装","男西裤"],["女短裙","女长裙","女衬衫"],["童装","童裤","童鞋"]];
+        var c1=[["110","120","130"],["210","220","230"],["310","320","330"]];
+        function fun03(){
+            var price=document.getElementById("price");
+            var n1=window.opener.document.getElementById("breed").value;
+            var m1=Number(a1.indexOf(n1));
+             var n2=document.getElementById("sort").value;
+            var m2=Number(b1[m1].indexOf(n2));
+            price.innerText=c1[m1][m2];
+        }
+        function fun04(){
+            var p1=Number(document.getElementById("price").innerText);
+            var m1=Number(document.getElementById("amount").value);
+            var d1=document.getElementById("dis");
+            var total=document.getElementById("total");
+            var t1=m1*p1;
+            if(m1<=1){
+                d1.innerText="1";
+                total.innerText=t1;
+            }
+            else if(m1>=2&&m1<=5){
+                d1.innerText="0.8";
+                total.innerText=t1*0.8;
+            }
+            else if(m1>=6){
+                d1.innerText="0.6";
+                total.innerText=t1*0.6;
+            }
+
+        }
+
+        var arr1=[];
+        var j=0;
+        function fun05(){
+            var arr2=[];
+            arr2[0]= document.getElementById("sort").value;
+            arr2[1]= document.getElementById("price").innerText;
+            arr2[2]= document.getElementById("amount").value;
+            arr2[3]= document.getElementById("dis").innerText;
+            arr2[4]= document.getElementById("total").innerText;
+            arr1.push(arr2);
+            var v1="";
+            for(i=0;i<arr1.length;i++){
+//                v1=arr1[i]+"<br>"+v1;
+                v1= "<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>"+arr1[i][0]+"</div>"+
+                "<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>"+arr1[i][1]+"</div>"+
+                "<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>"+arr1[i][2]+"</div>"+
+                "<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>"+arr1[i][3]+"</div>"+
+                "<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>"+arr1[i][4]+"</div>"+"<br>"+v1;
+            }
+            var v2="<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>名称</div>"
+                    +"<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>单价</div>"
+                    +"<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>数量</div>"
+                    +"<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>折扣</div>"
+                    +"<div style='display: inline-block;width: 50px;height: 25px;border: 1px solid #000000;text-align: center;line-height: 25px'>总价</div>"+"<br>"+v1;
+
+//            var v2="名称,"+"单价,"+"数量,"+"折扣,"+"总价"+"<br>"+v1;
+            j=Number(document.getElementById("total").innerText)+j;
+            window.opener.document.getElementById("table").innerHTML=v2+"<br>";
+            window.opener.document.getElementById("total").innerHTML="合计:"+j+"元";
+
+        }
+
+        </script>
+</head>
+<body>
+品种分类：<select id="sort" onchange="fun03()"></select><br><br><br>
+单价：<span class="d1" id="price" class="d1"></span><br><br>
+数量：<input type="text" id="amount" onchange="fun04()"><br><br>
+折扣：<span class="d1" id="dis"></span><br><br>
+总价：<span class="d1" id="total"></span><br><br>
+
+<input type="button" value="确定" onclick="fun05()">
+
+</body>
+</html>
