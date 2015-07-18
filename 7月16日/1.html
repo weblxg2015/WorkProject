@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div id="id1" style="width: 400px;height: 50px;border: 1px solid #ff0000;overflow: hidden">
+    <div id="id2"  style="width: 1200px;height: 50px;">
+        <div style="width: 400px;height: 50px;background-color: #ff0000;"></div>
+        <div style="width: 400px;height: 50px;background-color: #4d86ff;"></div>
+        <div style="width: 400px;height: 50px;background-color: #62ffa0;"></div>
+        <div style="width: 400px;height: 50px;background-color: #fffa98;"></div>
+    </div>
+</div>
+<button onclick="fun1()" style="width: 20px;height: 20px;font-size: 12px">红</button>
+<button onclick="fun2()" style="width: 20px;height: 20px;font-size: 12px">蓝</button>
+<button onclick="fun3()" style="width: 20px;height: 20px;font-size: 12px">绿</button>
+<button onclick="fun4()" style="width: 20px;height: 20px;font-size: 12px">黄</button>
+</body>
+</html>
+<script>
+    var i1 = document.getElementById("id1");
+    var i2 = document.getElementById("id2");
+    function gun1(){
+        if(i1.scrollTop >= 140){
+            i1.scrollTop-=140;
+        }
+        else if(i1.scrollTop >=0||i1.scrollTop <140){
+            i1.scrollTop+=10;
+        }
+    }
+    var timer1 = setInterval(gun1,500);
+    function fun1(){
+        i1.scrollTop=0;
+    }
+    function fun2(){
+        i1.scrollTop=50;
+    }
+    function fun3(){
+        i1.scrollTop=100;
+    }
+    function fun4(){
+        i1.scrollTop=150;
+    }
+
+</script>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var str="";
+        var t=0;
+        var a=0;
+        var but=['but0','but1','but2','but3','but4','but5','but6','but7','but8','but9','but10','but11'];
+        var bt=0
+        function fun5(){
+            for(var k=0;k<12;k++){
+                document.getElementById(but[k]).style.background='url("../images/btn.png") no-repeat left top';
+            }
+            switch (t){
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:{
+                    var bid=but[t];
+                    document.getElementById(bid).style.background='url("../images/btn.png") no-repeat left bottom';
+                    break;
+                }
+                default :break;
+            }
+        }
+        function fun6(b){
+            t=b;
+            fun2();
+        }
+        function fun2(){
+            a=(t-1)%12;
+            if(a<=0){
+                a+=12;
+            }
+            str='<img src="../images/province('+a+').jpeg">';
+            document.getElementById('id0').innerHTML=str;
+            a=(t+3)%12;
+            if(a<=0){
+                a+=12;
+            }
+            str='<img src="../images/province('+a+').jpeg">';
+            document.getElementById('id1').innerHTML=str;
+            a=t%12;
+            if(a<=0){
+                a+=12;
+            }
+            str='<img src="../images/province('+a+').jpeg">';
+            document.getElementById('id2').innerHTML=str;
+            a=(t+2)%12;
+            if(a<=0){
+                a+=12;
+            }
+            str='<img src="../images/province('+a+').jpeg">';
+            document.getElementById('id3').innerHTML=str;
+            a=(t+1)%12;
+            if(a<=0){
+                a+=12;
+            }
+            str='<img src="../images/province('+a+').jpeg">';
+            document.getElementById('id4').innerHTML=str;
+
+            setTimeout(fun5,300);
+        }
+        function fun1(){
+            setTimeout(fun2,300);
+            var idv1=document.getElementById('id1');
+            var idv2=document.getElementById('id2');
+            function fun4(){
+                if( t>=12){
+                    t=0;
+                }else{
+                    t++;
+                }
+                setTimeout(fun2,300);
+            }
+            var timer=setInterval(fun4,3000);
+            idv1.onmouseover=function(){
+                clearInterval(timer);
+            }
+            idv1.onmouseout=function(){
+                timer=setInterval(fun4,3000);
+            }
+        }
+        function fun3(a) {
+            if (a == 0) {
+                if (t == 0) {
+                    t = 11;
+                } else {
+                    t--;
+                }
+            } else {
+                if (t == 11) {
+                    t = 0;
+                } else {
+                    t++;
+                }
+            }
+            fun2();
+        }
+    </script>
+    <style>
+        #id0 img,#id1 img{
+            width: 400px;
+            height: 140px;
+        }
+        #id2 img,#id3 img{
+            width: 500px;
+            height: 180px;
+        }
+        #id4 img{
+            width: 600px;
+            height: 200px;
+        }
+        #but{
+            width: 264px;
+            height: 20px;
+            position: relative;
+            top: -22px;
+            left: 349px;
+        }
+        #but div{
+            width: 12px;
+            height: 12px;
+            background: url("../images/btn.png") no-repeat left top;
+            float: left;
+            border-right: none;
+        }
+    </style>
+</head>
+<body onload="fun1()">
+<div id='ida'style="width: 1300px;height: 200px;background-color: black;position: relative;">
+    <div id='id0'style="width: 400px;height: 140px;background-color: aqua;position: absolute;left: 0;top: 30px;"></div>
+    <div id='id1'style="width: 400px;height: 140px;background-color: papayawhip;position: absolute;right: 0;top: 30px;"></div>
+    <div id='id2'style="width: 500px;height: 180px;background-color: yellow;position: absolute;left: 150px;top: 10px;"></div>
+    <div id='id3'style="width: 500px;height: 180px;background-color: greenyellow;position: absolute;right: 150px;top: 10px;"></div>
+    <div id='id4'style="width: 600px;height: 200px;background-color: gainsboro;position: absolute;left: 350px;top: 0;"></div>
+    <!--<div id='id0'style="width: 400px;height: 140px;background-color: aqua;"></div>-->
+    <!--<div id='id2'style="width: 500px;height: 180px;background-color: yellow;"></div>-->
+    <!--<div id='id4'style="width: 600px;height: 200px;background-color: gainsboro;"></div>-->
+    <!--<div id='id3'style="width: 500px;height: 180px;background-color: greenyellow;"></div>-->
+    <!--<div id='id1'style="width: 400px;height: 140px;background-color: papayawhip;"></div>-->
+</div>
+<input type="button" value="前" onclick="fun3(0)">
+<input type="button" value="后" onclick="fun3(1)">
+<div id="but">
+    <div id="but0" onclick="fun6(0)"></div>
+    <div id="but1" onclick="fun6(1)"></div>
+    <div id="but2" onclick="fun6(2)"></div>
+    <div id="but3" onclick="fun6(3)"></div>
+    <div id="but4" onclick="fun6(4)"></div>
+    <div id="but5" onclick="fun6(5)"></div>
+    <div id="but6" onclick="fun6(6)"></div>
+    <div id="but7" onclick="fun6(7)"></div>
+    <div id="but8" onclick="fun6(8)"></div>
+    <div id="but9" onclick="fun6(9)"></div>
+    <div id="but10" onclick="fun6(10)"></div>
+    <div id="but11" onclick="fun6(11)"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var but=['but0','but1','but2','but3','but4','but5','but6','but7','but8','but9','but10','but11'];
+        var t=0;
+        function fun6(){
+            for(var k=0;k<12;k++){
+                document.getElementById(but[k]).style.background='#FFFFFF';
+            }
+            switch (t){
+                case 0:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                case 11:{
+                    var bid=but[t];
+                    document.getElementById(bid).style.background='#FF0000';
+                    break;
+                }
+                default :break;
+            }
+        }
+        function fun4(){
+            setTimeout(fun6,300);
+            var idv1=document.getElementById('id1');
+            var idv2=document.getElementById('id2');
+            function fun5(){
+                if( idv1.scrollTop>=idv2.scrollHeight-200){
+                    idv1.scrollTop=0;
+                    t=0;
+                }else{
+                    idv1.scrollTop+=200;
+                    t++;
+                }
+                setTimeout(fun6,300);
+            }
+            var timer=setInterval(fun5,3000);
+            idv1.onmouseover=function(){
+                clearInterval(timer);
+            }
+            idv1.onmouseout=function(){
+                timer=setInterval(fun5,3000);
+            }
+        }
+
+        function fun1(a){
+            var idv1=document.getElementById('id1');
+            var idv2=document.getElementById('id2');
+            function fun2(){
+                if( idv1.scrollTop>=idv2.scrollHeight-200){
+                    idv1.scrollTop=0;
+                }else{
+                    idv1.scrollTop+=200;
+                }
+                setTimeout(fun6,300);
+            }
+            function fun3(){
+                if( idv1.scrollTop<=200){
+                    idv1.scrollTop=2200;
+                }else{
+                    idv1.scrollTop-=200;
+                }
+                setTimeout(fun6,300);
+            }
+            if(t>a){
+                for(var i=0;i<(t-a);i++){
+                    setTimeout(fun3,100);
+                }
+                t=a;
+            }else if(t<a){
+                for(var j=0;j<(a-t);j++){
+                    setTimeout(fun2,100);
+                }
+                t=a;
+            }
+        }
+    </script>
+    <style>
+        #id2 img{
+            width: 600px;
+            height: 200px;
+            float: left;
+            margin: 0;
+            padding: 0;
+        }
+        #but{
+            width: 264px;
+            height: 20px;
+            position: relative;
+            top: -22px;
+            left: 349px;
+        }
+        #but div{
+            width: 20px;
+            height: 20px;
+            background: #FFFFFF;
+            text-align: center;
+            float: left;
+            border: 1px solid #FF0000;
+            border-right: none;
+        }
+    </style>
+</head>
+<body onload="fun4()">
+<div id="id1" style="width: 600px;height: 200px;border: 1px solid red;overflow: hidden">
+    <div id='id2'style="width: 600px;height: 2400px;background-color: aqua">
+        <img src="../images/province(1).jpeg">
+        <img src="../images/province(2).jpeg">
+        <img src="../images/province(3).jpeg">
+        <img src="../images/province(4).jpeg">
+        <img src="../images/province(5).jpeg">
+        <img src="../images/province(6).jpeg">
+        <img src="../images/province(7).jpeg">
+        <img src="../images/province(8).jpeg">
+        <img src="../images/province(9).jpeg">
+        <img src="../images/province(10).jpeg">
+        <img src="../images/province(11).jpeg">
+        <img src="../images/province(12).jpeg">
+    </div>
+</div>
+<div id="but">
+    <div id="but0" onclick="fun1(0)">1</div>
+    <div id="but1" onclick="fun1(1)">2</div>
+    <div id="but2" onclick="fun1(2)">3</div>
+    <div id="but3" onclick="fun1(3)">4</div>
+    <div id="but4" onclick="fun1(4)">5</div>
+    <div id="but5" onclick="fun1(5)">6</div>
+    <div id="but6" onclick="fun1(6)">7</div>
+    <div id="but7" onclick="fun1(7)">8</div>
+    <div id="but8" onclick="fun1(8)">9</div>
+    <div id="but9" onclick="fun1(9)">10</div>
+    <div id="but10" onclick="fun1(10)">11</div>
+    <div id="but11" onclick="fun1(11)">12</div>
+</div>
+</body>
+</html>

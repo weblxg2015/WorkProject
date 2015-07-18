@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000000;
+            border-collapse: collapse;
+table-layout: fixed;
+            text-align: center;
+        }
+        tr{
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+    </style>
+
+</head>
+<body>
+<table>
+    <caption>员工信息表</caption>
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>工资</th>
+        <th>部门</th>
+    </tr>
+    <tr class="tr01">
+        <td class="name">Tom</td>
+        <td>50</td>
+        <td>2300</td>
+        <td>开发部</td>
+    </tr>
+    <tr class="tr01">
+        <td class="name">Marry</td>
+        <td>34</td>
+        <td>1230.9</td>
+        <td>综合部</td>
+    </tr>
+    <tr class="tr01">
+        <td class="name">Carry</td>
+        <td>4</td>
+        <td>1230.9</td>
+        <td>后勤部</td>
+    </tr>
+</table>
+<input type="button" value="按姓名排序" onclick="funname()">
+<input type="button" value="按年龄排序" onclick="funage()">
+<input type="button" value="按工资排序" onclick="funsalary()">
+<input type="button" value="按部门排序" onclick="funsection()">
+</body>
+<script>
+    function funname(){
+        var arr=[];
+var name01=document.getElementsByTagName("tr");
+        for(var i= 1,j=0;i<name01.length;i++,j++){
+            arr[j]=name01[i].getElementsByTagName("td")[0].innerText;
+        }
+       for(var i=0;i<arr.length;i++){
+           for(var j=i+1;j<arr.length;j++)
+           if(arr[i]>=arr[j]){
+               var temp;
+               temp=arr[i];
+               arr[i]=arr[j];
+               arr[j]=temp;
+           }
+           name01[i+1].getElementsByTagName("td")[0].innerText=arr[i];
+       }
+        alert("姓名是按照升序排列");
+
+
+    }
+    function funage(){
+        var arr=[];
+        var name01=document.getElementsByTagName("tr");
+        for(var i= 1,j=0;i<name01.length;i++,j++){
+            arr[j]=Number(name01[i].getElementsByTagName("td")[1].innerText);
+        }
+        for(var i=0;i<arr.length;i++){
+            for(var j=i+1;j<arr.length;j++)
+                if(arr[i]>=arr[j]){
+                    var temp;
+                    temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            name01[i+1].getElementsByTagName("td")[1].innerText=arr[i];
+        }
+        alert("年龄是按照升序排列");
+
+
+    }
+    function funsalary(){
+        var arr=[];
+        var name01=document.getElementsByTagName("tr");
+        for(var i= 1,j=0;i<name01.length;i++,j++){
+            arr[j]=Number(name01[i].getElementsByTagName("td")[2].innerText);
+        }
+        for(var i=0;i<arr.length;i++){
+            for(var j=i+1;j<arr.length;j++)
+                if(arr[i]>=arr[j]){
+                    var temp;
+                    temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            name01[i+1].getElementsByTagName("td")[2].innerText=arr[i];
+        }
+        alert("工资是按照升序排列");
+
+    }
+    function funsection(){
+        var arr=[];
+        var name01=document.getElementsByTagName("tr");
+        for(var i= 1,j=0;i<name01.length;i++,j++){
+            arr[j]=name01[i].getElementsByTagName("td")[3].innerText;
+        }
+        for(var i=0;i<arr.length;i++){
+            for(var j=i+1;j<arr.length;j++)
+                if(arr[i]>=arr[j]){
+                    var temp;
+                    temp=arr[i];
+                    arr[i]=arr[j];
+                    arr[j]=temp;
+                }
+            name01[i+1].getElementsByTagName("td")[3].innerText=arr[i];
+        }
+        alert("部门是按照升序排列");
+
+
+    }
+</script>
+</html>

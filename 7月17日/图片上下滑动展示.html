@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .d1{
+            width: 550px;
+            height: 630px;
+            border: 1px solid #c7c7c7;
+            margin-left: 200px;
+            position: relative;
+        }
+        .wrap{
+            width: 90px;
+            height: 610px;
+           margin-top: 10px;
+            margin-left: 10px;
+
+        }
+        .img1_wrap{
+            width: 90px;
+            height: 117px;
+            opacity: 0.6;
+            position: relative;
+        }
+        .img1_wrap:hover{
+            background: url("images/hover.gif");
+            opacity: 1;
+        }
+        .img1{
+            width: 75px;
+            height: 100px;
+            position: absolute;
+            left: 5px;
+            top: 10px;
+        }
+        .show{
+            width: 430px;
+            height: 600px;
+            /*border: 1px solid #000000;*/
+            position: absolute;
+            left: 110px;
+            top: 10px;
+            overflow: hidden;
+        }
+        .img2{
+            width: 430px;
+            height: 600px;
+        }
+
+        </style>
+</head>
+<body onload="fun01()">
+<div class="d1">
+<div class="wrap">
+    <div class="img1_wrap" onmouseover="fun01()" id="id1"><img src="images/4.png" class="img1"></div>
+    <div class="img1_wrap" onmouseover="fun02()"><img src="images/5.png" class="img1"></div>
+    <div class="img1_wrap" onmouseover="fun03()"><img src="images/6.jpg" class="img1"></div>
+    <div class="img1_wrap" onmouseover="fun04()"><img src="images/7.jpg" class="img1"></div>
+    <div class="img1_wrap" onmouseover="fun05()"><img src="images/8.jpg" class="img1"></div>
+    </div>
+    <div class="show" id="show">
+        <img src="images/4.png" class="img2" id="img01">
+        <img src="images/5.png" class="img2" id="img02">
+        <img src="images/6.jpg" class="img2" id="img03">
+        <img src="images/7.jpg" class="img2" id="img04">
+        <img src="images/8.jpg" class="img2" id="img05">
+    </div>
+</div>
+</body>
+</html>
+
+<script>
+    function fun01() {
+//        var n1= document.getElementById("id1");
+        n1.style.backgroundImage="url(images/hover.gif)";
+        n1.style.opacity=1;
+        var b1 = v1.scrollTop;
+        var a1 = document.getElementById("img01").offsetTop;
+
+
+        if (a1 > b1) {
+            b1++;
+            v1.scrollTop += 1;
+            var timer = setTimeout(fun01, 0.05);
+        }
+        else if (a1 < b1) {
+            b1--;
+            v1.scrollTop -= 1;
+            var timer = setTimeout(fun01, 0.05);
+        }
+        if (b1 == a1) {
+            clearTimeout(timer)
+        }
+    }
+function fun02(){
+    var v1=document.getElementById("show");
+    var b1=v1.scrollTop;
+    var a1=document.getElementById("img02").offsetTop;
+    if(a1>b1){
+        b1++;
+        v1.scrollTop+=1;
+        var timer= setTimeout(fun02,0.05);
+    }
+    else if(a1<b1){
+        b1--;
+        v1.scrollTop-=1;
+        var timer=setTimeout(fun02,0.05);
+    }
+    if(b1==a1){
+        clearTimeout(timer2)
+    }
+}
+    function fun03(){
+        var v1=document.getElementById("show");
+        var b1=v1.scrollTop;
+        var a1=document.getElementById("img03").offsetTop;
+        if(a1>b1){
+            b1++;
+            v1.scrollTop+=1;
+            var timer= setTimeout(fun03,0.05);
+        }
+        else if(a1<b1){
+            b1--;
+            v1.scrollTop-=1;
+            var timer=setTimeout(fun03,0.05);
+        }
+        if(b1==a1){
+            clearTimeout(timer2)
+        }
+    }
+    function fun04(){
+        var v1=document.getElementById("show");
+        var b1=v1.scrollTop;
+        var a1=document.getElementById("img04").offsetTop;
+        if(a1>b1){
+            b1++;
+            v1.scrollTop+=1;
+            var timer= setTimeout(fun04,0.05);
+        }
+        else if(a1<b1){
+            b1--;
+            v1.scrollTop-=1;
+            var timer=setTimeout(fun04,0.05);
+        }
+        if(b1==a1){
+            clearTimeout(timer2)
+        }
+    }
+    function fun05(){
+        var v1=document.getElementById("show");
+        var b1=v1.scrollTop;
+        var a1=document.getElementById("img05").offsetTop;
+        if(a1>b1){
+            b1++;
+            v1.scrollTop+=1;
+            var timer= setTimeout(fun05,0.05);
+        }
+        else if(a1<b1){
+            b1--;
+            v1.scrollTop-=1;
+            var timer=setTimeout(fun05,0.05);
+        }
+        if(b1==a1){
+            clearTimeout(timer2)
+        }
+    }
+
+
+    </script>
