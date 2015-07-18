@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #demo img{border:none;width:100px;height:100px; margin-right:20px;}
+        #enlarge_images{position:absolute;display:none;z-index:2;border:5px solid #f4f4f4}
+    </style>
+</head>
+<body>
+<div id="demo" style="overflow:hidden;height:100px; width:1000px;">
+    <img src="images/1.jpg"><img src="images/2.jpg"><img src="images/3.jpg">
+</div>
+<div id="enlarge_images"></div>
+</body>
+</html>
+
+<script>
+    var demo = document.getElementById("demo");
+    var gg = demo.getElementsByTagName("img");
+    var ei = document.getElementById("enlarge_images");
+    for(i=0; i<gg.length; i++){
+        var ts = gg[i];
+        ts.onmousemove = function(event){
+            event = event || window.event;
+            ei.style.display = "block";
+            ei.innerHTML = '<img src="' + this.src + '" style=" width:200px; height:200px;" />';
+            ei.style.top  = document.body.scrollTop + event.clientY + 10 + "px";
+            ei.style.left = document.body.scrollLeft + event.clientX + 10 + "px";
+        }
+        ts.onmouseout = function(){
+            ei.innerHTML = "";
+            ei.style.display = "none";
+        }
+        ts.onclick = function(){
+            window.open( this.src );
+        }
+    }
+</script>

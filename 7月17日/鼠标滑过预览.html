@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .imgwrap img{
+            width: 200px;
+            height: 200px;
+            margin-left: 20px;
+        }
+        .show{
+            position: absolute;
+        }
+        </style>
+</head>
+<body>
+<div id="imgwrap" class="imgwrap">
+    <img src="images/1.jpg" id="i1"><img src="images/2.jpg" id="i2"><img src="images/3.jpg" id="i3">
+</div>
+<div id="show" class="show">
+    <!--<img src="" style="width: 400px;height: 400px" id="img01">-->
+</div>
+</body>
+</html>
+        <script>
+            var a1=document.getElementById("imgwrap");
+            var s1=document.getElementById("show");
+            var img= a1.getElementsByTagName("img");
+             for(i=0; i<img.length; i++) {
+                var i1 = img[i];
+            i1.onmousemove = function fun01(){
+                s1.style.display="block";
+                s1.innerHTML='<img src="'+ this.src+'" style="width: 400px;height: 400px">';
+                s1.style.left= window.event.clientX+"px";
+                s1.style.top= window.event.clientY+5+"px";
+            }
+            i1.onmouseout = function fun02(){
+                s1.style.display="none";
+                 }
+             }
+
+        </script>
