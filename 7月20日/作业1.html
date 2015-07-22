@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+     <div>
+         <ul>
+             <li>第一播报</li>
+             <li>排行</li>
+             <li>专题</li>
+             <li>时政</li>
+             <li>社会</li>
+             <li>军事</li>
+             <li>天下</li>
+             <li>图标</li>
+             <li>任务</li>
+             <li>时评</li>
+             <li>图片</li>
+             <li>无人机</li>
+             <li>回顾</li>
+             <input type="text" value="优衣库不雅视频">
+             <img src="imagse/search.png">
+             </ul>
+         <img src="imagse/com.png">
+     </div>
+
+     <div>
+           <div>
+               <img src="imagse/lover.png">
+               <li><img src="imagse/small.png"> 比赛中遭鲨鱼袭击 世界冲浪冠军惊险逃生</li>
+               <li><img src="imagse/small.png"> 洪秀柱"秀"出线 出任国民党台湾党代表</li>
+           </div>
+         <div>
+                <div>
+                    <span>要闻</span>
+                    <img src="imagse/img1.png">
+                    <span>手机看新闻</span>
+                    <img src="imagse/img2.png">
+                    <span>缓一缓</span>
+                </div>
+              <h6>十八届五中全会10月召开 研究十三五规划</h6>
+             <li>习近平视察16军：要清除徐才厚案影响| 李克强会见日本客人</li>
+             <h6>万里遗体22日火化 天安门降下半旗致哀</h6>
+             <li>谁在其灵前下跪行大礼？今年第二次下半旗致哀 乔石6月逝世</li>
+             <h6>证监会："正研究维稳资金退出"报道不实</h6>
+             <li>副财长：干预股市合理 动荡基本结束 今年24家A股公司遭调查</li>
+            </div>
+            <div>
+                <div><img src="imagse/title.png"><img src="imagse/img3.png"></div>
+                <h5>王林的"愈加之罪"有多重？</h5>
+                <img src="imagse/img4.png">
+                <div>舆论高度认定有罪或无罪时，司法面临考验
+                    <span>[详细]</span>
+                </div>
+                <div>
+                    <span>数字之道</span>
+                    <span>+更多</span>
+                </div>
+                <h5>为何只有中国人"不畏"酷暑？</h5>
+                <img src="imagse/img5.png">
+                <div>入伏以来，各地迎来大范围高温天气，北京、天津、河北等地最高气温逼近40℃
+                    <span>[详细]</span>
+                </div>
+                <ul>
+                    <li>谁是“正宗”争夺</li>
+                    <li>科研唐僧肉</li>
+                </ul>
+            </div>
+     </div>
+</body>
+</html>
+    <script>
+        //菜单
+        var menu=document.childNodes[1].childNodes[2].childNodes[1];//菜单外边框
+        menu.style.width="950px";
+        menu.style.height="30px";
+        menu.style.borderBottom="5px solid #406792";
+        menu.style.display="flex";
+
+        var ul1=menu.childNodes[1];
+        ul1.style.listStyle="none";
+        ul1.style.padding="0";
+        ul1.style.margin="0";
+        ul1.style.lineHeight="30px";
+        ul1.style.display="flex";
+       for(i=0;i<ul1.childNodes.length;i++) {
+           if (ul1.childNodes[i].nodeName.toLocaleLowerCase() == "li") {
+               ul1.childNodes[i].style.marginLeft = "20px";
+           }
+           else if (ul1.childNodes[i].nodeName.toLocaleLowerCase() == "input") {
+               ul1.childNodes[i].style.marginLeft = "50px";
+               ul1.childNodes[i].style.color = "#AFAFAF";
+               ul1.childNodes[i].style.height = "20px"
+           }
+            else if(ul1.childNodes[i].nodeName.toLocaleLowerCase()=="img"){
+               ul1.childNodes[i].style.height="22px";
+               ul1.childNodes[i].style.marginLeft="-25px";
+               ul1.childNodes[i].style.marginTop="2px";
+               ul1.childNodes[i].style.cursor="pointer"
+        }
+           ul1.childNodes[1].style.marginLeft = "0px";
+           ul1.childNodes[1].style.color = "#6D88A6";
+       }
+        menu.childNodes[3].style.height="30px"
+        menu.childNodes[3].style.marginLeft="60px"
+
+        var warp=menu.nextSibling.nextSibling;
+        warp.style.width="950px";
+        warp.style.height="300px";
+        warp.style.marginTop="10px";
+        warp.style.display="flex";
+        warp.style.justifyContent="space-between";
+
+        var left=warp.childNodes[1];
+        var mid=warp.childNodes[3];
+        var right=warp.childNodes[5];
+
+
+        left.style.width="300px";
+        left.style.height="350px";
+
+
+        mid.style.width="300px";
+        mid.style.height="350px";
+        mid.style.borderRight="1px solid #E8E8E8";
+
+        right.style.width="300px";
+        right.style.height="350px";
+        right.style.position="relative";
+
+        left.childNodes[1].style.width="300px";
+        left.childNodes[3].style.color="#959595";
+        left.childNodes[3].style.listStyle="none";
+        left.childNodes[3].style.lineHeight="30px";
+        left.childNodes[3].childNodes[0].style.width="15px";
+        left.childNodes[3].style.borderBottom="1px dotted #c0c0c0";
+
+        left.childNodes[5].style.color="#959595";
+        left.childNodes[5].style.listStyle="none";
+        left.childNodes[5].childNodes[0].style.width="15px";
+        left.childNodes[5].style.lineHeight="30px";
+
+        var midtitle=mid.childNodes[1];
+         midtitle.style.height="30px";
+        midtitle.style.lineHeight="30px"
+        midtitle.style.borderBottom="1px solid #c0c0c0";
+        midtitle.childNodes[3].style.width="12px";
+        midtitle.childNodes[3].style.marginLeft="120px";
+        midtitle.childNodes[7].style.width="12px";
+        midtitle.childNodes[9].style.color="#c0c0c0";
+
+        for(j=0;j<mid.childNodes.length;j++){
+            if (mid.childNodes[j].nodeName.toLocaleLowerCase() == "h6") {
+                mid.childNodes[j].style.color="#2E5D7E";
+                mid.childNodes[j].style.fontSize="13px";
+                mid.childNodes[j].style.marginTop="20px";
+                mid.childNodes[j].style.marginBottom="10px";
+            }
+            else if (mid.childNodes[j].nodeName.toLocaleLowerCase() == "li") {
+                mid.childNodes[j].style.listStyle="none";
+                mid.childNodes[j].style.padding="0";
+                mid.childNodes[j].style.margin="0";
+                mid.childNodes[j].style.lineHeight="20px";
+            }
+        }
+
+        var rititle=right.childNodes[1];
+        rititle.style.borderBottom="1px solid #E4E9EC";
+        rititle.childNodes[0].style.width="80px";
+        rititle.childNodes[1].style.width="60px";
+        rititle.childNodes[1].style.marginLeft="150px";
+
+ for(n=0;n<right.childNodes.length;n++) {
+     if (right.childNodes[n].nodeName.toLocaleLowerCase() == "h5") {
+         right.childNodes[n].style.marginTop = "10px";
+         right.childNodes[n].style.marginBottom = "10px";
+         right.childNodes[n].style.color = "#34545D";
+     }
+ }
+        right.childNodes[7].style.position="absolute";
+        right.childNodes[7].style.width="180px";
+        right.childNodes[7].style.top="70px";
+        right.childNodes[7].style.left="90px";
+        right.childNodes[7].style.fontSize="13px";
+        right.childNodes[7].style.lineHeight="20px";
+        right.childNodes[7].style.color="#848484";
+        right.childNodes[7].childNodes[1].style.color="#34545D";
+        right.childNodes[7].childNodes[1].style.fontWeight="bold";
+
+        right.childNodes[9].style.borderBottom="1px solid #E4E9EC";
+        right.childNodes[9].style.display="flex";
+        right.childNodes[9].style.justifyContent="space-between";
+        right.childNodes[9].style.lineHeight="30px";
+
+        right.childNodes[9].childNodes[1].style.fontSize="18px";
+        right.childNodes[9].childNodes[1].style.fontWeight="bold";
+        right.childNodes[9].childNodes[3].style.color="#BFC0C0"
+
+        right.childNodes[15].style.position="absolute";
+        right.childNodes[15].style.width="180px";
+        right.childNodes[15].style.top="210px";
+        right.childNodes[15].style.left="90px";
+        right.childNodes[15].style.fontSize="13px";
+        right.childNodes[15].style.lineHeight="20px";
+        right.childNodes[15].style.color="#848484";
+        right.childNodes[15].childNodes[1].style.color="#34545D";
+        right.childNodes[15].childNodes[1].style.fontWeight="bold";
+
+        right.childNodes[17].style.display="flex";
+        right.childNodes[17].style.listStyle="square";
+        right.childNodes[17].childNodes[1].style.marginLeft="-15px";
+        right.childNodes[17].childNodes[3].style.marginLeft="30px";
+
+    </script>

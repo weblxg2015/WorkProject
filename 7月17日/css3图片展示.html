@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #wrap1{
+            width: 200px;
+            height: 200px;
+            /*border: 1px solid #000000;*/
+            position: relative;
+           left: 300px;
+        }
+        #wrap1 img{
+            position: absolute;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap1" onmousemove="fun01(),fun02()" onmouseout="fun03()">
+    <img src="images2/1.jpg">
+    <img src="images2/2.jpg">
+    <img src="images2/3.jpg">
+    <img src="images2/4.jpg">
+    <img src="images2/5.jpg">
+    <img src="images2/6.jpg">
+    <img src="images2/7.jpg">
+    <img src="images2/8.jpg">
+    <img src="images2/9.jpg">
+</div>
+</body>
+</html>
+        <script>
+            var w1=document.getElementById("wrap1");
+            var img1=w1.getElementsByTagName("img");
+            var x1=w1.offsetLeft;
+             var a;
+            function fun01(){
+                var x2=event.clientX;
+                var x=x2-x1;
+                 a=parseInt(x/20);
+            }
+            function fun02(){
+                    var b1=300;
+                    for(i=a+1;i<img1.length;i++){
+                    img1[i].style.transform = "rotateY(50deg) translate("+b1+"px)";
+//                           var tim1= setInterval(fun04,3);
+//                        function fun04() {
+                            b1 += 1;
+//                            var tim1= setTimeout(fun04,3);
+//                            if (b1 == (300 - i)) {
+//                                clearTimeout(tim1)
+//                            }
+//                        }
+                }
+            }
+
+            function fun03(){
+                for(i=0;i<img1.length;i++){
+                    img1[i].style.transform='rotateY(0) translate(0)';
+                }
+            }
+
+
+
+
+            </script>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .show{
+            width: 600px;
+            height: 350px;
+            border: 5px solid #c0c0c0;
+            margin:0 auto ;
+            position: relative;
+            overflow: hidden;
+            /*overflow: scroll;*/
+        }
+        .arrow_left{
+            position: absolute;
+            width: 45px;
+            height: 58px;
+            background: url("images/leftarrow.png");
+            top: 140px;
+            left: 335px;
+            cursor: pointer;
+        }
+        .arrow_right{
+            position: absolute;
+            width: 45px;
+            height: 58px;
+            background: url("images/rightarrow.png");
+            top: 140px;
+           left: 985px;
+            cursor: pointer;
+        }
+        .wrap{
+             width: 2300px;
+            line-height: 480px;
+        }
+        </style>
+
+</head>
+<body>
+<div class="arrow_left" onclick="fun01()"></div><div class="arrow_right" onclick="fun03()"></div>
+
+<div class="show" id="show">
+    <div class="wrap" id="wrap">
+    <img src="images/9.jpg" style="width: 250px;height: 150px;margin-left: 300px">
+    <img src="images/10.jpg" style="width: 250px;height: 150px;margin-left: 70px">
+    <img src="images/11.jpg" style="width: 250px;height: 150px;margin-left: 70px">
+    <img src="images/12.jpg" style="width: 250px;height: 150px;margin-left: 70px">
+    <img src="images/13.jpg" style="width: 250px;height: 150px;margin-left: 70px">
+        </div>
+</div>
+</body>
+</html>
+<script>
+    var s1=document.getElementById("show");
+    var d1=document.getElementById("wrap");
+     s1.scrollLeft=750;
+    var img1=d1.getElementsByTagName("img");
+    var i=2;
+    img1[i].style.transform='scale(1.5)';
+    var n=100;
+    var m=150;
+    function fun01(){
+         i-=1;
+        setTimeout(fun02,10)
+    }
+    function fun02(){
+        n+=1;
+        m-=1;
+        var j=n/100;
+        var k=m/100;
+        img1[i].style.transform='scale('+j+')';
+        img1[i+1].style.transform='scale('+k+')';
+        s1.scrollLeft-=6;
+        var tim1= setTimeout(fun02,10);
+        if(n==150){
+            clearTimeout(tim1)
+             n=100;
+             m=150;
+        }
+    }
+
+    function fun03(){
+        i+=1;
+        setTimeout(fun04,10)
+    }
+    function fun04(){
+        n+=1;
+        m-=1;
+        var j=n/100;
+        var k=m/100;
+        img1[i].style.transform='scale('+j+')';
+        img1[i-1].style.transform='scale('+k+')';
+        s1.scrollLeft+=6;
+        var tim2= setTimeout(fun04,10);
+        if(n==150){
+            clearTimeout(tim2)
+            n=100;
+            m=150;
+        }
+    }
+    </script>

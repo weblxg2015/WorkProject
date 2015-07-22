@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<form>
+婚姻状况<select><option>未婚</option>
+    <option>已婚</option><option>离异</option></select><br><br>
+
+    年龄：<input type="text" onblur="fun01(this)"><br><br>
+
+    身高：<input type="text" onblur="fun02(this)"><br><br>
+
+    居住地<select onchange="fun03()"><option>请选择居住地</option>
+                <option>北京</option>
+                <option>上海</option>
+                <option>广州</option>
+</select><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <input type="text" value="验证码" onblur="fun05()">
+    <input type="button" value="获取验证码" onclick="fun04(this)"><br><br><br>
+
+    您自己有车吗？
+    <input name="radio1" type="radio" value="1">是
+    <input name="radio1" type="radio" value="2">否<br><br>
+
+    类型<input type="text"><br><br>
+
+   <button>确定</button>
+</form>
+
+<script>
+    var z1,z2,z3,z4,z5,z6,z7,z8;
+    var form01=document.forms[0];
+    var arr1=form01.elements;
+    var arr2=form01.getElementsByTagName("input");
+    var arr3=form01.getElementsByName("radio1");
+    var bot1= form01.getElementsByTagName("button")[0];
+    bot1.disabled=true;
+
+    var hint=document.createTextNode("　");
+    var hint2=document.createTextNode("　");
+    form01.insertBefore(hint,arr1[1].nextSibling);
+    form01.insertBefore(hint2,arr1[2].nextSibling);
+    function fun01(v){
+        var a1=arr1[1].value;
+        z1=0;
+        if(a1.length<3) {
+            for (var i = 0; i < a1.length; i++) {
+                if(a1.charCodeAt(i)>=48&&a1.charCodeAt(i)<=58){
+                    z1=1;
+                   var b1 =document.createTextNode("正确");
+                    form01.replaceChild(b1,arr1[1].nextSibling)
+                }
+                else{
+                    var b3 =document.createTextNode("请输入0-99之间的数字");
+                    form01.replaceChild(b3,arr1[1].nextSibling)
+                }
+            }
+        }
+        else{
+            v.focus();
+            var  b2 =document.createTextNode("请输入0-99之间的数字");
+            form01.replaceChild(b2,arr1[1].nextSibling);
+        }
+    }
+
+    function fun02(v){
+        var a1=arr1[2].value;
+        z1=0;
+        if(a1.length==3) {
+            for (var i = 0; i < a1.length; i++) {
+                if(a1.charCodeAt(i)>=48&&a1.charCodeAt(i)<=58&&a1.charCodeAt(0)==49){
+                    z2=1;
+                    var b1 =document.createTextNode("正确");
+                    form01.replaceChild(b1,arr1[2].nextSibling)
+                }
+                else{
+                    var b3 =document.createTextNode("请输入100-199之间的数字");
+                    form01.replaceChild(b3,arr1[2].nextSibling)
+                }
+            }
+        }
+        else{
+            v.focus();
+            var  b2 =document.createTextNode("请输入100-199之间的数字");
+            form01.replaceChild(b2,arr1[2].nextSibling);
+        }
+    }
+
+    var city=["上海","北京","广州"];
+    var district=[["静安区","卢湾区","徐汇区","黄浦区","长宁区","虹口区","普陀区","闸北区","杨浦区"],
+                   ["东城区","西城区","朝阳区","海淀区","丰台区","石景山区","门头沟区","大兴区"],
+                   ["白云区","越秀区","荔湾区","海珠区","天河区","黄埔区","番禺区","南沙区","萝岗区","花都区"]];
+//    var district=[["　静安区　","　卢湾区　","　徐汇区　","　黄浦区　","　长宁区　","　虹口区　","　普陀区　","　闸北区　","　杨浦区　"],
+//        ["　东城区　","　西城区　","　朝阳区　","　海淀区　","　丰台区　","　石景山区　","　门头沟区　","　大兴区　"],
+//        ["　白云区　","　越秀区　","　荔湾区　","　海珠区　","　天河区　","　黄埔区　","　番禺区　","　南沙区　","　萝岗区　","　花都区　"]];
+    var hint3=document.createTextNode("　");
+    form01.insertBefore(hint,arr1[3].nextSibling);
+    function fun03(){
+//        z3=0;
+        var a1=arr1[3].value;
+       var n1=city.indexOf(a1);
+        var d1=document.createElement("div");
+        d1.style.width="500px";
+        d1.style.height="100px";
+        d1.style.border="1px solid black";
+
+        for( var i=0;i<district[n1].length;i++){
+            var s1=document.createElement("span");
+            s1.style.color="red";
+            s1.style.cursor="pointer";
+            s1.style.marginLeft="10px";
+            s1.style.marginTop="10px";
+           var d3=document.createTextNode(district[n1][i]);
+            s1.appendChild(d3);
+            d1.appendChild(s1);
+        }
+        form01.replaceChild(d1,arr1[3].nextSibling.nextSibling);
+
+        for( var j= 0;j<d1.childNodes.length;j++){
+            d1.childNodes[j].aa=j;
+            d1.childNodes[j].onclick=function(){
+                      var n1= d1.childNodes[this.aa].childNodes[0].nodeValue;
+                      var m1=document.createTextNode(n1);
+                form01.replaceChild(m1,arr1[3].nextSibling);
+                z3=1;
+            }
+        }
+    }
+
+    var code="";
+    var code2="";
+    var code3="";
+    function fun04(n) {
+        for (var i = 0; i < 4; i++) {
+            code += Math.floor(Math.random() * 10);
+        }
+        n.disabled = "true";
+        code3=code;
+        var j1 = document.createTextNode(code);
+        form01.insertBefore(j1, arr2[3].nextSibling.nextSibling);
+        var j3=document.createElement("span");
+        j3.style.cursor="pointer";
+        j3.style.color="red";
+        j3.style.textDecoration="underline";
+        var j4=document.createTextNode("看不清？换一个");
+        j3.appendChild(j4);
+        form01.insertBefore(j3,j1.nextSibling);
+
+        j3.onclick=function(){
+             code2="";
+            for (var i = 0; i < 4; i++) {
+                code2 += Math.floor(Math.random() * 10);
+            }
+            var j5 = document.createTextNode(code2);
+            form01.replaceChild(j5, arr2[3].nextSibling.nextSibling);
+            code3=code2;
+        }
+    }
+
+    function fun05(){
+            var k1=Number(arr2[2].value);
+            if(k1==Number(code3)){
+                var j6 = document.createTextNode("正确");
+                form01.insertBefore(j6, arr2[3].nextSibling);
+                z4=1;
+            }
+            else{
+            }
+        }
+
+
+
+
+    </script>
+</body>
+</html>
