@@ -28,8 +28,8 @@
     <input type="button" value="获取验证码" onclick="fun04(this)"><br><br><br>
 
     您自己有车吗？
-    <input name="radio1" type="radio" value="1">是
-    <input name="radio1" type="radio" value="2">否<br><br>
+    <input name="radio1" type="radio" value="1" onclick="fun06(this)">是
+    <input name="radio1" type="radio" value="2" onclick="fun07(this)">否<br><br>
 
     类型<input type="text"><br><br>
 
@@ -37,11 +37,15 @@
 </form>
 
 <script>
-    var z1,z2,z3,z4,z5,z6,z7,z8;
+    var z1=0;
+    var z2=0;
+    var z3=0;
+    var z4=0;
+    var z5=0;
     var form01=document.forms[0];
     var arr1=form01.elements;
     var arr2=form01.getElementsByTagName("input");
-    var arr3=form01.getElementsByName("radio1");
+//    var arr3=form01.getElementsByName("radio1");
     var bot1= form01.getElementsByTagName("button")[0];
     bot1.disabled=true;
 
@@ -176,6 +180,22 @@
             else{
             }
         }
+
+    function fun06(v){
+        if(v.checked){
+            arr2[6].disabled=false;
+            z5=1;
+        }
+    }
+    function fun07(v){
+        if(v.checked){
+            arr2[6].disabled=true;
+            z5=1;
+            var z=z1+z2+z3+z4+z5;
+            alert(z)
+        }
+    }
+
 
 
 
