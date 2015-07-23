@@ -1,0 +1,109 @@
+
+body{
+    /*font-weight: bold;*/
+}
+.inp1{
+    width: 120px;
+    height: 30px;
+    margin-top: 5px;
+    /*position: absolute;*/
+}
+.hint1{
+    width: 300px;
+    height: 27px;
+    display: inline-block;
+    border: 1px solid #a3e5e5;
+    position: relative;
+    top:2px;
+    left: 15px;
+    line-height: 27px;
+    background-color: #ecf2f2;
+    /*display: none;*/
+}
+.sj1{
+    height: 0;
+    width: 0;
+    border-right: 8px solid  #ecf2f2;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    z-index: 2;
+}
+.sj2{
+    height: 0;
+    width: 0;
+    border-right: 8px solid  #a3e5e5;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    position: absolute;
+    top: 5px;
+    left: -16px;
+    z-index: 1;
+}
+
+.hint2{
+    width: 300px;
+    height: 27px;
+    display: inline-block;
+    border: 1px solid #ffb1b8;
+    position: relative;
+    top:2px;
+    left: 15px;
+    line-height: 27px;
+    background-color: #fbedea;
+    /*display: none;*/
+}
+
+.sj3{
+    height: 0;
+    width: 0;
+    border-right: 8px solid  #fbedea;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    z-index: 2;
+}
+.sj4{
+    height: 0;
+    width: 0;
+    border-right: 8px solid  #ffb1b8;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    position: absolute;
+    top: 5px;
+    left: -16px;
+    z-index: 1;
+}
+
+.hint3{
+    width: 150px;
+    height: 27px;
+    display: inline-block;
+    border: 1px solid #ffb1b8;
+    position: relative;
+    top:2px;
+    left: 15px;
+    line-height: 27px;
+    background-color: #fbedea;
+}
+
+
+.show{
+    width: 500px;
+    height: 500px;
+    border: 1px solid #000000;
+    line-height: 30px;
+    position: absolute;
+    left: 530px;
+    top: 10px;
+    display: none;
+}
+
