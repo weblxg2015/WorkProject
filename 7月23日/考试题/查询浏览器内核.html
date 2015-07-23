@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        var v2=navigator.userAgent;
+        var v1=v2.toLocaleLowerCase();
+        if(v1.indexOf("trident")!=-1){
+            alert("你的浏览器是Trident内核")
+        }
+        else if(v1.indexOf("webkit")!=-1){
+            alert("你的浏览器是Webkit内核")
+        }
+        else if(v1.indexOf("like gecko")==-1&&v1.indexOf("gecko")!=-1){
+            alert("你的浏览器是Gecko内核")
+        }
+        else if(v1.indexOf("presto")!=-1){
+            alert("你的浏览器是Presto内核")
+        }
+        else if(v1.indexOf("blink")!=-1){
+            alert("你的浏览器是Blink内核")
+        }
+        </script>
+</head>
+<body>
+
+</body>
+</html>

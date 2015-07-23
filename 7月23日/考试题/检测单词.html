@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    var v1=prompt("请输入字母");
+    v2=v1.toLocaleLowerCase();
+    v3=v2.split("");
+    for(i=0;i<v3.length;i++){
+        var a1=v3[i];
+        for(j=0;j<v3.length;j++){
+            var a2=v3[j];
+            if(a1==a2&&i!=j){
+                alert("有重复字母"+v3[j]);
+            }
+        }
+    }
+</script>

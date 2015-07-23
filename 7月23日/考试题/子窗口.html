@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+用户名：<input type="text" id="inp01"><br>
+用户名：<input type="text" id="inp02"><br>
+<input type="button" value="验证" onclick="fun01()" >
+</body>
+</html>
+       <script>
+           function fun01(){
+               var a1=document.getElementById("inp01").value;
+               var a2=document.getElementById("inp02").value;
+               if(a1=="123"&&a2=="123"){
+                   window.close();
+//                   window.opener.location.reload();
+                   window.opener.document.getElementById("id01").innerHTML="<div>用户名"+a1+"</div>"+
+                   "<div>密码"+a2+"</div>";
+
+               }
+           }
+           </script>

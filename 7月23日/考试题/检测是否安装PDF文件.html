@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+    var minearr= navigator.mimeTypes;
+    var v1="";
+    for (var i=0;i<minearr.length;i++){
+    v1=minearr[i].suffixes+v1;
+    }
+    v2=v1.toLocaleLowerCase();
+    if(v2.indexOf("pdf")>=0){
+    alert("你已安装PDF插件")
+    }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
