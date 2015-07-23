@@ -31,9 +31,9 @@
     <input name="radio1" type="radio" value="1" onclick="fun06(this)">是
     <input name="radio1" type="radio" value="2" onclick="fun07(this)">否<br><br>
 
-    类型<input type="text"><br><br>
-
-   <button>确定</button>
+    类型<input type="text" ><br><br>
+    <input type="button" onclick="fun08()" value="计算">
+   <button onclick="fun08()">确定</button>
 </form>
 
 <script>
@@ -78,7 +78,7 @@
 
     function fun02(v){
         var a1=arr1[2].value;
-        z1=0;
+        z2=0;
         if(a1.length==3) {
             for (var i = 0; i < a1.length; i++) {
                 if(a1.charCodeAt(i)>=48&&a1.charCodeAt(i)<=58&&a1.charCodeAt(0)==49){
@@ -191,14 +191,12 @@
         if(v.checked){
             arr2[6].disabled=true;
             z5=1;
-            var z=z1+z2+z3+z4+z5;
-            alert(z)
         }
     }
-
-
-
-
+  function fun08(){
+      var z=z1+z2+z3+z4+z5;
+      alert(z)
+  }
 
     </script>
 </body>
