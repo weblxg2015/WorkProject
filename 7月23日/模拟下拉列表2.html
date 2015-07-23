@@ -65,7 +65,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="fun06()">
 <div class="title" id="title" onclick="fun01()">点击出列表</div>
 <div class="menu" id="menu">
     <div><img src="images/ipad.jpg">ipad</div>
@@ -82,12 +82,12 @@
     &nbsp;&nbsp;图片<input type="text" style="margin-top:50px" id="addimg">
     <input type="file" id="adfile" onchange="fun04()"><br><br>
     选项文字<input type="text" id="addtext"><br><br>
-    <input type="button" value="添加" style="width: 120px;height: 30px;margin-left: 30px">
+    <input type="button" value="添加" style="width: 120px;height: 30px;margin-left: 30px" onclick="fun05()">
 </div>
 <div id="id02" class="change">
     搜索项索引1<input type="text" style="margin-top:50px" id="search1"><br><br>
     搜索项索引2<input type="text" id="search2"><br><br>
-    <input type="button" value="交换" style="width: 120px;height: 30px;margin-left: 30px">
+    <input type="button" value="交换" style="width: 120px;height: 30px;margin-left: 30px" onclick="fun07()">
 </div>
 <script>
     var menu=document.getElementById("menu");
@@ -95,6 +95,9 @@
         var k2=  document.getElementById("addtext");
         var k3=document.getElementById("adfile");
     var d1=menu.getElementsByTagName("div");
+
+    var s1=document.getElementById("search1");
+    var s2=document.getElementById("search2");
     function fun01(){
         if( menu.style.display=="block"){
             menu.style.display="none"
@@ -106,7 +109,6 @@
     var a1=document.getElementById("id01");
     var a2=document.getElementById("id02");
     function fun02(){
-
         a1.style.display="block";
         a2.style.display="none";
     }
@@ -115,15 +117,40 @@
         a2.style.display="block";
     }
     function fun04(){
-        alert(k3.value.IndexOf("\\"));
+       var g1=k3.value.lastIndexOf("\\");
+//        alert(g1)
+        var g2=k3.value.toString()
+        k1.value=g2.substring(g1+1);
+    }
+function fun05(){
+   var div1=document.createElement("div");
+    var img1=document.createElement("img");
+    var text1=document.createTextNode(k2.value);
+    img1.src="images\\"+k1.value;
+   div1.appendChild(img1);
+    div1.appendChild(text1);
+    menu.appendChild(div1);
+    setTimeout(fun06,0)
+}
+
+    function fun07(){
+        var f1=s1.value;
+        var f2=s2.value;
+        var w1=d1[f1].cloneNode(true);
+        var w2=d1[f2].cloneNode(true);
+        menu.replaceChild(w1,d1[f2]);
+        menu.replaceChild(w2,d1[f1]);
+        setTimeout(fun06,0)
     }
 
-    for(var i=0;i<=d1.length;i++){
-        d1[i].aa=i;
-        d1[i].ondblclick=function(){
-            d1[this.aa].style.display="none"
+function fun06(){
+    for (var i = 0; i <= d1.length; i++) {
+        d1[i].aa = i;
+        d1[i].ondblclick = function () {
+            d1[this.aa].style.display = "none"
         }
     }
+}
 
 </script>
 </body>
