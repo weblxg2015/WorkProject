@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            font-family: Arial;
+        }
+        .title{
+            width: 836px;
+            height: 30px;
+            background: #942629;
+            line-height: 30px;
+            color: white;
+            padding-left: 5px ;
+            border-top: 1px solid silver;
+            border-bottom: 1px solid silver;
+        }
+        table{
+            border-collapse: collapse;
+        }
+        table tr td{
+            border: 1px solid silver;
+            width: 203px;
+            padding-left: 5px ;
+            height: 28px;
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+<div class="title" id="title1" onclick="fun01()">Complate bikes performance</div>
+    <table id="table1" cellspacing="0" style="display: block">
+        <tr>
+            <td>Engine Type</td>
+            <td>BM15L(IV)</td>
+            <td>BM15L(IV)</td>
+            <td>
+                <input type="button" value="修改" onclick="fun03(this)">
+                <input type="button" value="保存" onclick="fun04(this)">
+            </td>
+        </tr>
+        <tr>
+            <td>Transmission Type</td>
+            <td>Manual 5 shifts transmission</td>
+            <td>Manual 5 shifts transmission</td>
+            <td>
+                <input type="button" value="修改" onclick="fun03(this)">
+                <input type="button" value="保存" onclick="fun04(this)">
+            </td>
+        </tr>
+        <tr>
+            <td>Suspension system</td>
+            <td colspan="3"></td>
+
+        </tr>
+        <tr>
+            <td>Wheel</td>
+            <td>Steel wheel R15+Cover</td>
+            <td>Steel wheel R15+Cover</td>
+            <td>
+                <input type="button" value="修改" onclick="fun03(this)">
+                <input type="button" value="保存" onclick="fun04(this)">
+            </td>
+        </tr>
+        <tr>
+            <td>Tyre</td>
+            <td>185/60 R15</td>
+            <td>185/60 R15</td>
+            <td>
+                <input type="button" value="修改" onclick="fun03(this)">
+                <input type="button" value="保存" onclick="fun04(this)">
+            </td>
+        </tr>
+        <tr>
+            <td>Spare Tyre</td>
+            <td>Steed+175/65R15</td>
+            <td>Steed+175/65R15</td>
+            <td>
+                <input type="button" value="修改" onclick="fun03(this)">
+                <input type="button" value="保存" onclick="fun04(this)">
+            </td>
+        </tr>
+        <tr>
+            <td>Emission Standard</td>
+            <td>EUR IV</td>
+            <td>EUR IV</td>
+            <td>
+                <input type="button" value="修改" onclick="fun03(this)">
+                <input type="button" value="保存" onclick="fun04(this)">
+            </td>
+        </tr>
+        </table>
+
+    <div class="title" id="title2" onclick="fun02()">Safety system</div>
+    <table id="table2" cellspacing="0" style="display: block">
+        <tr>
+            <td onclick="fun05(0)">Driver Airbag</td>
+            <td>Co-Driver Airbag</td>
+            <td>Spare Tyre</td>
+            <td>Emission Standard</td>
+        </tr>
+        <tr>
+            <td>185/60 R15</td>
+            <td>S</td>
+            <td>S</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <td>Steel wheel R15+Cover</td>
+            <td>185/60 R15</td>
+            <td>185/60 R15</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <td>Steel wheel R15+Cover</td>
+            <td>S</td>
+            <td>Steel+175/65R15</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <td>Steel+175/65R15</td>
+            <td>S</td>
+            <td>S</td>
+            <td>S</td>
+        </tr>
+        <tr>
+            <td>Steel+175/65R15</td>
+            <td>S</td>
+            <td>S</td>
+            <td>S</td>
+        </tr>
+    </table>
+    </div>
+
+<script>
+    var tit1=document.getElementById("title1");
+    var tit2=document.getElementById("title2");
+    var tab1=document.getElementById("table1");
+    var tab2=document.getElementById("table2");
+
+    for(var n=0;n<tab1.rows.length;n++){
+        tab1.rows[n].cells[0].style.fontWeight="bold"
+    }
+        tab2.rows[0].style.fontWeight="bold"
+
+    function fun01(){
+        if(tab1.style.display=='none'){
+            tab1.style.display="block"
+        }
+        else if(tab1.style.display=='block'){
+            tab1.style.display="none"
+        }
+    }
+
+    function fun02(){
+        if(tab2.style.display=='none'){
+            tab2.style.display="block"
+        }
+        else if(tab2.style.display=='block'){
+            tab2.style.display="none"
+        }
+    }
+
+    function fun03(v){
+         var tr1=v.parentNode.parentNode;
+        var a1=tr1.cells[0].childNodes[0].nodeName.toLowerCase();
+//        alert(a1)
+        if(a1!="input") {
+            for (var i = 0; i < tr1.cells.length - 1; i++) {
+                tr1.cells[i].innerHTML = "<input type='text' value='" + tr1.cells[i].innerText + "'>"
+            }
+        }
+    }
+    function fun04(v){
+        var tr2=v.parentNode.parentNode;
+        var a2=tr2.cells[0].childNodes[0].nodeName.toLowerCase();
+        if(a2=="input") {
+            for (var j = 0; j < tr2.cells.length - 1; j++) {
+                var v1 = tr2.cells[j].childNodes[0];
+                tr2.cells[j].innerHTML = v1.value;
+            }
+        }
+    }
+
+    for(var k=0;k<tab2.rows[0].cells.length;k++) {
+        tab2.rows[0].cells[k].aa = k;
+        tab2.rows[0].cells[k].onclick = function () {
+            for (var j = 1; j < tab2.rows.length; j++) {
+                for (var i = 1; i < tab2.rows.length - 1; i++) {
+                    var t1 = tab2.rows[i].cells[this.aa].innerText;
+                    var t2 = tab2.rows[i + 1].cells[this.aa].innerText;
+                    if (t1 < t2) {
+//                        tab2.moveRow(i,i+1)//可以只用这句而省略下面所以代码，但是不兼容谷歌
+                        for (var n = 0; n < tab2.rows[0].cells.length; n++) {
+                            var a1;
+                            a1 = tab2.rows[i].cells[n].innerText;
+                            tab2.rows[i].cells[n].innerText = tab2.rows[i + 1].cells[n].innerText;
+                            tab2.rows[i + 1].cells[n].innerText = a1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
+
