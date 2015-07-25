@@ -7,10 +7,10 @@
         .wrap{
             width: 800px;
             height: 500px;
-            border: 1px solid black;
+            /*border: 1px solid black;*/
             margin: 0 auto;
             line-height: 35px;
-            color: #15178f;
+            color: #34638f;
             font-weight: bold;
         }
         .title{
@@ -27,6 +27,7 @@
         table tr td{
             border: 1px solid #c8cccf;
             height: 35px;
+            text-align: center;
         }
         </style>
 </head>
@@ -34,26 +35,68 @@
 <div class="wrap">
     <div class="title">复杂条件查询配置</div>
     主功能查询条件
-    <table cellspacing="0" >
+    <table cellspacing="0" id="tab1">
          <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
+             <td>操作</td>
+             <td>左括号</td>
+             <td>列名称</td>
+             <td>关系运算符</td>
+             <td>值</td>
+             <td>左括号</td>
+             <td>逻辑运算符</td>
          </tr>
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><input type="button" value="添加" onclick="fun01()"></td>
+            <td><input type="checkbox"></td>
+            <td>
+                <select>
+                   <option>测试1</option>
+                    <option>测试2</option>
+                    <option>测试3</option>
+                    <option>测试4</option>
+                    <option>测试5</option>
+                </select>
+            </td>
+            <td>
+                <select>
+                    <option>等于</option>
+                    <option>大于</option>
+                    <option>小于</option>
+                </select>
+            </td>
+            <td><input type="text"></td>
+            <td><input type="checkbox"></td>
+            <td>
+                <select>
+                    <option>And</option>
+                    <option>Or</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    查询条件结果
+    <table id="tab2" cellspacing="0">
+        <tr>
+            <td>操作</td>
+            <td>左括号</td>
+            <td>列名称</td>
+            <td>关系运算符</td>
+            <td>值</td>
+            <td>左括号</td>
+            <td>逻辑运算符</td>
         </tr>
     </table>
 </div>
+<script>
+    var tab1= document.getElementById("tab1");
+    var ntr=tab1.getElementsByTagName("tr");
+    var tab2= document.getElementById("tab2");
+    function fun01(){
+           var v1=ntr[1].cloneNode(true);
+          tab2.appendChild(v1);
+
+    }
+</script>
 </body>
 </html>
