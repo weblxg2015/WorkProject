@@ -28,6 +28,7 @@
             border: 1px solid #c8cccf;
             height: 35px;
             text-align: center;
+
         }
         </style>
 </head>
@@ -70,6 +71,7 @@
                 <select>
                     <option>And</option>
                     <option>Or</option>
+                    <option>End</option>
                 </select>
             </td>
         </tr>
@@ -78,24 +80,141 @@
     查询条件结果
     <table id="tab2" cellspacing="0">
         <tr>
-            <td>操作</td>
-            <td>左括号</td>
-            <td>列名称</td>
-            <td>关系运算符</td>
-            <td>值</td>
-            <td>左括号</td>
+            <td style="width: 127px">操作</td>
+            <td style="width: 80px">左括号</td>
+            <td style="width: 88px">列名称</td>
+            <td style="width: 77px">关系运算符</td>
+            <td style="width: 252px">值</td>
+            <td style="width: 80px">左括号</td>
             <td>逻辑运算符</td>
         </tr>
     </table>
+    <table id="tab3" cellspacing="0">
+    </table>
+
+    <input type="button" value="保存" onclick="submit()">
+    <input type="button" value="取消" onclick="reload()"><br><br>
+    <div id="result" style="color: black;font-weight: 100;font-size: 20px"></div>
 </div>
 <script>
     var tab1= document.getElementById("tab1");
     var ntr=tab1.getElementsByTagName("tr");
     var tab2= document.getElementById("tab2");
+    var tab3= document.getElementById("tab3");
     function fun01(){
            var v1=ntr[1].cloneNode(true);
-          tab2.appendChild(v1);
+        v1.cells[0].innerHTML="<input type='button' value='删除' onclick='fdelete(this)'>"
+          var td1=v1.insertCell(1);
+          td1.innerHTML="<img src='images/up.png' style='cursor: pointer' onclick='fup(this)'>";
+            var td2=v1.insertCell(2);
+        td2.innerHTML="<img src='images/down.png' style='cursor: pointer'  onclick='fdown(this)'>";
+        v1.cells[3].style.width="80px";
+        v1.cells[7].style.width="80px";
 
+        if(ntr[1].cells[1].childNodes[0].checked){
+            v1.cells[3].checked=true;
+        }
+        if(ntr[1].cells[5].childNodes[0].checked){
+            v1.cells[7].checked=true;
+        }
+         var s1=ntr[1].cells[2].childNodes[1].selectedIndex;
+         var s2=ntr[1].cells[3].childNodes[1].selectedIndex;
+         var s3=ntr[1].cells[6].childNodes[1].selectedIndex;
+
+        v1.cells[4].childNodes[1].options[s1].selected=true;
+        v1.cells[5].childNodes[1].options[s2].selected=true;
+        v1.cells[8].childNodes[1].options[s3].selected=true;
+          tab3.appendChild(v1);
+    }
+
+    function fdelete(v){
+        var tr1= v.parentNode.parentNode;
+        tab3.removeChild(tr1)
+    }
+    function fup(v){
+        var tr2= v.parentNode.parentNode;
+        var tr3= v.parentNode.parentNode.previousSibling;
+        var t1=tr2.cloneNode(true);
+        var t2=tr3.cloneNode(true);
+        tab3.replaceChild(t2,tr2);
+        tab3.replaceChild(t1,tr3);
+
+        var s11=tr2.cells[4].childNodes[1].selectedIndex;
+        var s12=tr3.cells[4].childNodes[1].selectedIndex;
+        t1.cells[4].childNodes[1].options[s11].selected=true;
+        t2.cells[4].childNodes[1].options[s12].selected=true;
+
+        var s21=tr2.cells[5].childNodes[1].selectedIndex;
+        var s22=tr3.cells[5].childNodes[1].selectedIndex;
+        t1.cells[5].childNodes[1].options[s21].selected=true;
+        t2.cells[5].childNodes[1].options[s22].selected=true;
+
+        var s31=tr2.cells[8].childNodes[1].selectedIndex;
+        var s32=tr3.cells[8].childNodes[1].selectedIndex;
+        t1.cells[8].childNodes[1].options[s31].selected=true;
+        t2.cells[8].childNodes[1].options[s32].selected=true;
+
+    }
+    function fdown(v){
+        var tr2= v.parentNode.parentNode;
+        var tr3= v.parentNode.parentNode.nextSibling;
+        var t1=tr2.cloneNode(true);
+        var t2=tr3.cloneNode(true);
+        tab3.replaceChild(t2,tr2);
+        tab3.replaceChild(t1,tr3);
+
+        var s11=tr2.cells[4].childNodes[1].selectedIndex;
+        var s12=tr3.cells[4].childNodes[1].selectedIndex;
+        t1.cells[4].childNodes[1].options[s11].selected=true;
+        t2.cells[4].childNodes[1].options[s12].selected=true;
+
+        var s21=tr2.cells[5].childNodes[1].selectedIndex;
+        var s22=tr3.cells[5].childNodes[1].selectedIndex;
+        t1.cells[5].childNodes[1].options[s21].selected=true;
+        t2.cells[5].childNodes[1].options[s22].selected=true;
+
+        var s31=tr2.cells[8].childNodes[1].selectedIndex;
+        var s32=tr3.cells[8].childNodes[1].selectedIndex;
+        t1.cells[8].childNodes[1].options[s31].selected=true;
+        t2.cells[8].childNodes[1].options[s32].selected=true;
+    }
+
+
+    function reload(){
+        window.location.reload()
+    }
+
+    function submit(){
+      var result= document.getElementById("result");
+        var total="";
+        for(var i=0;i<tab3.rows.length;i++){
+            if(tab3.rows[i].cells[3].childNodes[0].checked){
+                total+="(";
+            }
+            total+=tab3.rows[i].cells[4].childNodes[1].value;
+//            total+=tab3.rows[i].cells[5].childNodes[1].value;
+            if(tab3.rows[i].cells[5].childNodes[1].selectedIndex==0){
+                total+="="
+            }
+            else if(tab3.rows[i].cells[5].childNodes[1].selectedIndex==1){
+                total+=">"
+            }
+            else if(tab3.rows[i].cells[5].childNodes[1].selectedIndex==2){
+                total+="<"
+            }
+            total+=tab3.rows[i].cells[6].childNodes[0].value;
+            if(tab3.rows[i].cells[7].childNodes[0].checked){
+                total+=")"
+            }
+            if(tab3.rows[i].cells[8].childNodes[1].selectedIndex==2){
+                total +="";
+            }
+            else
+            {
+                total += tab3.rows[i].cells[8].childNodes[1].value;
+            }
+        }
+       result.innerText=total;
     }
 </script>
 </body>
