@@ -143,44 +143,39 @@
        else if(e.shiftKey&& e.button==0){
             var src4 =e.srcElement||e.target;
             var tr4=src4.parentNode;
-            tr4.style.background="blue";
-            n1=tr4.rowIndex;
-        }
-    };
-    document.onmouseup=function(e) {
-        if(e.shiftKey&& e.button==0){
-            var src5 =e.srcElement||e.target;
-            var tr5=src5.parentNode;
-            tr5.style.background="blue";
-            n2=tr5.rowIndex;
-            alert(n2)
-            if(n2>=n1){
-                for(var z=n1;z<n2;z++){
+            n2=tr4.rowIndex;
+            for(var e=1;e<trarr.length;e++){
+                if(trarr[e].style.background=="blue"){
+                    n1=e;
+                }
+            }
+            if(n1<=n2){
+                for(var z=n1;z<=n2;z++){
+                    trarr[z].style.background="blue";
+                }
+            }
+            else  if(n1>n2){
+                for(var z=n2;z<=n1;z++){
                     trarr[z].style.background="blue";
                 }
             }
         }
-    }
-//    document.onkeydown=function(e){
-//        if(e.shiftKey){
-//            document.onkeydown=function(e){
-//                var src4 =e.srcElement||e.target;
-//                var tr4=src4.parentNode;
-////                alert(tr4.rowIndex)
-//                alert(src4.nodeName)
-//            }
-//
-//        }
-//    };
-
-//    document.onmousedown=function(e) {
+    };
+//    document.onmouseup=function(e) {
 //        if(e.shiftKey&& e.button==0){
-//            var src4 =e.srcElement||e.target;
-//            var tr4=src4.parentNode;
-//            tr4.style.background="blue";
-//            n1=tr4.rowIndex;
+//            var src5 =e.srcElement||e.target;
+//            var tr5=src5.parentNode;
+////            tr5.style.background="blue";
+//            n2=tr5.rowIndex;
+//            alert(n2)
+//            if(n2>=n1){
+//                for(var z=n1;z<n2;z++){
+//                    trarr[z].style.background="blue";
+//                }
+//            }
 //        }
 //    }
+
 
 
 
