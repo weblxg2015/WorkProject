@@ -95,7 +95,7 @@
         <td>-2.31%</td>
     </tr>
 </table>
-<input type="button" value="删除" onclick="delete1()">
+<input type="button" value="删除" onmousedown="delete1()">
 </body>
 </html>
 <script>
@@ -129,7 +129,8 @@
     }
     var n1;
     var n2;
-    document.onmousedown=function(e) {
+
+        document.onmousedown=function(e) {
         if (e.ctrlKey && e.button==0){
             var src2 =e.srcElement||e.target;
             var tr2=src2.parentNode;
@@ -160,21 +161,23 @@
                 }
             }
         }
+
     };
-//    document.onmouseup=function(e) {
-//        if(e.shiftKey&& e.button==0){
-//            var src5 =e.srcElement||e.target;
-//            var tr5=src5.parentNode;
-////            tr5.style.background="blue";
-//            n2=tr5.rowIndex;
-//            alert(n2)
-//            if(n2>=n1){
-//                for(var z=n1;z<n2;z++){
-//                    trarr[z].style.background="blue";
-//                }
-//            }
-//        }
-//    }
+    document.onmouseup=function(e) {
+       if(e.button==0){
+            var src5 =e.srcElement||e.target;
+            var tr5=src5.parentNode;
+            var n3= tr5.rowIndex;
+            for(var y=1;y<trarr.length;y++){
+                if(y==n3){
+                    trarr[y].style.background="blue";
+                }
+                else{
+                    trarr[y].style.background="#EFF8FF";
+                }
+            }
+        }
+    }
 
 
 
