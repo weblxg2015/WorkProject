@@ -13,14 +13,56 @@
             position: absolute;
         }
 
+        .q1{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: #7aff73;
+            display: none;
+            position: absolute;
+        }
+        .q2{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: #ff40f6;
+            display: none;
+            position: absolute;
+        }
+        .q3{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: #f4393e;
+            display: none;
+            position: absolute;
+        }
+        .q4{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            background: #04feff;
+            display: none;
+            position: absolute;
+        }
+
+
     </style>
 </head>
 <body>
-<div class= "y1" id="y1"></div>
+<div class= "y1" id="a1"></div>
+<div class="q1" id="q1"></div>
+<div class="q2" id="q2"></div>
+<div class="q3" id="q3"></div>
+<div class="q4" id="q4"></div>
 </body>
 </html>
 <script>
-     var y1=document.getElementById("y1");
+    var a1=document.getElementById("a1");
+     var q1=document.getElementById("q1");
+     var q2=document.getElementById("q2");
+     var q3=document.getElementById("q3");
+     var q4=document.getElementById("q4");
      document.onmousedown=function(e){
          var px;
          var py;
@@ -33,18 +75,69 @@
             py= e.clientY + document.body.scrollTop;
         }
         var py2=700;
-         y1.style.top=py2+"px";
-        y1.style.left=px+"px";
-        y1.style.display="block";
+         a1.style.top=py2+"px";
+        a1.style.left=px+"px";
+        a1.style.display="block";
         setTimeout(fun01,1);
      function fun01(){
          py2--;
-         y1.style.top=py2+"px";
-         var tim1= setTimeout(fun01,2)
+         a1.style.top=py2+"px";
+         var tim1= setTimeout(fun01,2);
          if(py2==py){
-             y1.style.display="none"
-             clearTimeout(tim1)
+             a1.style.display="none";
+             clearTimeout(tim1);
+             setTimeout(fun02,1)
          }
       }
+         var x1=px;
+         var y1=py;
+         var x2=px;
+         var y2=py;
+         var x3=px;
+         var y3=py;
+         var x4=px;
+         var y4=py;
+
+         function fun02(){
+             q1.style.left=x1+"px";
+             q1.style.top=y1+"px";
+
+             q2.style.left=x2+"px";
+             q2.style.top=y2+"px";
+
+             q3.style.left=x3+"px";
+             q3.style.top=y3+"px";
+
+             q4.style.left=x4+"px";
+             q4.style.top=y4+"px";
+
+         q1.style.display="block";
+         q2.style.display="block";
+         q3.style.display="block";
+         q4.style.display="block";
+//
+             x1++;
+             y1++;
+
+             x2++;
+             y2--;
+
+             x3--;
+             y3++;
+
+             x4--;
+             y4--;
+             var d1=x1-px;
+            var tim2= setTimeout(fun02,2)
+             if(d1==200){
+                 clearTimeout(tim2);
+                 q1.style.display="none";
+                 q2.style.display="none";
+                 q3.style.display="none";
+                 q4.style.display="none";
+             }
+         }
+
+
     }
 </script>

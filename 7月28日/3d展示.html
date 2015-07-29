@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<div  id="d1"  style="position: absolute;z-index: 1">
+    <div style="width: 100px;height: 100px;position: absolute;z-index: 3"></div>
+    <img src="img1.png"  id="img1" style="position:absolute;z-index: -1">
+</div>
+</body>
+</html>
+<script>
+
+    var d1=document.getElementById("d1");
+    var img=document.getElementById("img1");
+    var px;
+    var py;
+    d1.onmousedown=function(e) {
+        e = e || window.e;
+        img1.setAttribute("src", "img2.png");
+
+        d1.onmousemove=function(e){
+            if (e.pageX || e.pageY) {
+                px = e.pageX;
+                py= e.pageY;
+            }
+            else if (e.clientX || e.clientY) {
+                px= e.clientX + document.body.scrollLeft;
+                py= e.clientY + document.body.scrollTop;
+            }
+            d1.style.top=(py-50)+"px";
+            d1.style.left=(px-50)+"px";
+        }
+
+        d1.onmouseup=function(e) {
+            e = e || window.e;
+           d1.onmousemove = null;
+            d1.style.top=(py-170)+"px";
+            d1.style.left=(px-300)+"px";
+            img1.setAttribute("src", "img3.png")
+        }
+        d1.onmouout=function(e) {
+            e = e || window.e;
+            d1.onmousemove = null;
+            d1.style.top=(py-130)+"px";
+            d1.style.left=(px-300)+"px";
+            img1.setAttribute("src", "img3.png")
+        }
+    }
+
+
+    </script>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        table tr td{
+            border: 1px solid white;
+            width: 150px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+        }
+        </style>
+</head>
+<body>
+<table cellspacing="0" id="t1">
+    <tr>
+        <td>货币</td>
+        <td>本周收盘</td>
+        <td>上周收盘</td>
+        <td>涨跌</td>
+        <td>涨幅</td>
+    </tr>
+    <tr>
+        <td>EUPGBP1</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+    <tr>
+        <td>EUPGBP2</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+    <tr>
+        <td>EUPGBP3</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+
+    <tr>
+        <td>EUPGBP4</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+
+    <tr>
+        <td>EUPGBP5</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+
+    <tr>
+        <td>EUPGBP6</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+
+    <tr>
+        <td>EUPGBP7</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+
+    <tr>
+        <td>EUPGBP8</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+
+    <tr>
+        <td>EUPGBP9</td>
+        <td>0.8693</td>
+        <td>0.8894</td>
+        <td>-201</td>
+        <td>-2.31%</td>
+    </tr>
+
+</table>
+</body>
+</html>
+<script>
+    var t1=document.getElementById("t1");
+    var trarr=t1.getElementsByTagName("tr");
+     trarr[0].style.background="#1599D8";
+    trarr[0].style.color="#FFFFFF";
+   for(var i=1;i<trarr.length;i++){
+       if(i%2==1){
+           trarr[i].style.background="#DBEFF7";
+       }
+       else{
+           trarr[i].style.background="#EFF8FF";
+       }
+   }
+
+//    for(var j=1;j<trarr.length;j++) {
+       document.body.ondblclick=function(e){
+//            alert("你好");
+           var src =e.srcElement||e.target;
+            var tr1=src.parentNode;
+          var td1=tr1.getElementsByTagName("td");
+           for(var n=0;n<td1.length;n++){
+               td1[n].innerHTML="<input type='text'style='width:120px' value='"+td1[n].innerText+"'onblur='fun1(this)' >"
+           }
+    };
+    function fun1(n){
+        var tr2=n.parentNode.parentNode;
+        for(var m=0;m<tr2.cells.length;m++){
+            tr2.cells[m].innerHTML=tr2.cells[m].children[0].value;
+        }
+    }
+
+
+
+</script>
