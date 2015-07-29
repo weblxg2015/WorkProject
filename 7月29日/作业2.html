@@ -94,8 +94,8 @@
         <td>-201</td>
         <td>-2.31%</td>
     </tr>
-
 </table>
+<input type="button" value="删除" onclick="delete1()">
 </body>
 </html>
 <script>
@@ -114,7 +114,6 @@
 
 //    for(var j=1;j<trarr.length;j++) {
        document.body.ondblclick=function(e){
-//            alert("你好");
            var src =e.srcElement||e.target;
             var tr1=src.parentNode;
           var td1=tr1.getElementsByTagName("td");
@@ -128,7 +127,71 @@
             tr2.cells[m].innerHTML=tr2.cells[m].children[0].value;
         }
     }
+    var n1;
+    var n2;
+    document.onmousedown=function(e) {
+        if (e.ctrlKey && e.button==0){
+            var src2 =e.srcElement||e.target;
+            var tr2=src2.parentNode;
+            tr2.style.background="blue"
+        }
+       else if (e.altKey && e.button==0){
+            var src3 =e.srcElement||e.target;
+            var tr3=src3.parentNode;
+            tr3.style.background="#EFF8FF";
+        }
+       else if(e.shiftKey&& e.button==0){
+            var src4 =e.srcElement||e.target;
+            var tr4=src4.parentNode;
+            tr4.style.background="blue";
+            n1=tr4.rowIndex;
+        }
+    };
+    document.onmouseup=function(e) {
+        if(e.shiftKey&& e.button==0){
+            var src5 =e.srcElement||e.target;
+            var tr5=src5.parentNode;
+            tr5.style.background="blue";
+            n2=tr5.rowIndex;
+            alert(n2)
+            if(n2>=n1){
+                for(var z=n1;z<n2;z++){
+                    trarr[z].style.background="blue";
+                }
+            }
+        }
+    }
+//    document.onkeydown=function(e){
+//        if(e.shiftKey){
+//            document.onkeydown=function(e){
+//                var src4 =e.srcElement||e.target;
+//                var tr4=src4.parentNode;
+////                alert(tr4.rowIndex)
+//                alert(src4.nodeName)
+//            }
+//
+//        }
+//    };
 
+//    document.onmousedown=function(e) {
+//        if(e.shiftKey&& e.button==0){
+//            var src4 =e.srcElement||e.target;
+//            var tr4=src4.parentNode;
+//            tr4.style.background="blue";
+//            n1=tr4.rowIndex;
+//        }
+//    }
+
+
+
+    function delete1(){
+        for(var f=1;f<trarr.length;f++){
+            if(trarr[f].style.background=="blue"){
+                t1.deleteRow(f);
+                f--;
+            }
+        }
+    }
 
 
 </script>
