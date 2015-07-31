@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{   background: url("../img/1.png") repeat;   }
+        .id02{
+            position:absolute;
+            top:300px;
+            left:100px;
+        }
+        .id03{
+            position: absolute;
+            z-index: 3;
+            left: 320px;
+            top:60px;
+        }
+        .id04{
+            position: absolute;
+            z-index: 5;
+            left: 650px;
+            top:100px;
+        }
+    </style>
+    <script>
+        window.onscroll=function(){
+            var v1=document.getElementById('id02');
+            v1.style.top=30+document.body.scrollTop+'px';
+//                alert(typeof document.body.scrollTop)
+        }
+        var id_03=document.getElementById("id03");
+        var id_04=document.getElementById("id04");
+        document.onmousemove=function(e) {
+            e = e || window.e;
+
+        }
+
+    </script>
+</head>
+<body>
+<div id="id02" class="id02">
+    <img src="../img/4.png">
+</div>
+<div id="id03" class="id03">
+    <img src="../img/3.png">
+</div>
+<div id="id04" class="id04">
+    <img src="../img/2.png">
+</div>
+</body>
+</html>

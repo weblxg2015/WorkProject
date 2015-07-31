@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script>
+        window.onload=function(){
+            var EventUtil={
+                //跨浏览器事件处理程序
+                addhandle: function(element,type,handler){         //元素     事件类型       执行函数
+                    if(element.addEventListener){        //支持ＤＯＭ２事件模型
+                        element.addEventListener(type,handler,false);
+                    }else if(element.attachEvent){         //ie事件模型
+                        element.attachEvent("on"+type,handler)
+                    }else{
+                        element["on"+type]=handler  ;         //DOM0级事件模型
+                    }
+                },
+                removeHandle: function (element,type,handler){
+                    if(element.removeEventListener){        //支持ＤＯＭ２事件模型
+                        element.removeEventListener(type,handler,false);
+                    }else if(element.detachEvent){         //ie事件模型
+                        element.detachEvent("on"+type,handler)
+                    }else{
+                        element["on"+type]=null;           //DOM0级事件模型
+                    }
+                },
+                //跨浏览器的事件对象
+                getEvent:function(e){
+                    return e ? e:window.e;
+                },
+                //
+                getsrc:function(e){
+                    return e.srcElement|| e.target;
+                },
+                stopmp:function(e1){
+                    if(e1.stopPropagation){
+                        e1.stopPropagation();
+                    }else{
+                        e1.cancelBubble=true;
+                    }
+                }
+            };
+            var v1=document.getElementById('id01');
+            var v2=document.getElementById('id02');
+            var v3=document.getElementById('id03');
+            var x1,x2;
+            x1=v2.pageX;
+            x2=v3.pageX;
+            var cc=x2-x1;
+//            v2.onmouseover=function(e){
+//                    e=EventUtil.getEvent(e);
+//                x1=e.pageX;
+//                    }
+            window.onmousemove=function(){
+                 v2.style.top=80+cc+document.body.scrollTop+'px';
+            }
+            window.onscroll=function(){
+                v1.style.top=80+document.body.scrollTop+'px';
+                v2.style.top=80+document.body.scrollTop+'px';
+                v3.style.top=80+document.body.scrollTop+'px';
+//                alert(typeof document.body.scrollTop)
+            }
+        }
+    </script>
+    <style>
+        body{
+            height:809px;
+            background: url("1.png");
+        }
+    </style>
+</head>
+<body>
+<img id="id01" src="4.png"style="position: absolute;left: 180px;top:80px">
+<img id="id02" src="2.png"style="position: absolute;left: 780px;top:120px">
+<img id="id03" src="3.png"style="position: absolute;left: 180px;top:130px">
+</body>
+</html>

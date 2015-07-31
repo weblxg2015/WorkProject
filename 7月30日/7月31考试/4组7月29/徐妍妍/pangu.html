@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<div style="position: relative">
+    <img src="img/home_bg.png" style="position: absolute" id="img01">
+    <img src="img/home_wz.png" style="position:fixed;left: 100px;top: 100px" id="img02">
+    <img src="img/home_star.png"style="position: absolute;left: 400px;top: 0px" id="img03">
+    <img src="img/home_nav.png" style="position: absolute;left: 700px;top: 250px" id="img04">
+</div>
+<div style="width: 100%;height: 2000px;"></div>
+</body>
+</html>
+        <script>
+            var img01=document.getElementById("img01");
+            var img03=document.getElementById("img03");
+            var img02=document.getElementById("img02");
+            var img04=document.getElementById("img04");
+            document.onscroll=function(){
+
+                var s=10-document.body.scrollTop;
+                if(s<=-500){
+                    img02.style.position="absolute"
+                }
+                else{
+                    img02.style.position="fixed"
+                    img01.style.top=s+"px"
+                }
+            }
+
+            document.onmousemove=function(e){
+                e=e||window.e;
+                var x= e.pageX;
+                var y= e.pageY;
+               x=(700-x)/100;
+                y=(700-y)/100
+                img03.style.left=(550+x+y)+"px";
+                img04.style.left=(750-x-y)+"px"
+
+            }
+        </script>

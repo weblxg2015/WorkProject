@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+<style>
+   *{
+        margin: 0;
+       padding: 0;
+    }
+    .menu{
+        width: 100%;
+        height: 40px;
+        background: #4A4A4A;
+        display: flex;
+        list-style: none;
+        position: relative;
+        z-index: 2;
+    }
+   .menu>li{
+       font-size: 18px;
+       color: white;
+       font-weight: bold;
+       line-height: 40px;
+       margin-left: 27px;
+       position:relative;
+   }
+   .menu>li:hover{
+       text-decoration: underline;
+   }
+    .secondmenu1{
+        width: 474px;
+        height: 147px;
+        position: absolute;
+        border: 1px solid silver;
+        display: none;
+        background: #ffffff;
+    }
+   .secondmenu2{
+       width: 474px;
+       height: 147px;
+       position: absolute;
+       border: 1px solid silver;
+       display: none;
+       background: #ffffff;
+   }
+   .secondmenu3{
+       width: 474px;
+       height: 147px;
+       position: absolute;
+       border: 1px solid silver;
+       display: none;
+       background: #ffffff;
+   }
+   .menu li:nth-child(2):hover .secondmenu1{
+       display: block;
+   }
+   .menu li:nth-child(3):hover .secondmenu2{
+       display: block;
+   }
+   .menu li:nth-child(4):hover .secondmenu3{
+       display: block;
+   }
+   .secondmenu_text1{
+       font-weight: bold;
+       position: absolute;
+       color: black;
+       left: 30px;
+       top: 20px;
+   }
+   .secondmenu_text2{
+       font-weight: bold;
+       position: absolute;
+       color: black;
+       left: 30px;
+       top: 80px;
+   }
+   .secondmenu_text1:hover {
+       text-decoration: underline;
+   }
+   .secondmenu_text2:hover {
+       text-decoration: underline;
+   }
+    .menu2{
+        width: 375px;
+        height: 57px;
+        color: #666666;
+        list-style: none;
+        font-size: 12px;
+        font-weight: 100;
+        line-height: 25px;
+        position: absolute;
+        top: 10px;;
+        left: 100px;
+
+    }
+   .menu2 li{
+       height: 20px;
+       float: left;
+       padding-left: 8px;
+       padding-right: 8px;
+       margin-top: 5px;
+       border-right: 1px solid silver;
+   }
+   .menu2 li:hover {
+       text-decoration: underline;
+   }
+   .menu3{
+       width: 375px;
+       height: 57px;
+       color: #666666;
+       list-style: none;
+       font-size: 12px;
+       font-weight: 100;
+       line-height: 25px;
+       position: absolute;
+       top: 70px;
+       left: 100px;
+
+   }
+   .menu3 li{
+       height: 20px;
+       float: left;
+       padding-left: 8px;
+       padding-right: 8px;
+       margin-top: 5px;
+       border-right: 1px solid silver;
+   }
+    .line{
+        width: 450px;
+        height: 0;
+        position: absolute;
+        border-bottom: 1px dotted silver;
+        top: 70px;
+        left: 10px;
+    }
+
+    #bgc{
+        height: 40px;
+        line-height: 40px;
+    }
+   #bgc input{
+       width: 15px;
+       height: 15px;
+   }
+    #show{
+        width: 550px;
+        height: 320px;
+        border: 1px solid black;
+        position: relative;
+        left: 200px;
+        top: 20px;
+        z-index: 1;
+    }
+   #show img{
+       position: absolute;
+       display: none;
+
+   }
+    #num{
+        list-style: none;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+    }
+   #num li{
+       width: 109px;
+       height: 45px;
+       background: rgba(0, 0, 0, 0.74);
+       color: white;
+       text-align: center;
+       line-height:45px;
+       border-right:1px solid white;
+   }
+    #xz{
+        position: absolute;
+        left: 800px;
+        top: 100px;
+        transition:all 1s linear;
+    }
+    #new{
+        width: 230px;
+        height: 200px;
+        border: 1px solid silver;
+        line-height: 25px;
+        position: absolute;
+        left: 800px;
+        top: 300px;
+    }
+   #new ul{
+       list-style: none;
+   }
+   .newtext{
+       font-weight: bold;
+   }
+    </style>
+</head>
+<body>
+<div id="bgc">
+    <input type="checkbox" style="color: #4261A4" value="#4261A4" name="bc1" onchange="fun1(this)">
+    <input type="checkbox" style="background: #BE46D8" value="#BE46D8" name="bc1" onchange="fun1(this)">
+    <input type="checkbox" style="background: #E11355" value="#E11355" name="bc1" onchange="fun1(this)">
+    <input type="checkbox" style="background: #0ABFCF" value="#0ABFCF" name="bc1" onchange="fun1(this)">
+    <input type="checkbox" style="background: #FBAB0D" value="#FBAB0D" name="bc1" onchange="fun1(this)">
+    <input type="checkbox" style="background: #AFD302" value="#AFD302" name="bc1" onchange="fun1(this)">
+</div>
+<ul class="menu" id="menu">
+    <li>首页
+    </li>
+    <li>品牌
+        <div class="secondmenu1">
+            品牌：
+            <ul class="menu2">
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>安踏</li>
+                <li>奥康</li>
+                <li>骆驼</li>
+                <li>特步</li>
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>特步</li>
+            </ul>
+            <div class="line"></div>
+            <ul class="menu3">
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>安踏</li>
+                <li>奥康</li>
+                <li>骆驼</li>
+                <li>特步</li>
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>特步</li>
+            </ul>
+            <div class="secondmenu_text1">品牌</div>
+            <div class="secondmenu_text2">品牌</div>
+        </div>
+    </li>
+    <li>女装
+        <div class="secondmenu2">
+            品牌：
+            <ul class="menu2">
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>安踏</li>
+                <li>奥康</li>
+                <li>骆驼</li>
+                <li>特步</li>
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>特步</li>
+            </ul>
+            <div class="line"></div>
+            <ul class="menu3">
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>安踏</li>
+                <li>奥康</li>
+                <li>骆驼</li>
+                <li>特步</li>
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>特步</li>
+            </ul>
+            <div class="secondmenu_text1">女装</div>
+            <div class="secondmenu_text2">女装</div>
+        </div>
+    </li>
+    <li>男装
+        <div class="secondmenu3">
+            品牌：
+            <ul class="menu2">
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>安踏</li>
+                <li>奥康</li>
+                <li>骆驼</li>
+                <li>特步</li>
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>特步</li>
+            </ul>
+            <div class="line"></div>
+            <ul class="menu3">
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>安踏</li>
+                <li>奥康</li>
+                <li>骆驼</li>
+                <li>特步</li>
+                <li>耐克</li>
+                <li>阿迪达斯</li>
+                <li>达芙妮</li>
+                <li>李宁</li>
+                <li>特步</li>
+            </ul>
+            <div class="secondmenu_text1">男装</div>
+            <div class="secondmenu_text2">男装</div>
+        </div>
+    </li>
+    <li>鞋包配饰</li>
+</ul>
+
+<div id="show">
+    <img src="images/1.jpg">
+    <img src="images/2.jpg">
+    <img src="images/3.jpg">
+    <img src="images/4.jpg">
+    <img src="images/5.jpg">
+    <ul id="num">
+        <li>相约情人节</li>
+        <li>相约情人节</li>
+        <li>相约情人节</li>
+        <li>相约情人节</li>
+        <li>相约情人节</li>
+    </ul>
+</div>
+
+<img src="images/20120216.jpg" id="xz">
+<div id="new">
+<span class="newtext">最新动态</span>
+    <ul id="text">
+       <li>[活动] 伊伴春鞋迎春大促</li>
+       <li>[活动] 千百度冬靴新品火热让利</li>
+       <li>[活动] COEY秋冬新品全场2.3折起</li>
+       <li>[活动] 伊伴春鞋迎春大促</li>
+       <li>[活动] 千百度冬靴新品火热让利</li>
+       <li>[活动] COEY秋冬新品全场2.3折起</li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+  var r1= document.getElementsByName("bc1");
+  var menu= document.getElementById("menu");
+  var show= document.getElementById("show");
+  var num= document.getElementById("num");
+  var arr1= num.getElementsByTagName("li");
+  var img=show.getElementsByTagName("img");
+    function fun1(a){
+    for(var i=0;i<r1.length;i++){
+          r1[i].checked=false;
+       }
+        a.checked=true;
+        menu.style.background=a.value;
+   }
+    img[0].style.display="block"
+    arr1[0].style.background="#37A7D7"
+
+    for(var i=0;i<arr1.length;i++){
+        arr1[i].aa=i
+        arr1[i].onmouseover=function(){
+            this.style.background="#37A7D7"
+            img[this.aa].style.display="block";
+            for(var j=0;j<arr1.length;j++){
+                if(j!=this.aa){
+                    arr1[j].style.background="rgba(0, 0, 0, 0.74)";
+                    img[j].style.display="none";
+                }
+            }
+
+        }
+    }
+//  var m=0;
+//  function fun3(){
+//      for(var j=0;j<arr1.length;j++){
+//          if(j==m){
+//              arr1[j].style.background="#37A7D7";
+//              img[j].style.display="block";
+//          }
+//          else{
+//              arr1[j].style.background="rgba(0, 0, 0, 0.74)";
+//              img[j].style.display="none";
+//          }
+//      }
+//      m++;
+//      if(m==5){
+//          m=0
+//      }
+//     var timer1= setTimeout(fun3(),1000);
+//  }
+//  fun3();
+
+  var x1= document.getElementById("xz");
+    x1.onmouseover=function(){
+        x1.style.transform= "rotateZ(-720deg)";
+  };
+  x1.onmouseout=function(){
+      x1.style.transform= "rotateZ(0deg)";
+  };
+      var text= document.getElementById("text");
+       var arr2=text.getElementsByTagName("li");
+    function fun02(){
+        var v1=arr2[0].cloneNode(true)
+        text.removeChild(arr2[0]);
+        text.appendChild(v1)
+     }
+  setInterval(fun02,1000);
+
+
+
+
+</script>
