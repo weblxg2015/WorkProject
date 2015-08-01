@@ -193,16 +193,77 @@
    .newtext{
        font-weight: bold;
    }
+    .bgc1{
+        width: 14px;
+        height: 14px;
+        background-image: url("images/theme.gif");
+        background-position-x: 0;
+        background-position-y: 0;
+        margin-left: 20px;
+        color: #4261A4;
+    }
+   .bgc2{
+       width: 14px;
+       height: 14px;
+       background-image: url("images/theme.gif");
+       background-position-x: -20px;
+       background-position-y: 0;
+       margin-left: 20px;
+       color: #BE46D8;
+   }
+   .bgc3{
+       width: 14px;
+       height: 14px;
+       background-image: url("images/theme.gif");
+       background-position-x: -40px;
+       background-position-y: 0;
+       margin-left: 20px;
+       color: #E11355;
+   }
+   .bgc4{
+       width: 14px;
+       height: 14px;
+       background-image: url("images/theme.gif");
+       background-position-x: -60px;
+       background-position-y: 0;
+       margin-left: 20px;
+       color: #0ABFCF;
+   }
+   .bgc5{
+       width: 14px;
+       height: 14px;
+       background-image: url("images/theme.gif");
+       background-position-x: -80px;
+       background-position-y: 0;
+       margin-left: 20px;
+       color: #FBAB0D;
+   }
+   .bgc6{
+       width: 14px;
+       height: 14px;
+       background-image: url("images/theme.gif");
+       background-position-x: -100px;
+       background-position-y: 0;
+       margin-left: 20px;
+       color:#AFD302;
+   }
+    .bg{
+        display: flex;
+        float: right;
+        padding-top: 10px;
+    }
     </style>
 </head>
-<body>
+<body onload="fun4()">
 <div id="bgc">
-    <input type="checkbox" style="color: #4261A4" value="#4261A4" name="bc1" onchange="fun1(this)">
-    <input type="checkbox" style="background: #BE46D8" value="#BE46D8" name="bc1" onchange="fun1(this)">
-    <input type="checkbox" style="background: #E11355" value="#E11355" name="bc1" onchange="fun1(this)">
-    <input type="checkbox" style="background: #0ABFCF" value="#0ABFCF" name="bc1" onchange="fun1(this)">
-    <input type="checkbox" style="background: #FBAB0D" value="#FBAB0D" name="bc1" onchange="fun1(this)">
-    <input type="checkbox" style="background: #AFD302" value="#AFD302" name="bc1" onchange="fun1(this)">
+    <div class="bg" id="bg">
+    <div class="bgc1" onclick="cbg(this)" style="color:#4261A4 "></div>
+    <div class="bgc2" onclick="cbg(this)" style="color:#AFD302;"></div>
+    <div class="bgc3" onclick="cbg(this)" style="color: #FBAB0D; "></div>
+    <div class="bgc4" onclick="cbg(this)" style="color:#0ABFCF "></div>
+    <div class="bgc5" onclick="cbg(this)" style="color:#E11355 "></div>
+        <div class="bgc6" onclick="cbg(this)" style="color: #BE46D8; "></div>
+   </div>
 </div>
 <ul class="menu" id="menu">
     <li>首页
@@ -367,13 +428,13 @@
         a.checked=true;
         menu.style.background=a.value;
    }
-    img[0].style.display="block"
-    arr1[0].style.background="#37A7D7"
-
+  var timer1,timer2;
     for(var i=0;i<arr1.length;i++){
-        arr1[i].aa=i
+        arr1[i].aa=i;
         arr1[i].onmouseover=function(){
-            this.style.background="#37A7D7"
+            clearTimeout(timer1);
+            clearTimeout(timer2);
+            this.style.background="#37A7D7";
             img[this.aa].style.display="block";
             for(var j=0;j<arr1.length;j++){
                 if(j!=this.aa){
@@ -381,28 +442,35 @@
                     img[j].style.display="none";
                 }
             }
-
+        };
+        arr1[i].onmouseout=function() {
+            m = this.aa;
+            timer2= setTimeout(fun4,1000);
         }
     }
-//  var m=0;
-//  function fun3(){
-//      for(var j=0;j<arr1.length;j++){
-//          if(j==m){
-//              arr1[j].style.background="#37A7D7";
-//              img[j].style.display="block";
-//          }
-//          else{
-//              arr1[j].style.background="rgba(0, 0, 0, 0.74)";
-//              img[j].style.display="none";
-//          }
-//      }
-//      m++;
-//      if(m==5){
-//          m=0
-//      }
-//     var timer1= setTimeout(fun3(),1000);
-//  }
-//  fun3();
+
+  var m=0;
+  function fun4(){
+      arr1[m].style.background="#37A7D7";
+      img[m].style.display="block";
+      for(var j=0;j<arr1.length;j++){
+          if(j==m){
+              arr1[j].style.background="#37A7D7";
+              img[j].style.display="block";
+          }
+          else{
+              arr1[j].style.background="rgba(0, 0, 0, 0.74)";
+              img[j].style.display="none";
+          }
+      }
+      m=m+1;
+      if(m==5){
+          m=0
+      }
+      timer1= setTimeout(fun4,1000);
+  }
+
+
 
   var x1= document.getElementById("xz");
     x1.onmouseover=function(){
@@ -420,7 +488,15 @@
      }
   setInterval(fun02,1000);
 
-
+  var bg= document.getElementById("bg");
+    var carr=bg.getElementsByTagName("div");
+    function cbg(a){
+        for(var k=0;k<carr.length;k++){
+            carr[k].style.backgroundPositionY="0"
+        }
+        a.style.backgroundPositionY="15px";
+        menu.style.background=a.style.color;
+    }
 
 
 </script>
