@@ -174,7 +174,7 @@
    }
     #xz{
         position: absolute;
-        left: 800px;
+        left: 770px;
         top: 100px;
         transition:all 1s linear;
     }
@@ -184,7 +184,7 @@
         border: 1px solid silver;
         line-height: 25px;
         position: absolute;
-        left: 800px;
+        left: 770px;
         top: 280px;
     }
    #new ul{
@@ -252,6 +252,35 @@
         float: right;
         padding-top: 10px;
     }
+    #show1{
+        width: 800px;
+        height: 200px;
+        border: 1px solid #c4c2c8;
+        position: absolute;
+        top: 460px;
+        left: 200px;
+        overflow: scroll;
+    }
+    #wrap{
+        width: 3200px;
+    }
+    #wrap img{
+        margin-left: 10px;
+    }
+    #title{
+        display: flex;
+        list-style: none;
+        position: absolute;
+        top: 440px;
+        left: 820px;
+    }
+   #title li{
+       width: 45px;
+       height: 20px;
+       background: #e4e4e4;
+       line-height: 20px;
+       text-align: center;
+   }
     </style>
 </head>
 <body onload="fun4()">
@@ -409,9 +438,22 @@
        <li>[活动] COEY秋冬新品全场2.3折起</li>
        <li>[活动] 伊伴春鞋迎春大促</li>
        <li>[活动] 千百度冬靴新品火热让利</li>
-
     </ul>
 </div>
+  <div id="show1">
+    <div id="wrap">
+        <img src="images/20120217.jpg"> <img src="images/20120218.jpg"> <img src="images/20120219.png"> <img src="images/20120220.png">
+        <img src="images/20120217.jpg"> <img src="images/20120218.jpg"> <img src="images/20120219.png"> <img src="images/20120220.png">
+        <img src="images/20120217.jpg"> <img src="images/20120218.jpg"> <img src="images/20120219.png"> <img src="images/20120220.png">
+        <img src="images/20120217.jpg"> <img src="images/20120218.jpg"> <img src="images/20120219.png"> <img src="images/20120220.png">
+    </div>
+</div>
+<ul id="title">
+    <li onclick="sco(0)">运动</li>
+    <li onclick="sco(800)">女鞋</li>
+    <li onclick="sco(1600)">男鞋</li>
+    <li onclick="sco(2400)">童鞋</li>
+</ul>
 </body>
 </html>
 <script>
@@ -445,7 +487,7 @@
         };
         arr1[i].onmouseout=function() {
             m = this.aa;
-            timer2= setTimeout(fun4,1000);
+            timer2= setTimeout(fun4,2000);
         }
     }
 
@@ -467,7 +509,7 @@
       if(m==5){
           m=0
       }
-      timer1= setTimeout(fun4,1000);
+      timer1= setTimeout(fun4,2000);
   }
 
 
@@ -498,5 +540,30 @@
         menu.style.background=a.style.color;
     }
 
+    var arimg=document.getElementById("title").getElementsByTagName("li");
+    var tim1;
+    function sco(v){
+        clearTimeout(tim1);
+        for(var i=0;i<arimg.length;i++){
+            arimg[i].style.background="#e4e4e4";
+        }
+       var v1=v/800;
+        arimg[v1].style.background="#fa5889";
+       var show1= document.getElementById("show1");
+        (function sco1(){
+            var a1=show1.scrollLeft;
+            if(v>=a1){
+                show1.scrollLeft++;
+            }
+            else if(v==a1){
+                clearTimeout(tim1)
+            }
+            else{
+                show1.scrollLeft--;
+            }
 
+             tim1=setTimeout(sco1,1)
+        })()
+
+    }
 </script>
