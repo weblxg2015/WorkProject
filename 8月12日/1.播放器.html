@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<progress max="100" value="0" id="progressid" style="width:300px;height: 20px"></progress><br><br>
+<input type="button" value="上一首" onclick="fun03()">
+<input type="button" value="暂停" onclick="fun01(this)">
+<input type="button" value="下一首" onclick="fun02()">
+<button onclick="fun5()" id="jy">静音</button>
+<audio src="../media/1.mp3" autoplay="true" preload="none" controls id="audio01" style="opacity:0;position: absolute">
+    你当前的浏览器不支持音频
+</audio><br><br>
+<div id="id01"></div>
+<div id="id02"></div>
+</body>
+</html>
+<script>
+    var i=0;
+    var m1=['1.mp3','2.mp3','3.mp3','4.mp3','5.mp3'];
+    var v_audio=document.getElementById('audio01');
+    var d1=document.getElementById("id01");
+    d1.innerHTML='您正在听'+m1[i];
+
+    v_audio.addEventListener("ended",function(){
+        i += 1;
+        if (i == m1.length) {
+            i = 0;
+        }
+        v_audio.src ="media/"+ m1[i];
+        d1.innerHTML='您正在听'+m1[i];
+    },false);
+
+    function fun01(v){
+        if(v_audio.paused){
+            v_audio.play();
+            v.value="暂停";
+        }
+        else  if(v_audio.played){
+            v_audio.pause();
+            v.value="播放";
+        }
+    }
+
+    v_audio.src ="media/"+ m1[i];
+    function fun02(){
+        i+=1;
+        if(i==m1.length){
+            i=0
+        }
+        v_audio.src ="media/"+ m1[i];
+        d1.innerHTML='您正在听'+m1[i];
+    }
+
+    function fun03(){
+        i-=1;
+        if(i<0){
+            i=m1.length-1;
+        }
+        v_audio.src ="media/"+ m1[i];
+        d1.innerHTML='您正在听'+m1[i];
+    }
+    function fun5() {
+        var v_audio = document.getElementById('audio01');
+        if( v_audio.muted){
+            v_audio.muted=false;
+            document.getElementById('jy').innerText="静音"
+        }
+        else {
+            v_audio.muted = true;
+            document.getElementById('jy').innerText="取消静音"
+        }
+    }
+
+    var v_audio = document.getElementById('audio01');
+    v_audio.addEventListener("timeupdate", funtimeupdate, false);
+
+    var v_pro = document.getElementById('progressid');
+    v_pro.addEventListener("click", propress_click, false);
+    function funtimeupdate(){
+        var v1=Math.round((Math.floor(v_audio.currentTime)/Math.floor(v_audio.duration))*100);
+        document.getElementById("progressid").value=v1;
+    }
+    function propress_click(e){
+               var x1= e.offsetX;
+               var w1=parseFloat(document.getElementById("progressid").style.width);
+                v_audio.currentTime=(x1/w1)*(Math.floor(v_audio.duration));
+    }
+</script>
